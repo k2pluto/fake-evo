@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ES2022",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+    "inlineSourceMap": true,
+    "esModuleInterop": true,
+    "incremental": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "baseUrl": "./src"
+  },
+  "exclude": ["node_modules", "__tests__", ".serverless", "jest.config.ts", "dist"]
+}

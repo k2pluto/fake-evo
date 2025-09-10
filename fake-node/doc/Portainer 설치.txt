@@ -1,0 +1,14 @@
+1. Docker에서 Portainer 볼륨 생성 먼저 Portainer 데이터를 저장할 볼륨을 생성합니다.
+
+docker volume create portainer_data
+
+2. Portainer 설치 및 실행 Docker 명령어를 사용하여 Portainer 컨테이너를 실행합니다.
+
+docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+
+-p 8000:8000: Edge Agent를 위한 포트
+-p 9443:9443: Portainer 웹 UI 접근을 위한 포트
+-v /var/run/docker.sock:/var/run/docker.sock: Docker 엔진에 접근할 수 있게 연결
+-v portainer_data:/data: Portainer 데이터를 저장할 볼륨 연결
+
+3. 중간에 portainer 에서 만든 stack 을 지웠다가 다시 만드는데 실패할 경우 portainer_data 볼륨을 지우고 새로 만들면 정상으로 만들어진다.

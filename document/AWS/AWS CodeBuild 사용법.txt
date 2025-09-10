@@ -1,0 +1,100 @@
+1. 만약 CodeBuild에 Github를 사용하기 위해 CodeConnections 을 사용하게 된다면 CodeBuild 만들 때 Role에 다가 CodeConnections 권한을 추가시켜 줘야 된다.
+
+2. 도커 빌드가 Cannot connect to the Docker daemon 라고 안될땐 CodeBuild 프로젝트 설저에서 Environment -> Privileged 옵션이 켜져 있는지 확인해야 한다.
+
+3. CodBuildBasePolicy 설정 예제
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:logs:ap-northeast-1:633624879762:log-group:/aws/codebuild/build-fake-korea",
+                "arn:aws:logs:ap-northeast-1:633624879762:log-group:/aws/codebuild/build-fake-korea:*"
+            ],
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Resource": [
+                "arn:aws:s3:::codepipeline-ap-northeast-1-*"
+            ],
+            "Action": [
+                "s3:PutObject",
+                "s3:GetObject",
+                "s3:GetObjectVersion",
+                "s3:GetBucketAcl",
+                "s3:GetBucketLocation"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "codebuild:CreateReportGroup",
+                "codebuild:CreateReport",
+                "codebuild:UpdateReport",
+                "codebuild:BatchPutTestCases",
+                "codebuild:BatchPutCodeCoverages"
+            ],
+            "Resource": [
+                "arn:aws:codebuild:ap-northeast-1:633624879762:report-group/build-fake-korea-*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "codeconnections:*"
+            ],
+            "Resource": [
+                "arn:aws:codeconnections:ap-northeast-1:633624879762:connection/b4fe5e4a-4fc8-41b2-8320-03699543a35f"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ecr:GetAuthorizationToken"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ecr:UploadLayerPart",
+                "ecr:PutImage",
+                "ecr:InitiateLayerUpload",
+                "ecr:CompleteLayerUpload",
+                "ecr:BatchCheckLayerAvailability"
+            ],
+            "Resource": "arn:aws:ecr:ap-northeast-1:633624879762:repository/amd64-fake-api-node"
+        }
+    ]
+}
+
+
+3. buildspec.yaml 예제
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+
+  build:
+    commands:
+      - docker buildx build --platform linux/amd64  -f ./docker/dockerfiles/pluto-runtime-base.Dockerfile -t pluto-runtime-base .
+      - docker buildx build --platform linux/amd64  -f ./docker/dockerfiles/pluto-build-base.Dockerfile -t pluto-build-base .
+      - docker buildx build --platform linux/amd64 --build-arg ENV=$TAG --build-arg STAGE_ENV=$TAG -f ./docker/dockerfiles/$PROJECT_NAME.Dockerfile -t $PROJECT_NAME:$TAG .
+      - docker tag $PROJECT_NAME:$TAG 633624879762.dkr.ecr.ap-northeast-1.amazonaws.com/$PROJECT_NAME:$TAG
+      
+  post_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+      - docker push 633624879762.dkr.ecr.ap-northeast-1.amazonaws.com/$PROJECT_NAME:$TAG
+      
+artifacts:
+  files:
+    - './**/*'

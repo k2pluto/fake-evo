@@ -1,0 +1,27 @@
+1. 로키 리눅스 설정법
+
+먼저 도커를 설치한다.
+sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo dnf -y install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo systemctl --now enable docker
+
+도커 스웜에 워커로 등록한다.
+docker swarm join --token SWMTKN-1-44jpjpdfmmahid2l7nbd978hgkyv197gq9br111r3b0ctr1we6-822m3kubvgkoadp8ah3j3khv9 192.168.1.50:2377
+
+시스템 이름을 바꾼다.
+hostnamectl set-hostname 새로운_이름
+
+방화벽을 연다.
+firewall-cmd --permanent --add-port=포트번호/udp
+
+// 2377 TCP 스웜 매니저와 워커 간의 통신
+firewall-cmd --permanent --add-port=2377/tcp
+
+// 4789 UDP 포트는 도커 스웜 워커에서 가장 중요한 포트이다.
+firewall-cmd --permanent --add-port=4789/udp
+
+7946 (TCP/UDP): 노드 간 통신을 위한 포트
+firewall-cmd --permanent --add-port=7946/tcp
+
+방화벽 리로드
+firewall-cmd --reload

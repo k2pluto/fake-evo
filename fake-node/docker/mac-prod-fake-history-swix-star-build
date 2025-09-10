@@ -1,0 +1,4 @@
+#! /bin/bash
+BASEDIR=$(dirname $0)
+cd $BASEDIR
+sh mac-arm64-build-docker-image.sh arm64-fake-history swix

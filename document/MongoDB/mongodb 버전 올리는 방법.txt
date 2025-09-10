@@ -1,0 +1,12 @@
+https://www.mongodb.com/docs/manual/release-notes/7.0-upgrade-standalone/
+
+1. 4.0에서 6.0이나 7.0등 메이저 버전을 두단계 이상 건너 띄우면서 업그레이드는 불가능하다.
+
+2. 4.0에서 5.0 으로 갈려면 mongodb 를 5.0 으로 재시작 한 다음에 아래와 같은 명령어를 입력해 주면 된다.
+db.adminCommand( { setFeatureCompatibilityVersion: "5.0" })
+
+3. 5.0에서 6.0 으로 갈려면 mongodb 를 6.0 으로 재시작 한 다음에 아래와 같은 명령어를 입력해 주면 된다.
+db.adminCommand( { setFeatureCompatibilityVersion: "6.0" })
+
+4. 6.0에서 7.0 으로 갈려면 mongodb 를 7.0 으로 재시작 한 다음에 아래와 같은 명령어를 입력해 주면 된다.
+db.adminCommand( { setFeatureCompatibilityVersion: "7.0", confirm:true })

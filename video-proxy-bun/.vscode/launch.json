@@ -1,0 +1,31 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "bun-video-proxy",
+        "type": "bun",
+        "request": "launch",
+        "program": "src/main.ts",
+        "args": [],
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "STAGE_ENV": "remote-prod",
+          "FAKE_VENDOR": "fchev",
+          "FAKE_SERVER": "blue",
+          "DEBUG_MODE": "debug",
+        },
+        "strictEnv": false,
+        "internalConsoleOptions": "openOnSessionStart",
+        "runtimeArgs": [
+        ],
+      }
+    ]
+
+  }
+
+  
+  // d:\WOKR\copy-game\pluto\fake-evo\dist\src\evo-control\main.js
+  //D:\WOKR\copy-game\pluto\fake-evo\.vscode\launch.json

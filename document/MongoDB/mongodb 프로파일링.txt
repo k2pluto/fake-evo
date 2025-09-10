@@ -1,0 +1,5 @@
+https://qkqhxla1.tistory.com/943
+
+db.setProfilingLevel(1, 1000)
+
+으로 셋팅하면 system.profile 이라는 컬렉션이 생기고 거기에 1초 넘어가는 쿼리들이 쌓인다.

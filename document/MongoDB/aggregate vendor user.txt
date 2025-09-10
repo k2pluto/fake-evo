@@ -1,0 +1,17 @@
+db.getCollection("bet_data_slot").aggregate({
+    $match: {
+        vendor: 'lgdg',
+        betStatus: 'SETTLE'
+    }},
+ 
+    {$group:{
+        _id: '$userId',
+        amountBet: {$sum:'$amountBet'},
+        amountWin: {$sum:'$amountWin'}
+    }},
+ 
+    {$sort:{
+        amountWin: -1,
+    }}
+)
+

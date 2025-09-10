@@ -1,0 +1,35 @@
+1. 도커
+https://docs.docker.com/desktop/install/mac-install/
+
+2. Vscode
+https://code.visualstudio.com
+
+3. MongoDB studio3T
+https://studio3t.com/download/
+
+4. Mysql
+vscode에서 Cweijan의 MySQL Extension을 설치한다.
+https://devbirdfeet.tistory.com/176
+
+4. Home-brew 및 node 설치
+https://brew.sh/index_ko
+
+4-1 home-brew 설치 스크립트
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+4-2 node 설치 스크립트
+brew install node
+4-3 yarn 설치 스크립트
+npm i -g yarn
+4-4 typescript 설치 스크립트
+npm i -g typescript
+4-5 serverless 설치 스크립트
+npm i -g serverless
+
+5. Awscli 설치
+https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/getting-started-install.html
+$ curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+$ sudo installer -pkg AWSCLIV2.pkg -target /
+
+6. aws configure profile 설정
+https://longtermsad.tistory.com/13
+$ aws configure --profile <PROFILE NAME>

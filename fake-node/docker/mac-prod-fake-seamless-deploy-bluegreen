@@ -1,0 +1,19 @@
+#! /bin/bash
+BASEDIR=$(dirname $0)
+cd $BASEDIR
+
+applicationName=AppECS-fake-seamless-bluegreen-fake-seamless-srv
+
+deploymentGroupName=DgpECS-fake-seamless-bluegreen-fake-seamless-srv
+
+regionName=ap-northeast-1
+
+TASKARN=arn:aws:ecs:ap-northeast-1:633624879762:task-definition/fake-seamless-fargate-prod:1
+
+APPSPEC=$(echo '{"version":1,"Resources":[{"TargetService":{"Type":"AWS::ECS::Service","Properties":{"TaskDefinition":"'$TASKARN'","LoadBalancerInfo":{"ContainerName":"container1","ContainerPort":4000}}}}]}'| jq -Rs .)
+
+REVISION='{"revisionType":"AppSpecContent","appSpecContent":{"content":'$APPSPEC'}}'
+
+echo $REVISION
+
+aws deploy create-deployment --application-name $applicationName --deployment-group-name $deploymentGroupName --revision $REVISION --region $regionName --profile faker

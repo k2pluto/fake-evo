@@ -1,0 +1,97 @@
+version: '3'
+
+services:
+  fake-api-blue:
+    image: 633624879762.dkr.ecr.ap-northeast-1.amazonaws.com/amd64-fake-api-node:korea
+    deploy:
+      replicas: 10
+      placement:
+        max_replicas_per_node: 2  # 한 노드당 2개의 컨테이너만 실행되도록 설정
+        constraints:
+          - node.labels.type == blue                   # blue type 에서만 실행
+          #- node.hostname == linux2nd                   # Traefik은 manager 노드에서 실행
+          #- node.role != manager                   # Traefik은 manager 노드에서 실행
+      labels:
+        # deploy 안에서 labels 를 사용해야 service labels 로 달림
+        - traefik.enable=true
+        - "traefik.http.routers.fake_blue.rule=Host(`babylonagst3.evo-games-k.com`)" # Host 규칙: example.com으로 라우팅
+        - "traefik.http.routers.fake_blue.entrypoints=web"            # HTTP 엔트리포인트 사용
+        - "traefik.http.services.fake_blue.loadbalancer.server.port=4000" # 서비스 포트 4000으로 트래픽 전달
+        - "traefik.http.services.fake_blue.loadbalancer.healthcheck.path=/health"
+        # HTTPS 엔트리포인트 라우팅 규칙
+        - "traefik.http.routers.fake_blue_secure.rule=Host(`babylonagst3.evo-games-k.com`)"  # 도메인 규칙
+        - "traefik.http.routers.fake_blue_secure.entrypoints=websecure"     # HTTPS 엔트리포인트 (443)
+        - "traefik.http.routers.fake_blue_secure.tls=true"     # HTTPS 엔트리포인트 (443)
+        - "traefik.http.routers.fake_blue_secure.tls.certresolver=myresolver"     # HTTPS 엔트리포인트 (443)
+    #ports:
+    #  - "10001:4000"                               # 외부 10001번 포트에 매핑
+    expose:
+      - 4000
+    networks:
+      - traefik-net                                 # 네트워크 연결
+
+  fake-api-green:
+    image: 633624879762.dkr.ecr.ap-northeast-1.amazonaws.com/amd64-fake-api-node:korea
+    deploy:
+      replicas: 10
+      placement:
+        max_replicas_per_node: 2  # 한 노드당 2개의 컨테이너만 실행되도록 설정
+        constraints:
+          - node.labels.type == green                   # green type 에서만 실행
+          #- node.hostname == linux2nd                   # Traefik은 manager 노드에서 실행
+          #- node.role != manager                   # Traefik은 manager 노드에서 실행
+      labels:
+        # deploy 안에서 labels 를 사용해야 service labels 로 달림
+        - traefik.enable=true
+        - "traefik.http.routers.fake_green.rule=Host(`babylongr1.evo-games-k.com`)" # Host 규칙: example.com으로 라우팅
+        - "traefik.http.routers.fake_green.entrypoints=web"            # HTTP 엔트리포인트 사용
+        - "traefik.http.services.fake_green.loadbalancer.server.port=4000" # 서비스 포트 4000으로 트래픽 전달
+        - "traefik.http.services.fake_green.loadbalancer.healthcheck.path=/health"
+        # HTTPS 엔트리포인트 라우팅 규칙
+        - "traefik.http.routers.fake_green_secure.rule=Host(`babylongr1.evo-games-k.com`)"  # 도메인 규칙
+        - "traefik.http.routers.fake_green_secure.entrypoints=websecure"     # HTTPS 엔트리포인트 (443)
+        - "traefik.http.routers.fake_green_secure.tls=true"     # HTTPS 엔트리포인트 (443)
+        - "traefik.http.routers.fake_green_secure.tls.certresolver=myresolver"     # HTTPS 엔트리포인트 (443)
+    #ports:
+    #  - "10001:4000"                               # 외부 10001번 포트에 매핑
+    expose:
+      - 4000
+    networks:
+      - traefik-net                                 # 네트워크 연결
+
+  traefik:
+    image: traefik:v3.1
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager                   # Traefik은 manager 노드에서 실행
+      labels:
+        - traefik.http.routers.mydashboard.rule=Host(`traefik.example.com`)
+        - traefik.http.routers.mydashboard.service=api@internal
+        - traefik.http.services.mydashboard.loadbalancer.server.port=1337
+    command:
+      - "--api.insecure=true"
+      - "--api.dashboard=true"
+      - "--providers.docker=true" # Docker 프로바이더 사용
+      - "--entrypoints.web.address=:80" # HTTP 엔트리포인트 설정
+      - "--entrypoints.websecure.address=:443" # HTTPS 엔트리포인트 설정
+    ports:
+      - "80:80"     # HTTP 포트 노출
+      - "443:443"   # HTTPS 포트
+      - "9001:8080" # Traefik 대시보드 포트 노출
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock" # Docker 소켓 접근 권한
+      #- "/home/linuxadmin/evo-games-k.com.crt:/etc/ssl/certs/evo-games-k.com.crt"               # Let's Encrypt 인증서 저장소
+      #- "/home/linuxadmin/evo-games-k.com.key:/etc/ssl/private/evo-games-k.com.key"               # Let's Encrypt 인증서 저장소
+      - "/home/linuxadmin/traefik.yml:/traefik.yml"               # Let's Encrypt 인증서 저장소
+      - "/home/linuxadmin/traefik:/traefik"
+
+    networks:
+      - traefik-net                                 # 네트워크 연결
+
+networks:
+  traefik-net:                                      # 네트워크 정의
+    name: traefik-net
+    driver: overlay
+    attachable: true

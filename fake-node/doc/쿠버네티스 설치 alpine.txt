@@ -1,0 +1,54 @@
+kubectl : 쿠버네티스 명령줄 클라이언트 도구
+kubeadm : 쿠버네티스 클러스터를 설치하고 부트스트랩 하는 도구
+kube-apiserver : 쿠버네티스 api 서버 kube-apiserver 이름의 컴포넌트로 실행이 된다.
+
+1. 방화벽 열기
+6443
+2379
+2380
+10250
+10259
+
+10257
+30000-32767
+
+firewall-cmd --permanent --add-port=6433/tcp
+firewall-cmd --reload
+
+https://ipv6.rs/tutorial/Alpine_Linux_Latest/Kubernetes/
+
+// apk update
+apk update && apk upgrade
+
+// install curl
+apk add curl
+
+// install kubectl
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+chmod +x kubectl
+mv kubectl /usr/local/bin/
+
+// install kubeadm and kubelet
+apk add kubeadm kubelet
+
+//스왑 메모리 끄기
+swapoff -a
+
+// hostname add
+nano /etc/hosts
+127.0.0.1   alpine1st
+
+//kubelet을 시스템 부팅 시 자동으로 시작되도록 활성화해야 합니다.
+rc-update add kubelet default
+
+//containerd 설치
+apk add containerd
+
+// failed to parse kernel config: unable to load kernel module: "configs", output: "modprobe: FATAL: Module configs not found in directory /lib/modules/6.6.49-0-lts"
+// 라는 메시지가 뜰때
+apk upgrade linux-lts
+reboot
+
+//join kubeadm
+kubeadm join 192.168.1.50:6443 --token q9bg2w.cui2kbxzmdn803kr \
+	--discovery-token-ca-cert-hash sha256:73deb66869d2dd17f18bf3eb43810aef3fe03ff0de73c82d48cb92d34334ccf5 

@@ -1,0 +1,32 @@
+{
+  "ts-node": {
+    // these options are overrides used only by ts-node
+    // same as the --compilerOptions flag and the TS_NODE_COMPILER_OPTIONS environment variable
+    //"typeCheck": false,
+    //"swc": true,
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  },
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ESNext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    //"strict": true,
+    "removeComments": true,
+    "skipLibCheck": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+    "inlineSourceMap": true,
+    "incremental": true,
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "@service/*": ["./service/*"],
+    }
+  },
+  "include": [".eslintrc.cjs", "**/*.ts", "**/*.tsx", "./share/**/*.ts"],
+  "exclude": ["node_modules", ".serverless", "jest.config.ts", "dist"]
+}

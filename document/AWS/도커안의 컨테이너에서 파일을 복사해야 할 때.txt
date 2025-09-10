@@ -1,0 +1,5 @@
+아래와 같이 docker cp 명령어를 이용하면 된다.
+
+docker cp 806f5f4a049b:/usr/server/page1.png .
+
+https://itholic.github.io/docker-copy/

@@ -1,0 +1,49 @@
+version: '3'
+services: 
+  elastic:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.13.2
+    container_name: elastic
+    environment:
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+      - "xpack.security.enabled=true"
+    ports:
+      - "127.0.0.1:8080:8080"
+      - "127.0.0.1:50000:50000"
+      - "127.0.0.1:9200:9200"
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+    networks:
+      - es_net
+ 
+  kibana:
+    image:  docker.elastic.co/kibana/kibana:7.13.2
+    environment:
+      ELASTICSEARCH_HOSTS: http://elastic:9200
+      ELASTICSEARCH_USERNAME: elastic
+      ELASTICSEARCH_PASSWORD: guragura
+    ports:
+      - "127.0.0.1:5601:5601"
+    networks:
+      - es_net
+
+  fluent-bit:
+    image: fluent/fluent-bit:3.1
+    deploy:
+      mode: global
+    ports:
+      - "24224:24224"
+    configs:
+      - source: fluent-bit-config
+        target: /fluent-bit/etc/fluent-bit.conf
+    networks:
+      - es_net
+    
+volumes:
+  es_data:
+    driver: local
+ 
+networks:
+  es_net:
+    name: elastic_network
+    driver: overlay

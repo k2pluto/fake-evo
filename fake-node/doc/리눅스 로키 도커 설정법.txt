@@ -1,0 +1,12 @@
+1. 로키 리눅스 설정법
+
+먼저 도커를 설치한다.
+sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo dnf -y install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+sudo systemctl --now enable docker
+
+시스템 이름을 바꾼다.
+hostnamectl set-hostname 새로운_이름
+
+방화벽을 연다.
+firewall-cmd --permanent --add-port=8002/tcp

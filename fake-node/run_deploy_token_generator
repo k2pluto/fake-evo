@@ -1,0 +1,5 @@
+#! /bin/bash
+BASEDIR=$(dirname $0)
+cd $BASEDIR
+tsc
+sls deploy --config serverless.token-generator.yml --stage prod --aws-profile faker

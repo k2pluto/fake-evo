@@ -1,0 +1,9 @@
+1. 윈도우용 Docker 를 설치한다.
+
+2. 윈도우 재시작 후 Docker 로그인 한다.
+
+2. tools 에 있는 AWS Cli 를 설치한다.
+
+3. CMD 에 aws configure 를 입력 후 doc의 credentials.json 에 있는데로 입력한다.
+
+4. 도커 빌드 후 푸쉬한다.

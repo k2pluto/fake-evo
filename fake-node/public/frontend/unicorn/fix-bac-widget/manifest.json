@@ -1,0 +1,1474 @@
+{
+    "defaults": {
+      "customAppExample": {
+        "adaptive": {
+          "loader": "/frontend/unicorn/fix-bac-widget/custom-app-example",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/custom-app-example.3fdd56df.js"
+          ],
+          "ignoreVideo": true
+        }
+      },
+      "tertius.example": {
+        "adaptive": {
+          "loader": "/frontend/unicorn/fix-bac-widget/tertius.example",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/tertius.example.769bfefc.css",
+            "/frontend/unicorn/fix-bac-widget/js/tertius.example.769bfefc.js"
+          ],
+          "ignoreVideo": true,
+          "audioLibrary": "ecas"
+        }
+      },
+      "ne-template-pixi": {
+        "adaptive": {
+          "loader": "/frontend/unicorn/fix-bac-widget/ne-template-pixi",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/js/ne-template-pixi.b6f7ae3d.js"
+          ],
+          "ignoreVideo": true,
+          "audioLibrary": "ecas"
+        }
+      },
+      "abstractGame": {
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/abstractGame.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/abstractGame.mobile.02369292.css",
+            "/frontend/unicorn/fix-bac-widget/js/abstractGame.mobile.02369292.js"
+          ]
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/abstractGame.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/abstractGame.desktop.286ea205.css",
+            "/frontend/unicorn/fix-bac-widget/js/abstractGame.desktop.286ea205.js"
+          ]
+        }
+      },
+      "andarbahar": {
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/andarBahar.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/andarBahar.desktop.8cca0510.css",
+            "/frontend/unicorn/fix-bac-widget/js/andarBahar.desktop.8cca0510.js"
+          ]
+        },
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/andarBahar.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/andarBahar.mobile.f542de93.css",
+            "/frontend/unicorn/fix-bac-widget/js/andarBahar.mobile.f542de93.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "promotions": {
+        "adaptive": {
+          "loader": "/frontend/unicorn/fix-bac-widget/promotions",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/promotions.2a3ac885.css",
+            "/frontend/unicorn/fix-bac-widget/js/promotions.2a3ac885.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "*"
+        }
+      },
+      "baccaratmultiplay": {
+        "adaptive": {
+          "loader": "/frontend/unicorn/fix-bac-widget/baccarat.multiplay",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/baccarat.multiplay.6bd81e41.css",
+            "/frontend/unicorn/fix-bac-widget/js/baccarat.multiplay.6bd81e41.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "lobby": {
+        "adaptive": {
+          "loader": "/frontend/unicorn/fix-bac-widget/lobby",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/lobby.abafc329.css",
+            "/frontend/unicorn/fix-bac-widget/js/lobby.abafc329.js",
+            "/frontend/unicorn/fix-bac-widget/styles/lobby-3_0-global.115783ff.css",
+            "/frontend/unicorn/fix-bac-widget/styles/lobby-global.94dc0797.css"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "*"
+        }
+      },
+      "reserved-table": {
+        "adaptive": {
+          "loader": "/frontend/unicorn/fix-bac-widget/reserved-table",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/reserved-table.1eaed51d.css",
+            "/frontend/unicorn/fix-bac-widget/js/reserved-table.1eaed51d.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "*"
+        }
+      },
+      "roulette": {
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/roulette.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/roulette.mobile.d9761526.css",
+            "/frontend/unicorn/fix-bac-widget/js/roulette.mobile.d9761526.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/roulette.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/roulette.desktop.ee2be768.css",
+            "/frontend/unicorn/fix-bac-widget/js/roulette.desktop.ee2be768.js"
+          ]
+        }
+      },
+      "moneywheel": {
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/moneywheel.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/moneywheel.mobile.28e8b834.css",
+            "/frontend/unicorn/fix-bac-widget/js/moneywheel.mobile.28e8b834.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/moneywheel.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/moneywheel.desktop.35cc7858.css",
+            "/frontend/unicorn/fix-bac-widget/js/moneywheel.desktop.35cc7858.js"
+          ]
+        }
+      },
+      "blackjack": {
+        "mobile": {
+          "logoImage": "/frontend/unicorn/fix-bac-widget/images/blackjacka.b7ae15d9.svg",
+          "loader": "/frontend/unicorn/fix-bac-widget/blackjack.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/blackjack.mobile.b11fe528.css",
+            "/frontend/unicorn/fix-bac-widget/js/blackjack.mobile.b11fe528.js",
+            "/frontend/unicorn/fix-bac-widget/styles/blackjack.mobile-global.342261f4.css"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loaderBackground": "/frontend/unicorn/fix-bac-widget/images/blackjack.7106e9cd.jpg",
+          "loader": "/frontend/unicorn/fix-bac-widget/blackjack.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/blackjack.desktop.82d69de1.css",
+            "/frontend/unicorn/fix-bac-widget/js/blackjack.desktop.82d69de1.js"
+          ]
+        }
+      },
+      "blackjack.v3": {
+        "mobile": {
+          "logoImage": "/frontend/unicorn/fix-bac-widget/images/blackjacka.b7ae15d9.svg",
+          "loader": "/frontend/unicorn/fix-bac-widget/blackjack.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/blackjack.mobile.b11fe528.css",
+            "/frontend/unicorn/fix-bac-widget/js/blackjack.mobile.b11fe528.js",
+            "/frontend/unicorn/fix-bac-widget/styles/blackjack.mobile-global.342261f4.css"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loaderBackground": "/frontend/unicorn/fix-bac-widget/images/blackjack.7106e9cd.jpg",
+          "loader": "/frontend/unicorn/fix-bac-widget/blackjack.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/blackjack.desktop.82d69de1.css",
+            "/frontend/unicorn/fix-bac-widget/js/blackjack.desktop.82d69de1.js"
+          ]
+        }
+      },
+      "rng-blackjack": {
+        "mobile": {
+          "logoImage": "/frontend/unicorn/fix-bac-widget/images/rngblackja.2a0d4a80.svg",
+          "loader": "/frontend/unicorn/fix-bac-widget/rng-blackjack.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.rng.e86e7c26.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.rng.e86e7c26.js",
+            "/frontend/unicorn/fix-bac-widget/styles/rng-blackjack.mobile.704d2bfe.css",
+            "/frontend/unicorn/fix-bac-widget/js/rng-blackjack.mobile.704d2bfe.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "evo_rng_blackjack"
+        },
+        "desktop": {
+          "loaderBackground": "/frontend/unicorn/fix-bac-widget/images/rngblackja.4be746eb.jpg",
+          "loader": "/frontend/unicorn/fix-bac-widget/rng-blackjack.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.rng.e86e7c26.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.rng.e86e7c26.js",
+            "/frontend/unicorn/fix-bac-widget/styles/rng-blackjack.desktop.3d5b582f.css",
+            "/frontend/unicorn/fix-bac-widget/js/rng-blackjack.desktop.3d5b582f.js"
+          ],
+          "ignoreVideo": true
+        }
+      },
+      "rng-blackjack.horizon.preview": {
+        "desktop": {
+          "loaderBackground": "/frontend/unicorn/fix-bac-widget/images/rngblackja.4be746eb.jpg",
+          "loader": "/frontend/unicorn/fix-bac-widget/rng-blackjack.horizon.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.rng.e86e7c26.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.rng.e86e7c26.js",
+            "/frontend/unicorn/fix-bac-widget/styles/rng-blackjack.horizon.desktop.29e5f3dc.css",
+            "/frontend/unicorn/fix-bac-widget/js/rng-blackjack.horizon.desktop.29e5f3dc.js"
+          ],
+          "ignoreVideo": true
+        },
+        "mobile": {
+          "logoImage": "/frontend/unicorn/fix-bac-widget/images/rngblackja.2a0d4a80.svg",
+          "loader": "/frontend/unicorn/fix-bac-widget/rng-blackjack.horizon.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.rng.e86e7c26.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.rng.e86e7c26.js",
+            "/frontend/unicorn/fix-bac-widget/styles/rng-blackjack.horizon.mobile.1cf28fcd.css",
+            "/frontend/unicorn/fix-bac-widget/js/rng-blackjack.horizon.mobile.1cf28fcd.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "evo_rng_blackjack"
+        }
+      },
+      "rng-blackjack.horizon": {
+        "desktop": {
+          "loaderBackground": "/frontend/unicorn/fix-bac-widget/images/rngblackja.4be746eb.jpg",
+          "loader": "/frontend/unicorn/fix-bac-widget/rng-blackjack.horizon.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.rng.e86e7c26.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.rng.e86e7c26.js",
+            "/frontend/unicorn/fix-bac-widget/styles/rng-blackjack.horizon.desktop.29e5f3dc.css",
+            "/frontend/unicorn/fix-bac-widget/js/rng-blackjack.horizon.desktop.29e5f3dc.js"
+          ],
+          "ignoreVideo": true
+        },
+        "mobile": {
+          "logoImage": "/frontend/unicorn/fix-bac-widget/images/rngblackja.2a0d4a80.svg",
+          "loader": "/frontend/unicorn/fix-bac-widget/rng-blackjack.horizon.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.rng.e86e7c26.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.rng.e86e7c26.js",
+            "/frontend/unicorn/fix-bac-widget/styles/rng-blackjack.horizon.mobile.1cf28fcd.css",
+            "/frontend/unicorn/fix-bac-widget/js/rng-blackjack.horizon.mobile.1cf28fcd.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "evo_rng_blackjack"
+        }
+      },
+      "scalableblackjack.v2": {
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/blackjack.scalable.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/blackjack.scalable.mobile.61c7538e.css",
+            "/frontend/unicorn/fix-bac-widget/js/blackjack.scalable.mobile.61c7538e.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/blackjack.scalable.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/blackjack.scalable.desktop.b2712316.css",
+            "/frontend/unicorn/fix-bac-widget/js/blackjack.scalable.desktop.b2712316.js"
+          ]
+        }
+      },
+      "scalableblackjack": {
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/blackjack.scalable.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/blackjack.scalable.mobile.61c7538e.css",
+            "/frontend/unicorn/fix-bac-widget/js/blackjack.scalable.mobile.61c7538e.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/blackjack.scalable.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/blackjack.scalable.desktop.b2712316.css",
+            "/frontend/unicorn/fix-bac-widget/js/blackjack.scalable.desktop.b2712316.js"
+          ]
+        }
+      },
+      "baccarat.v0": {
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/baccarat.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/baccarat.mobile.f888c4b1.css",
+            "/frontend/unicorn/fix-bac-widget/js/baccarat.mobile.f888c4b1.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/baccarat.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/baccarat.desktop.7fb760a0.css",
+            "/frontend/unicorn/fix-bac-widget/js/baccarat.desktop.7fb760a0.js"
+          ]
+        }
+      },
+      "baccarat.xtreme": {
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/baccarat.xtreme.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/js/baccarat.xtreme.mobile.4ab0755c.js"
+          ]
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/baccarat.xtreme.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/js/baccarat.xtreme.desktop.9cfbbc19.js"
+          ]
+        }
+      },
+      "rng-roulette": {
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/rng-roulette.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.rng.e86e7c26.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.rng.e86e7c26.js",
+            "/frontend/unicorn/fix-bac-widget/styles/rng-roulette.mobile.80c13f2d.css",
+            "/frontend/unicorn/fix-bac-widget/js/rng-roulette.mobile.80c13f2d.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "evo_rng_roulette"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/rng-roulette.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.rng.e86e7c26.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.rng.e86e7c26.js",
+            "/frontend/unicorn/fix-bac-widget/styles/rng-roulette.desktop.33d27831.css",
+            "/frontend/unicorn/fix-bac-widget/js/rng-roulette.desktop.33d27831.js"
+          ],
+          "ignoreVideo": true
+        }
+      },
+      "rng-roulette.horizon.preview": {
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/rng-roulette.horizon.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.rng.e86e7c26.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.rng.e86e7c26.js",
+            "/frontend/unicorn/fix-bac-widget/styles/rng-roulette.horizon.desktop.14575912.css",
+            "/frontend/unicorn/fix-bac-widget/js/rng-roulette.horizon.desktop.14575912.js"
+          ],
+          "ignoreVideo": true
+        },
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/rng-roulette.horizon.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.rng.e86e7c26.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.rng.e86e7c26.js",
+            "/frontend/unicorn/fix-bac-widget/styles/rng-roulette.horizon.mobile.c032d1b6.css",
+            "/frontend/unicorn/fix-bac-widget/js/rng-roulette.horizon.mobile.c032d1b6.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "evo_rng_roulette"
+        }
+      },
+      "rng-moneywheel.horizon": {
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/rng-moneywheel.horizon.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.rng.e86e7c26.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.rng.e86e7c26.js",
+            "/frontend/unicorn/fix-bac-widget/styles/rng-moneywheel.horizon.desktop.744c1ea3.css",
+            "/frontend/unicorn/fix-bac-widget/js/rng-moneywheel.horizon.desktop.744c1ea3.js"
+          ],
+          "ignoreVideo": true
+        },
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/rng-moneywheel.horizon.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.rng.e86e7c26.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.rng.e86e7c26.js",
+            "/frontend/unicorn/fix-bac-widget/styles/rng-moneywheel.horizon.mobile.57547990.css",
+            "/frontend/unicorn/fix-bac-widget/js/rng-moneywheel.horizon.mobile.57547990.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "evo_rng_moneywheel"
+        }
+      },
+      "rng-baccarat.v0": {
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/rng-baccarat.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.rng.e86e7c26.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.rng.e86e7c26.js",
+            "/frontend/unicorn/fix-bac-widget/styles/rng-baccarat.mobile.b335a2c0.css",
+            "/frontend/unicorn/fix-bac-widget/js/rng-baccarat.mobile.b335a2c0.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "evo_rng_baccarat"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/rng-baccarat.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.rng.e86e7c26.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.rng.e86e7c26.js",
+            "/frontend/unicorn/fix-bac-widget/styles/rng-baccarat.desktop.15876612.css",
+            "/frontend/unicorn/fix-bac-widget/js/rng-baccarat.desktop.15876612.js"
+          ],
+          "ignoreVideo": true
+        }
+      },
+      "monopoly": {
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/monopoly.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/monopoly.mobile.dc1a0b17.css",
+            "/frontend/unicorn/fix-bac-widget/js/monopoly.mobile.dc1a0b17.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/monopoly.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/monopoly.desktop.78b78e06.css",
+            "/frontend/unicorn/fix-bac-widget/js/monopoly.desktop.78b78e06.js"
+          ]
+        }
+      },
+      "crazytime": {
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/crazyTime.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/crazyTime.mobile.1a8544b4.css",
+            "/frontend/unicorn/fix-bac-widget/js/crazyTime.mobile.1a8544b4.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/crazyTime.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/crazyTime.desktop.fdf1b5fd.css",
+            "/frontend/unicorn/fix-bac-widget/js/crazyTime.desktop.fdf1b5fd.js"
+          ]
+        }
+      },
+      "gonzotreasurehunt": {
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/surprise.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/surprise.mobile.70548060.css",
+            "/frontend/unicorn/fix-bac-widget/js/surprise.mobile.70548060.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/surprise.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/surprise.desktop.fb24487f.css",
+            "/frontend/unicorn/fix-bac-widget/js/surprise.desktop.fb24487f.js"
+          ]
+        }
+      },
+      "gonzotreasuremap": {
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/gonzotreasuremap.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/gonzotreasuremap.mobile.67e2b854.css",
+            "/frontend/unicorn/fix-bac-widget/js/gonzotreasuremap.mobile.67e2b854.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/gonzotreasuremap.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/gonzotreasuremap.desktop.7283ca62.css",
+            "/frontend/unicorn/fix-bac-widget/js/gonzotreasuremap.desktop.7283ca62.js"
+          ]
+        }
+      },
+      "deadalive.v0": {
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/deadalive.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/deadalive.mobile.d6fcda1e.css",
+            "/frontend/unicorn/fix-bac-widget/js/deadalive.mobile.d6fcda1e.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/deadalive.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/deadalive.desktop.1318f638.css",
+            "/frontend/unicorn/fix-bac-widget/js/deadalive.desktop.1318f638.js"
+          ]
+        }
+      },
+      "fantan": {
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/fanTan.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/fanTan.mobile.a3eb0566.css",
+            "/frontend/unicorn/fix-bac-widget/js/fanTan.mobile.a3eb0566.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/fanTan.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/fanTan.desktop.a6dbc516.css",
+            "/frontend/unicorn/fix-bac-widget/js/fanTan.desktop.a6dbc516.js"
+          ]
+        }
+      },
+      "dragontiger.v0": {
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/dragonTiger.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/dragonTiger.mobile.47072b29.css",
+            "/frontend/unicorn/fix-bac-widget/js/dragonTiger.mobile.47072b29.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/dragonTiger.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/dragonTiger.desktop.5c8830d4.css",
+            "/frontend/unicorn/fix-bac-widget/js/dragonTiger.desktop.5c8830d4.js"
+          ]
+        }
+      },
+      "crazycoinflip": {
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/crazyCoinFlip.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/crazyCoinFlip.mobile.89cc1f59.css",
+            "/frontend/unicorn/fix-bac-widget/js/crazyCoinFlip.mobile.89cc1f59.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/crazyCoinFlip.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/crazyCoinFlip.desktop.0a5e3c67.css",
+            "/frontend/unicorn/fix-bac-widget/js/crazyCoinFlip.desktop.0a5e3c67.js"
+          ]
+        }
+      },
+      "rng-dragontiger.v0": {
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/rng-dragontiger.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.rng.e86e7c26.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.rng.e86e7c26.js",
+            "/frontend/unicorn/fix-bac-widget/styles/rng-dragontiger.mobile.e2c46dad.css",
+            "/frontend/unicorn/fix-bac-widget/js/rng-dragontiger.mobile.e2c46dad.js"
+          ],
+          "nativeBundle": "evo_rng_topcard"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/rng-dragontiger.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.rng.e86e7c26.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.rng.e86e7c26.js",
+            "/frontend/unicorn/fix-bac-widget/styles/rng-dragontiger.desktop.dee24b27.css",
+            "/frontend/unicorn/fix-bac-widget/js/rng-dragontiger.desktop.dee24b27.js"
+          ]
+        }
+      },
+      "holdem": {
+        "mobile": {
+          "logoImage": "/frontend/unicorn/fix-bac-widget/images/holdemadap.209fb863.svg",
+          "loader": "/frontend/unicorn/fix-bac-widget/poker.casino-holdem-v2.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/poker.casino-holdem-v2.mobile.78a022b4.css",
+            "/frontend/unicorn/fix-bac-widget/js/poker.casino-holdem-v2.mobile.78a022b4.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/poker.casino-holdem-v2.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/poker.casino-holdem-v2.desktop.9bde2ff3.css",
+            "/frontend/unicorn/fix-bac-widget/js/poker.casino-holdem-v2.desktop.9bde2ff3.js"
+          ],
+          "loaderBackground": "/frontend/unicorn/fix-bac-widget/images/poker.chp.b03aa76f.jpg"
+        }
+      },
+      "uth": {
+        "mobile": {
+          "logoImage": "/frontend/unicorn/fix-bac-widget/images/ultimatete.85204dea.svg",
+          "loader": "/frontend/unicorn/fix-bac-widget/poker.ultimate-texas.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/poker.ultimate-texas.mobile.b4bbeee3.css",
+            "/frontend/unicorn/fix-bac-widget/js/poker.ultimate-texas.mobile.b4bbeee3.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/poker.ultimate-texas.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/poker.ultimate-texas.desktop.b915cf39.css",
+            "/frontend/unicorn/fix-bac-widget/js/poker.ultimate-texas.desktop.b915cf39.js"
+          ],
+          "loaderBackground": "/frontend/unicorn/fix-bac-widget/images/poker.uth.a6b432c4.jpg"
+        }
+      },
+      "eth": {
+        "mobile": {
+          "logoImage": "/frontend/unicorn/fix-bac-widget/images/poker.ethlogo.19897f94.svg",
+          "loader": "/frontend/unicorn/fix-bac-widget/poker.ultimate-texas.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/poker.ultimate-texas.mobile.b4bbeee3.css",
+            "/frontend/unicorn/fix-bac-widget/js/poker.ultimate-texas.mobile.b4bbeee3.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/poker.ultimate-texas.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/poker.ultimate-texas.desktop.b915cf39.css",
+            "/frontend/unicorn/fix-bac-widget/js/poker.ultimate-texas.desktop.b915cf39.js"
+          ],
+          "loaderBackground": "/frontend/unicorn/fix-bac-widget/images/poker.eth.2cb4da77.jpg"
+        }
+      },
+      "csp": {
+        "mobile": {
+          "logoImage": "/frontend/unicorn/fix-bac-widget/images/caribbeans.2e7845c4.svg",
+          "loader": "/frontend/unicorn/fix-bac-widget/poker.caribbean-stud-v2.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/poker.caribbean-stud-v2.mobile.67321520.css",
+            "/frontend/unicorn/fix-bac-widget/js/poker.caribbean-stud-v2.mobile.67321520.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/poker.caribbean-stud-v2.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/poker.caribbean-stud-v2.desktop.d80656e0.css",
+            "/frontend/unicorn/fix-bac-widget/js/poker.caribbean-stud-v2.desktop.d80656e0.js"
+          ],
+          "loaderBackground": "/frontend/unicorn/fix-bac-widget/images/poker.csp.6a23c978.jpg"
+        }
+      },
+      "sidebetcity": {
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/poker.side-bet-city.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/poker.side-bet-city.desktop.c5def0d4.css",
+            "/frontend/unicorn/fix-bac-widget/js/poker.side-bet-city.desktop.c5def0d4.js"
+          ],
+          "loaderBackground": "/frontend/unicorn/fix-bac-widget/images/poker.sidebetcit.e1792367.jpg"
+        },
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/poker.side-bet-city.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/poker.side-bet-city.mobile.fd075e9a.css",
+            "/frontend/unicorn/fix-bac-widget/js/poker.side-bet-city.mobile.fd075e9a.js"
+          ],
+          "logoImage": "/frontend/unicorn/fix-bac-widget/images/sidebetcit.809487a7.svg",
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "tcp.v2": {
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/poker.three-card-v2.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/poker.three-card-v2.desktop.6f8b2592.css",
+            "/frontend/unicorn/fix-bac-widget/js/poker.three-card-v2.desktop.6f8b2592.js"
+          ],
+          "loaderBackground": "/frontend/unicorn/fix-bac-widget/images/poker.tcp.89318fb1.jpg"
+        },
+        "mobile": {
+          "logoImage": "/frontend/unicorn/fix-bac-widget/images/threecarda.1a12d4df.svg",
+          "loader": "/frontend/unicorn/fix-bac-widget/poker.three-card-v2.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/poker.three-card-v2.mobile.564ffd02.css",
+            "/frontend/unicorn/fix-bac-widget/js/poker.three-card-v2.mobile.564ffd02.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "trp.v2": {
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/poker.three-card-v2.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/poker.three-card-v2.desktop.6f8b2592.css",
+            "/frontend/unicorn/fix-bac-widget/js/poker.three-card-v2.desktop.6f8b2592.js"
+          ],
+          "loaderBackground": "/frontend/unicorn/fix-bac-widget/images/poker.trp.559f7998.jpg"
+        },
+        "mobile": {
+          "logoImage": "/frontend/unicorn/fix-bac-widget/images/triplecard.406123fc.svg",
+          "loader": "/frontend/unicorn/fix-bac-widget/poker.three-card-v2.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/poker.three-card-v2.mobile.564ffd02.css",
+            "/frontend/unicorn/fix-bac-widget/js/poker.three-card-v2.mobile.564ffd02.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "dhp": {
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/poker.double-hand-poker.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/poker.double-hand-poker.desktop.946ec3bb.css",
+            "/frontend/unicorn/fix-bac-widget/js/poker.double-hand-poker.desktop.946ec3bb.js"
+          ],
+          "loaderBackground": "/frontend/unicorn/fix-bac-widget/images/poker.dhp.23fdd72d.jpg"
+        },
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/poker.double-hand-poker.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/poker.double-hand-poker.mobile.de08620a.css",
+            "/frontend/unicorn/fix-bac-widget/js/poker.double-hand-poker.mobile.de08620a.js"
+          ],
+          "logoImage": "/frontend/unicorn/fix-bac-widget/images/2handcasin.6c94ff05.svg",
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "thb.v2": {
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/poker.texas-bonus-v2.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/poker.texas-bonus-v2.desktop.79a0e9e5.css",
+            "/frontend/unicorn/fix-bac-widget/js/poker.texas-bonus-v2.desktop.79a0e9e5.js"
+          ],
+          "loaderBackground": "/frontend/unicorn/fix-bac-widget/images/poker.thb.e88b25c3.jpg"
+        },
+        "mobile": {
+          "logoImage": "/frontend/unicorn/fix-bac-widget/images/poker.thblogo.641abc72.svg",
+          "loader": "/frontend/unicorn/fix-bac-widget/poker.texas-bonus-v2.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/poker.texas-bonus-v2.mobile.fc552604.css",
+            "/frontend/unicorn/fix-bac-widget/js/poker.texas-bonus-v2.mobile.fc552604.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "sicbo": {
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/sicbo.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/sicbo.desktop.4a13f218.css",
+            "/frontend/unicorn/fix-bac-widget/js/sicbo.desktop.4a13f218.js"
+          ]
+        },
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/sicbo.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/sicbo.mobile.d0ac3b3e.css",
+            "/frontend/unicorn/fix-bac-widget/js/sicbo.mobile.d0ac3b3e.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "lightningdice": {
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/lightningdice.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/lightningdice.desktop.a0f99fb8.css",
+            "/frontend/unicorn/fix-bac-widget/js/lightningdice.desktop.a0f99fb8.js"
+          ]
+        },
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/lightningdice.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/lightningdice.mobile.a0cf8a08.css",
+            "/frontend/unicorn/fix-bac-widget/js/lightningdice.mobile.a0cf8a08.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "craps": {
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/craps.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/craps.desktop.d1904af7.css",
+            "/frontend/unicorn/fix-bac-widget/js/craps.desktop.d1904af7.js"
+          ]
+        },
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/craps.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/craps.mobile.277ffcd7.css",
+            "/frontend/unicorn/fix-bac-widget/js/craps.mobile.277ffcd7.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "bacbo": {
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/bacbo.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/bacbo.mobile.86cf5ab6.css",
+            "/frontend/unicorn/fix-bac-widget/js/bacbo.mobile.86cf5ab6.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/bacbo.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/bacbo.desktop.fda7376a.css",
+            "/frontend/unicorn/fix-bac-widget/js/bacbo.desktop.fda7376a.js"
+          ]
+        }
+      },
+      "topdice": {
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/topdice.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/topdice.mobile.5436f476.css",
+            "/frontend/unicorn/fix-bac-widget/js/topdice.mobile.5436f476.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/topdice.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/topdice.desktop.b00c1c47.css",
+            "/frontend/unicorn/fix-bac-widget/js/topdice.desktop.b00c1c47.js"
+          ]
+        }
+      },
+      "rng-craps": {
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/rng-craps.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.rng.e86e7c26.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.rng.e86e7c26.js",
+            "/frontend/unicorn/fix-bac-widget/styles/rng-craps.mobile.7cc07986.css",
+            "/frontend/unicorn/fix-bac-widget/js/rng-craps.mobile.7cc07986.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "evo_rng_craps"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/rng-craps.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.rng.e86e7c26.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.rng.e86e7c26.js",
+            "/frontend/unicorn/fix-bac-widget/styles/rng-craps.desktop.9c24a727.css",
+            "/frontend/unicorn/fix-bac-widget/js/rng-craps.desktop.9c24a727.js"
+          ],
+          "ignoreVideo": true
+        }
+      },
+      "dealnodeal": {
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/dealnodeal.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/dealnodeal.desktop.f7a9968c.css",
+            "/frontend/unicorn/fix-bac-widget/js/dealnodeal.desktop.f7a9968c.js"
+          ]
+        },
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/dealnodeal.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/dealnodeal.mobile.93661ea3.css",
+            "/frontend/unicorn/fix-bac-widget/js/dealnodeal.mobile.93661ea3.js",
+            "/frontend/unicorn/fix-bac-widget/styles/dealnodeal-global.3aeb97b6.css"
+          ],
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "rng-dealnodeal": {
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/rng-dealnodeal.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.rng.e86e7c26.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.rng.e86e7c26.js",
+            "/frontend/unicorn/fix-bac-widget/styles/rng-dealnodeal.mobile.92a90bfe.css",
+            "/frontend/unicorn/fix-bac-widget/js/rng-dealnodeal.mobile.92a90bfe.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "evo_rng_dealnodeal"
+        },
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/rng-dealnodeal.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.rng.e86e7c26.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.rng.e86e7c26.js",
+            "/frontend/unicorn/fix-bac-widget/styles/rng-dealnodeal.desktop.c8db6675.css",
+            "/frontend/unicorn/fix-bac-widget/js/rng-dealnodeal.desktop.c8db6675.js"
+          ],
+          "ignoreVideo": true
+        }
+      },
+      "megaball": {
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/megaball.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/megaball.desktop.43df8c22.css",
+            "/frontend/unicorn/fix-bac-widget/js/megaball.desktop.43df8c22.js"
+          ]
+        },
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/megaball.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/megaball.mobile.6fcb986a.css",
+            "/frontend/unicorn/fix-bac-widget/js/megaball.mobile.6fcb986a.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "rng-megaball": {
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/rng-megaball.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.rng.e86e7c26.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.rng.e86e7c26.js",
+            "/frontend/unicorn/fix-bac-widget/styles/rng-megaball.desktop.787b5f5b.css",
+            "/frontend/unicorn/fix-bac-widget/js/rng-megaball.desktop.787b5f5b.js"
+          ],
+          "ignoreVideo": true
+        },
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/rng-megaball.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.rng.e86e7c26.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.rng.e86e7c26.js",
+            "/frontend/unicorn/fix-bac-widget/styles/rng-megaball.mobile.06ddb729.css",
+            "/frontend/unicorn/fix-bac-widget/js/rng-megaball.mobile.06ddb729.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "evo_rng_megaball"
+        }
+      },
+      "cashorcrash": {
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/cashorcrash.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/cashorcrash.desktop.7e9d372c.css",
+            "/frontend/unicorn/fix-bac-widget/js/cashorcrash.desktop.7e9d372c.js"
+          ]
+        },
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/cashorcrash.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/cashorcrash.mobile.d48383e5.css",
+            "/frontend/unicorn/fix-bac-widget/js/cashorcrash.mobile.d48383e5.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "monopolybigballer": {
+        "desktop": {
+          "loader": "/frontend/unicorn/fix-bac-widget/monopolybigballer.desktop",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/monopolybigballer.desktop.bee36c50.css",
+            "/frontend/unicorn/fix-bac-widget/js/monopolybigballer.desktop.bee36c50.js"
+          ]
+        },
+        "mobile": {
+          "loader": "/frontend/unicorn/fix-bac-widget/monopolybigballer.mobile",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/styles/monopolybigballer.mobile.0fdf31af.css",
+            "/frontend/unicorn/fix-bac-widget/js/monopolybigballer.mobile.0fdf31af.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "slots.ne": {
+        "adaptive": {
+          "loader": "/frontend/unicorn/fix-bac-widget/slots.ne",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/js/commons.wrapped.a6c3d598.js",
+            "/frontend/unicorn/fix-bac-widget/styles/slots.ne.fc3863a5.css",
+            "/frontend/unicorn/fix-bac-widget/js/slots.ne.fc3863a5.js"
+          ],
+          "nativeBundle": "wrapped_ne",
+          "ignoreVideo": true,
+          "loaderResourcesCountingMode": "none"
+        }
+      },
+      "slots.rt": {
+        "adaptive": {
+          "loader": "/frontend/unicorn/fix-bac-widget/slots.rt",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/js/commons.wrapped.a6c3d598.js",
+            "/frontend/unicorn/fix-bac-widget/styles/slots.rt.0e29ec00.css",
+            "/frontend/unicorn/fix-bac-widget/js/slots.rt.0e29ec00.js"
+          ],
+          "nativeBundle": "wrapped_rt",
+          "ignoreVideo": true,
+          "loaderResourcesCountingMode": "none"
+        }
+      },
+      "slots.btg": {
+        "adaptive": {
+          "loader": "/frontend/unicorn/fix-bac-widget/slots.btg",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/js/commons.wrapped.a6c3d598.js",
+            "/frontend/unicorn/fix-bac-widget/styles/slots.btg.4d59aff5.css",
+            "/frontend/unicorn/fix-bac-widget/js/slots.btg.4d59aff5.js"
+          ],
+          "nativeBundle": "wrapped_btg",
+          "ignoreVideo": true
+        }
+      },
+      "live.ezugi": {
+        "adaptive": {
+          "loader": "/frontend/unicorn/fix-bac-widget/live.ezugi",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/js/commons.wrapped.a6c3d598.js",
+            "/frontend/unicorn/fix-bac-widget/styles/live.ezugi.38d7d458.css",
+            "/frontend/unicorn/fix-bac-widget/js/live.ezugi.38d7d458.js"
+          ],
+          "nativeBundle": "wrapped_ezugi",
+          "ignoreVideo": true,
+          "loaderResourcesCountingMode": "none"
+        }
+      },
+      "slots.nlc": {
+        "adaptive": {
+          "loader": "/frontend/unicorn/fix-bac-widget/slots.nlc",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/js/commons.wrapped.a6c3d598.js",
+            "/frontend/unicorn/fix-bac-widget/styles/slots.nlc.2b5d7052.css",
+            "/frontend/unicorn/fix-bac-widget/js/slots.nlc.2b5d7052.js"
+          ],
+          "ignoreVideo": true,
+          "loaderResourcesCountingMode": "none"
+        }
+      },
+      "valkyrie": {
+        "adaptive": {
+          "loader": "/frontend/unicorn/fix-bac-widget/valkyrie",
+          "assets": [
+            "/frontend/unicorn/fix-bac-widget/js/video.137fe3e5.js",
+            "/frontend/unicorn/fix-bac-widget/js/vendor.59bd3d82.js",
+            "/frontend/unicorn/fix-bac-widget/styles/commons.11aaec87.css",
+            "/frontend/unicorn/fix-bac-widget/js/commons.11aaec87.js",
+            "/frontend/unicorn/fix-bac-widget/js/commons.wrapped.a6c3d598.js",
+            "/frontend/unicorn/fix-bac-widget/styles/valkyrie.fd184661.css",
+            "/frontend/unicorn/fix-bac-widget/js/valkyrie.fd184661.js"
+          ],
+          "ignoreVideo": true,
+          "loaderResourcesCountingMode": "none"
+        }
+      }
+    },
+    "build": {
+      "env": "production",
+      "version": "6.20221206.152749.18446-d498f19ab4",
+      "publicPath": "/frontend/unicorn/fix-bac-widget/"
+    }
+  }

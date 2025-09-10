@@ -1,0 +1,9 @@
+#! /bin/bash
+BASEDIR=$(dirname $0)
+cd $BASEDIR
+
+clusterId=fake-seamless
+serviceName=fake-seamless-srv
+regionName=ap-southeast-1
+
+aws ecs update-service --cluster $clusterId --service $serviceName --region $regionName --force-new-deployment --profile faker

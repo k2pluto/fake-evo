@@ -1,0 +1,16 @@
+아래와 같이 입력했을 때
+nc -vz 49.254.156.70 2377
+
+Connection to 49.254.156.70 port 9001 [tcp/etlservicemgr] succeeded!
+라고 뜨면 열려 있고 리스닝도 하는 중
+
+nc: connectx to 49.254.156.70 port 9002 (tcp) failed: Connection refused
+라고 뜨면 열려 있는데 리스닝은 안하는 중
+
+아무 응답이 없을 때
+포트가 닫혀 있다.
+
+도커 확인 포트
+2377
+4789
+7946

@@ -1,0 +1,25 @@
+
+먼저 sudo su 로 루트로 들어간다
+
+mkdir /data
+
+cd /data 로 /data에서 작업한다.
+
+https://docs.aws.amazon.com/ko_kr/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html
+
+
+먼저 nvm 으로 노드를 설치한다.
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+
+. ~/.nvm/nvm.sh
+
+nvm install --lts
+
+https://velog.io/@strombreeding/%EA%B9%83%ED%97%88%EB%B8%8C-Private-repository-clone-%ED%95%98%EB%8A%94%EB%B2%95
+
+GitHub 개발자 옵션에 퍼스널 액세스 토큰 - 클래식 토큰으로 발급하고
+
+2. https://{nickname}:{token}@github.com/your-nickname/your-repository.git 중괄호 안에 값을 알맞게 넣어준다.
+
+Nickname은 email 형식이 아니라 그냥 영문과 숫자만 넣는다.

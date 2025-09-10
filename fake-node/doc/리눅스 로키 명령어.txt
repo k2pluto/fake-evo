@@ -1,0 +1,26 @@
+오픈 포트 확인
+netstat -plnt
+
+네트워크 장치 확인
+ifconfig
+
+//패키지 인스톨
+yum install [패키지]
+
+//패키지 삭제
+yum remove [패키지]
+
+//서비스 제거
+systemctl disable [서비스]
+
+//systemctl 재시작
+systemctl daemon-reload
+
+firewall-cmd --permanent --add-port=8002/tcp
+firewall-cmd --permanent --add-port=8445/tcp
+
+방화벽 리로드
+firewall-cmd --reload
+
+#방화벽 포트 확인
+firewall-cmd --list-services

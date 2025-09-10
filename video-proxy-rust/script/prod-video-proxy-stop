@@ -1,0 +1,15 @@
+#! /bin/bash
+BASEDIR=$(dirname $0)
+cd $BASEDIR
+
+clusterId=fake-video-proxy
+serviceName=fake-video-proxy-srv
+regionName=ap-northeast-2
+
+tasklist=$(aws ecs list-tasks --cluster $clusterId --region $regionName --profile faker --service-name $serviceName --desired-status RUNNING --output text --query taskArns[*])
+
+for var in $tasklist
+do
+    echo $var
+    aws ecs stop-task --cluster $clusterId --task $var --region $regionName --profile faker --reason "Stopped by kill script"
+done

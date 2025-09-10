@@ -1,0 +1,17 @@
+#! /bin/bash
+BASEDIR=$(dirname $0)
+cd $BASEDIR
+
+_1=arm64-fake-api-node
+_2=korea
+
+docker build -f ./dockerfiles/pluto-runtime-base.Dockerfile -t pluto-runtime-base .
+
+docker build -f ./dockerfiles/pluto-build-base.Dockerfile -t pluto-build-base .
+
+cd ..
+
+docker build  --progress=plain --build-arg ENV=$_2 --build-arg STAGE_ENV=$_2 -f ./docker/dockerfiles/$_1.Dockerfile -t $_1:$_2 .
+
+docker tag $_1:$_2 633624879762.dkr.ecr.ap-northeast-1.amazonaws.com/$_1:$_2
+

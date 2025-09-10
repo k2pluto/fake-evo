@@ -1,0 +1,1496 @@
+{
+    "defaults": {
+      "customAppExample": {
+        "adaptive": {
+          "loader": "/frontend/panda/sicbo-video-settings/custom-app-example",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/custom-app-example.5ef69041.js"
+          ],
+          "ignoreVideo": true
+        }
+      },
+      "tertius.example": {
+        "adaptive": {
+          "loader": "/frontend/panda/sicbo-video-settings/tertius.example",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/tertius.example.5b8f4c8a.css",
+            "/frontend/panda/sicbo-video-settings/js/tertius.example.5b8f4c8a.js"
+          ],
+          "ignoreVideo": true,
+          "audioLibrary": "ecas"
+        }
+      },
+      "ne-template-pixi": {
+        "adaptive": {
+          "loader": "/frontend/panda/sicbo-video-settings/ne-template-pixi",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/js/ne-template-pixi.4fbd6cec.js"
+          ],
+          "ignoreVideo": true,
+          "audioLibrary": "ecas"
+        }
+      },
+      "abstractGame": {
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/abstractGame.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/abstractGame.mobile.08b9451d.css",
+            "/frontend/panda/sicbo-video-settings/js/abstractGame.mobile.08b9451d.js"
+          ]
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/abstractGame.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/abstractGame.desktop.ee992c97.css",
+            "/frontend/panda/sicbo-video-settings/js/abstractGame.desktop.ee992c97.js"
+          ]
+        }
+      },
+      "andarbahar": {
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/andarBahar.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/andarBahar.desktop.f8d8d30e.css",
+            "/frontend/panda/sicbo-video-settings/js/andarBahar.desktop.f8d8d30e.js"
+          ]
+        },
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/andarBahar.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/andarBahar.mobile.a8dd357d.css",
+            "/frontend/panda/sicbo-video-settings/js/andarBahar.mobile.a8dd357d.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "promotions": {
+        "adaptive": {
+          "loader": "/frontend/panda/sicbo-video-settings/promotions",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/promotions.c09ababf.css",
+            "/frontend/panda/sicbo-video-settings/js/promotions.c09ababf.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "*"
+        }
+      },
+      "baccaratmultiplay": {
+        "adaptive": {
+          "loader": "/frontend/panda/sicbo-video-settings/baccarat.multiplay",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/baccarat.multiplay.ae31818e.css",
+            "/frontend/panda/sicbo-video-settings/js/baccarat.multiplay.ae31818e.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "lobby": {
+        "adaptive": {
+          "loader": "/frontend/panda/sicbo-video-settings/lobby",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/lobby.1e249b9e.css",
+            "/frontend/panda/sicbo-video-settings/js/lobby.1e249b9e.js",
+            "/frontend/panda/sicbo-video-settings/styles/lobby-3_0-global.e9b26fc1.css",
+            "/frontend/panda/sicbo-video-settings/styles/lobby-global.ccf4b834.css"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "*"
+        }
+      },
+      "reserved-table": {
+        "adaptive": {
+          "loader": "/frontend/panda/sicbo-video-settings/reserved-table",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/reserved-table.adb5d87f.css",
+            "/frontend/panda/sicbo-video-settings/js/reserved-table.adb5d87f.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "*"
+        }
+      },
+      "roulette": {
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/roulette.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/roulette.mobile.e3baf9b2.css",
+            "/frontend/panda/sicbo-video-settings/js/roulette.mobile.e3baf9b2.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/roulette.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/roulette.desktop.41cece47.css",
+            "/frontend/panda/sicbo-video-settings/js/roulette.desktop.41cece47.js"
+          ]
+        }
+      },
+      "moneywheel": {
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/moneywheel.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/moneywheel.mobile.2e0db1d9.css",
+            "/frontend/panda/sicbo-video-settings/js/moneywheel.mobile.2e0db1d9.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/moneywheel.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/moneywheel.desktop.a599a100.css",
+            "/frontend/panda/sicbo-video-settings/js/moneywheel.desktop.a599a100.js"
+          ]
+        }
+      },
+      "blackjack": {
+        "mobile": {
+          "logoImage": "/frontend/panda/sicbo-video-settings/images/blackjacka.b7ae15d9.svg",
+          "loader": "/frontend/panda/sicbo-video-settings/blackjack.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/blackjack.mobile.f6831159.css",
+            "/frontend/panda/sicbo-video-settings/js/blackjack.mobile.f6831159.js",
+            "/frontend/panda/sicbo-video-settings/styles/blackjack.mobile-global.9261ed71.css"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loaderBackground": "/frontend/panda/sicbo-video-settings/images/blackjack.7106e9cd.jpg",
+          "loader": "/frontend/panda/sicbo-video-settings/blackjack.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/blackjack.desktop.dbea39ee.css",
+            "/frontend/panda/sicbo-video-settings/js/blackjack.desktop.dbea39ee.js"
+          ]
+        }
+      },
+      "blackjack.v3": {
+        "mobile": {
+          "logoImage": "/frontend/panda/sicbo-video-settings/images/blackjacka.b7ae15d9.svg",
+          "loader": "/frontend/panda/sicbo-video-settings/blackjack.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/blackjack.mobile.f6831159.css",
+            "/frontend/panda/sicbo-video-settings/js/blackjack.mobile.f6831159.js",
+            "/frontend/panda/sicbo-video-settings/styles/blackjack.mobile-global.9261ed71.css"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loaderBackground": "/frontend/panda/sicbo-video-settings/images/blackjack.7106e9cd.jpg",
+          "loader": "/frontend/panda/sicbo-video-settings/blackjack.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/blackjack.desktop.dbea39ee.css",
+            "/frontend/panda/sicbo-video-settings/js/blackjack.desktop.dbea39ee.js"
+          ]
+        }
+      },
+      "rng-blackjack": {
+        "mobile": {
+          "logoImage": "/frontend/panda/sicbo-video-settings/images/rngblackja.2a0d4a80.svg",
+          "loader": "/frontend/panda/sicbo-video-settings/rng-blackjack.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.rng.d5d90e1e.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.rng.d5d90e1e.js",
+            "/frontend/panda/sicbo-video-settings/styles/rng-blackjack.mobile.159609ce.css",
+            "/frontend/panda/sicbo-video-settings/js/rng-blackjack.mobile.159609ce.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "evo_rng_blackjack"
+        },
+        "desktop": {
+          "loaderBackground": "/frontend/panda/sicbo-video-settings/images/rngblackja.4be746eb.jpg",
+          "loader": "/frontend/panda/sicbo-video-settings/rng-blackjack.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.rng.d5d90e1e.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.rng.d5d90e1e.js",
+            "/frontend/panda/sicbo-video-settings/styles/rng-blackjack.desktop.bd6a2709.css",
+            "/frontend/panda/sicbo-video-settings/js/rng-blackjack.desktop.bd6a2709.js"
+          ],
+          "ignoreVideo": true
+        }
+      },
+      "rng-blackjack.horizon.preview": {
+        "desktop": {
+          "loaderBackground": "/frontend/panda/sicbo-video-settings/images/rngblackja.4be746eb.jpg",
+          "loader": "/frontend/panda/sicbo-video-settings/rng-blackjack.horizon.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.rng.d5d90e1e.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.rng.d5d90e1e.js",
+            "/frontend/panda/sicbo-video-settings/styles/rng-blackjack.horizon.desktop.a4f41bbe.css",
+            "/frontend/panda/sicbo-video-settings/js/rng-blackjack.horizon.desktop.a4f41bbe.js"
+          ],
+          "ignoreVideo": true
+        },
+        "mobile": {
+          "logoImage": "/frontend/panda/sicbo-video-settings/images/rngblackja.2a0d4a80.svg",
+          "loader": "/frontend/panda/sicbo-video-settings/rng-blackjack.horizon.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.rng.d5d90e1e.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.rng.d5d90e1e.js",
+            "/frontend/panda/sicbo-video-settings/styles/rng-blackjack.horizon.mobile.676394fe.css",
+            "/frontend/panda/sicbo-video-settings/js/rng-blackjack.horizon.mobile.676394fe.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "evo_rng_blackjack"
+        }
+      },
+      "rng-blackjack.horizon": {
+        "desktop": {
+          "loaderBackground": "/frontend/panda/sicbo-video-settings/images/rngblackja.4be746eb.jpg",
+          "loader": "/frontend/panda/sicbo-video-settings/rng-blackjack.horizon.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.rng.d5d90e1e.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.rng.d5d90e1e.js",
+            "/frontend/panda/sicbo-video-settings/styles/rng-blackjack.horizon.desktop.a4f41bbe.css",
+            "/frontend/panda/sicbo-video-settings/js/rng-blackjack.horizon.desktop.a4f41bbe.js"
+          ],
+          "ignoreVideo": true
+        },
+        "mobile": {
+          "logoImage": "/frontend/panda/sicbo-video-settings/images/rngblackja.2a0d4a80.svg",
+          "loader": "/frontend/panda/sicbo-video-settings/rng-blackjack.horizon.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.rng.d5d90e1e.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.rng.d5d90e1e.js",
+            "/frontend/panda/sicbo-video-settings/styles/rng-blackjack.horizon.mobile.676394fe.css",
+            "/frontend/panda/sicbo-video-settings/js/rng-blackjack.horizon.mobile.676394fe.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "evo_rng_blackjack"
+        }
+      },
+      "scalableblackjack.v2": {
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/blackjack.scalable.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/blackjack.scalable.mobile.d3458601.css",
+            "/frontend/panda/sicbo-video-settings/js/blackjack.scalable.mobile.d3458601.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/blackjack.scalable.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/blackjack.scalable.desktop.d25ba7aa.css",
+            "/frontend/panda/sicbo-video-settings/js/blackjack.scalable.desktop.d25ba7aa.js"
+          ]
+        }
+      },
+      "scalableblackjack": {
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/blackjack.scalable.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/blackjack.scalable.mobile.d3458601.css",
+            "/frontend/panda/sicbo-video-settings/js/blackjack.scalable.mobile.d3458601.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/blackjack.scalable.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/blackjack.scalable.desktop.d25ba7aa.css",
+            "/frontend/panda/sicbo-video-settings/js/blackjack.scalable.desktop.d25ba7aa.js"
+          ]
+        }
+      },
+      "baccarat.v0": {
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/baccarat.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/baccarat.mobile.03b113eb.css",
+            "/frontend/panda/sicbo-video-settings/js/baccarat.mobile.03b113eb.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/baccarat.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/baccarat.desktop.ee6ca276.css",
+            "/frontend/panda/sicbo-video-settings/js/baccarat.desktop.ee6ca276.js"
+          ]
+        }
+      },
+      "baccarat.regular": {
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/baccarat.regular.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/js/baccarat.regular.desktop.e4530756.js"
+          ]
+        },
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/baccarat.regular.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/js/baccarat.regular.mobile.a333aaa8.js"
+          ]
+        }
+      },
+      "baccarat.xtreme": {
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/baccarat.xtreme.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/js/baccarat.xtreme.mobile.8016cb6e.js"
+          ]
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/baccarat.xtreme.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/js/baccarat.xtreme.desktop.9243908c.js"
+          ]
+        }
+      },
+      "rng-roulette": {
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/rng-roulette.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.rng.d5d90e1e.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.rng.d5d90e1e.js",
+            "/frontend/panda/sicbo-video-settings/styles/rng-roulette.mobile.c645843d.css",
+            "/frontend/panda/sicbo-video-settings/js/rng-roulette.mobile.c645843d.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "evo_rng_roulette"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/rng-roulette.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.rng.d5d90e1e.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.rng.d5d90e1e.js",
+            "/frontend/panda/sicbo-video-settings/styles/rng-roulette.desktop.3092a66e.css",
+            "/frontend/panda/sicbo-video-settings/js/rng-roulette.desktop.3092a66e.js"
+          ],
+          "ignoreVideo": true
+        }
+      },
+      "rng-roulette.horizon.preview": {
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/rng-roulette.horizon.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.rng.d5d90e1e.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.rng.d5d90e1e.js",
+            "/frontend/panda/sicbo-video-settings/styles/rng-roulette.horizon.desktop.7f76b8b2.css",
+            "/frontend/panda/sicbo-video-settings/js/rng-roulette.horizon.desktop.7f76b8b2.js"
+          ],
+          "ignoreVideo": true
+        },
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/rng-roulette.horizon.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.rng.d5d90e1e.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.rng.d5d90e1e.js",
+            "/frontend/panda/sicbo-video-settings/styles/rng-roulette.horizon.mobile.c43d5c77.css",
+            "/frontend/panda/sicbo-video-settings/js/rng-roulette.horizon.mobile.c43d5c77.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "evo_rng_roulette"
+        }
+      },
+      "rng-moneywheel.horizon": {
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/rng-moneywheel.horizon.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.rng.d5d90e1e.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.rng.d5d90e1e.js",
+            "/frontend/panda/sicbo-video-settings/styles/rng-moneywheel.horizon.desktop.f6a8a647.css",
+            "/frontend/panda/sicbo-video-settings/js/rng-moneywheel.horizon.desktop.f6a8a647.js"
+          ],
+          "ignoreVideo": true
+        },
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/rng-moneywheel.horizon.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.rng.d5d90e1e.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.rng.d5d90e1e.js",
+            "/frontend/panda/sicbo-video-settings/styles/rng-moneywheel.horizon.mobile.84b3f7f2.css",
+            "/frontend/panda/sicbo-video-settings/js/rng-moneywheel.horizon.mobile.84b3f7f2.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "evo_rng_moneywheel"
+        }
+      },
+      "rng-baccarat.v0": {
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/rng-baccarat.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.rng.d5d90e1e.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.rng.d5d90e1e.js",
+            "/frontend/panda/sicbo-video-settings/styles/rng-baccarat.mobile.a8e5cd67.css",
+            "/frontend/panda/sicbo-video-settings/js/rng-baccarat.mobile.a8e5cd67.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "evo_rng_baccarat"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/rng-baccarat.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.rng.d5d90e1e.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.rng.d5d90e1e.js",
+            "/frontend/panda/sicbo-video-settings/styles/rng-baccarat.desktop.9b0b1915.css",
+            "/frontend/panda/sicbo-video-settings/js/rng-baccarat.desktop.9b0b1915.js"
+          ],
+          "ignoreVideo": true
+        }
+      },
+      "monopoly": {
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/monopoly.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/monopoly.mobile.34799a51.css",
+            "/frontend/panda/sicbo-video-settings/js/monopoly.mobile.34799a51.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/monopoly.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/monopoly.desktop.a7ade311.css",
+            "/frontend/panda/sicbo-video-settings/js/monopoly.desktop.a7ade311.js"
+          ]
+        }
+      },
+      "crazytime": {
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/crazyTime.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/crazyTime.mobile.fe80dd4c.css",
+            "/frontend/panda/sicbo-video-settings/js/crazyTime.mobile.fe80dd4c.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/crazyTime.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/crazyTime.desktop.997a1e92.css",
+            "/frontend/panda/sicbo-video-settings/js/crazyTime.desktop.997a1e92.js"
+          ]
+        }
+      },
+      "gonzotreasurehunt": {
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/surprise.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/surprise.mobile.b1190791.css",
+            "/frontend/panda/sicbo-video-settings/js/surprise.mobile.b1190791.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/surprise.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/surprise.desktop.83791fc0.css",
+            "/frontend/panda/sicbo-video-settings/js/surprise.desktop.83791fc0.js"
+          ]
+        }
+      },
+      "gonzotreasuremap": {
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/gonzotreasuremap.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/gonzotreasuremap.mobile.2109d951.css",
+            "/frontend/panda/sicbo-video-settings/js/gonzotreasuremap.mobile.2109d951.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/gonzotreasuremap.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/gonzotreasuremap.desktop.c7d94ace.css",
+            "/frontend/panda/sicbo-video-settings/js/gonzotreasuremap.desktop.c7d94ace.js"
+          ]
+        }
+      },
+      "deadalive.v0": {
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/deadalive.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/deadalive.mobile.2dff4776.css",
+            "/frontend/panda/sicbo-video-settings/js/deadalive.mobile.2dff4776.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/deadalive.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/deadalive.desktop.75f5bca8.css",
+            "/frontend/panda/sicbo-video-settings/js/deadalive.desktop.75f5bca8.js"
+          ]
+        }
+      },
+      "fantan": {
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/fanTan.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/fanTan.mobile.4edaae77.css",
+            "/frontend/panda/sicbo-video-settings/js/fanTan.mobile.4edaae77.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/fanTan.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/fanTan.desktop.2251e254.css",
+            "/frontend/panda/sicbo-video-settings/js/fanTan.desktop.2251e254.js"
+          ]
+        }
+      },
+      "dragontiger.v0": {
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/dragonTiger.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/dragonTiger.mobile.479d54c3.css",
+            "/frontend/panda/sicbo-video-settings/js/dragonTiger.mobile.479d54c3.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/dragonTiger.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/dragonTiger.desktop.21df5f0f.css",
+            "/frontend/panda/sicbo-video-settings/js/dragonTiger.desktop.21df5f0f.js"
+          ]
+        }
+      },
+      "crazycoinflip": {
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/crazyCoinFlip.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/crazyCoinFlip.mobile.1145e1ec.css",
+            "/frontend/panda/sicbo-video-settings/js/crazyCoinFlip.mobile.1145e1ec.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/crazyCoinFlip.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/crazyCoinFlip.desktop.2aecdc99.css",
+            "/frontend/panda/sicbo-video-settings/js/crazyCoinFlip.desktop.2aecdc99.js"
+          ]
+        }
+      },
+      "rng-dragontiger.v0": {
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/rng-dragontiger.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.rng.d5d90e1e.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.rng.d5d90e1e.js",
+            "/frontend/panda/sicbo-video-settings/styles/rng-dragontiger.mobile.e19f1f32.css",
+            "/frontend/panda/sicbo-video-settings/js/rng-dragontiger.mobile.e19f1f32.js"
+          ],
+          "nativeBundle": "evo_rng_topcard"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/rng-dragontiger.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.rng.d5d90e1e.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.rng.d5d90e1e.js",
+            "/frontend/panda/sicbo-video-settings/styles/rng-dragontiger.desktop.043d490c.css",
+            "/frontend/panda/sicbo-video-settings/js/rng-dragontiger.desktop.043d490c.js"
+          ]
+        }
+      },
+      "holdem": {
+        "mobile": {
+          "logoImage": "/frontend/panda/sicbo-video-settings/images/holdemadap.209fb863.svg",
+          "loader": "/frontend/panda/sicbo-video-settings/poker.casino-holdem-v2.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/poker.casino-holdem-v2.mobile.ead68b1f.css",
+            "/frontend/panda/sicbo-video-settings/js/poker.casino-holdem-v2.mobile.ead68b1f.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/poker.casino-holdem-v2.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/poker.casino-holdem-v2.desktop.4792c5d9.css",
+            "/frontend/panda/sicbo-video-settings/js/poker.casino-holdem-v2.desktop.4792c5d9.js"
+          ],
+          "loaderBackground": "/frontend/panda/sicbo-video-settings/images/poker.chp.b03aa76f.jpg"
+        }
+      },
+      "uth": {
+        "mobile": {
+          "logoImage": "/frontend/panda/sicbo-video-settings/images/ultimatete.85204dea.svg",
+          "loader": "/frontend/panda/sicbo-video-settings/poker.ultimate-texas.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/poker.ultimate-texas.mobile.1389253a.css",
+            "/frontend/panda/sicbo-video-settings/js/poker.ultimate-texas.mobile.1389253a.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/poker.ultimate-texas.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/poker.ultimate-texas.desktop.1ca140b9.css",
+            "/frontend/panda/sicbo-video-settings/js/poker.ultimate-texas.desktop.1ca140b9.js"
+          ],
+          "loaderBackground": "/frontend/panda/sicbo-video-settings/images/poker.uth.a6b432c4.jpg"
+        }
+      },
+      "eth": {
+        "mobile": {
+          "logoImage": "/frontend/panda/sicbo-video-settings/images/poker.ethlogo.19897f94.svg",
+          "loader": "/frontend/panda/sicbo-video-settings/poker.ultimate-texas.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/poker.ultimate-texas.mobile.1389253a.css",
+            "/frontend/panda/sicbo-video-settings/js/poker.ultimate-texas.mobile.1389253a.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/poker.ultimate-texas.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/poker.ultimate-texas.desktop.1ca140b9.css",
+            "/frontend/panda/sicbo-video-settings/js/poker.ultimate-texas.desktop.1ca140b9.js"
+          ],
+          "loaderBackground": "/frontend/panda/sicbo-video-settings/images/poker.eth.2cb4da77.jpg"
+        }
+      },
+      "csp": {
+        "mobile": {
+          "logoImage": "/frontend/panda/sicbo-video-settings/images/caribbeans.2e7845c4.svg",
+          "loader": "/frontend/panda/sicbo-video-settings/poker.caribbean-stud-v2.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/poker.caribbean-stud-v2.mobile.bb82e331.css",
+            "/frontend/panda/sicbo-video-settings/js/poker.caribbean-stud-v2.mobile.bb82e331.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/poker.caribbean-stud-v2.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/poker.caribbean-stud-v2.desktop.e464a01a.css",
+            "/frontend/panda/sicbo-video-settings/js/poker.caribbean-stud-v2.desktop.e464a01a.js"
+          ],
+          "loaderBackground": "/frontend/panda/sicbo-video-settings/images/poker.csp.6a23c978.jpg"
+        }
+      },
+      "sidebetcity": {
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/poker.side-bet-city.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/poker.side-bet-city.desktop.df83d22c.css",
+            "/frontend/panda/sicbo-video-settings/js/poker.side-bet-city.desktop.df83d22c.js"
+          ],
+          "loaderBackground": "/frontend/panda/sicbo-video-settings/images/poker.sidebetcit.e1792367.jpg"
+        },
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/poker.side-bet-city.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/poker.side-bet-city.mobile.c581623e.css",
+            "/frontend/panda/sicbo-video-settings/js/poker.side-bet-city.mobile.c581623e.js"
+          ],
+          "logoImage": "/frontend/panda/sicbo-video-settings/images/sidebetcit.809487a7.svg",
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "tcp.v2": {
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/poker.three-card-v2.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/poker.three-card-v2.desktop.d709f25b.css",
+            "/frontend/panda/sicbo-video-settings/js/poker.three-card-v2.desktop.d709f25b.js"
+          ],
+          "loaderBackground": "/frontend/panda/sicbo-video-settings/images/poker.tcp.89318fb1.jpg"
+        },
+        "mobile": {
+          "logoImage": "/frontend/panda/sicbo-video-settings/images/threecarda.1a12d4df.svg",
+          "loader": "/frontend/panda/sicbo-video-settings/poker.three-card-v2.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/poker.three-card-v2.mobile.a834f52c.css",
+            "/frontend/panda/sicbo-video-settings/js/poker.three-card-v2.mobile.a834f52c.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "trp.v2": {
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/poker.three-card-v2.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/poker.three-card-v2.desktop.d709f25b.css",
+            "/frontend/panda/sicbo-video-settings/js/poker.three-card-v2.desktop.d709f25b.js"
+          ],
+          "loaderBackground": "/frontend/panda/sicbo-video-settings/images/poker.trp.559f7998.jpg"
+        },
+        "mobile": {
+          "logoImage": "/frontend/panda/sicbo-video-settings/images/triplecard.406123fc.svg",
+          "loader": "/frontend/panda/sicbo-video-settings/poker.three-card-v2.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/poker.three-card-v2.mobile.a834f52c.css",
+            "/frontend/panda/sicbo-video-settings/js/poker.three-card-v2.mobile.a834f52c.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "dhp": {
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/poker.double-hand-poker.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/poker.double-hand-poker.desktop.4e821e0f.css",
+            "/frontend/panda/sicbo-video-settings/js/poker.double-hand-poker.desktop.4e821e0f.js"
+          ],
+          "loaderBackground": "/frontend/panda/sicbo-video-settings/images/poker.dhp.23fdd72d.jpg"
+        },
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/poker.double-hand-poker.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/poker.double-hand-poker.mobile.309201b8.css",
+            "/frontend/panda/sicbo-video-settings/js/poker.double-hand-poker.mobile.309201b8.js"
+          ],
+          "logoImage": "/frontend/panda/sicbo-video-settings/images/2handcasin.6c94ff05.svg",
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "thb.v2": {
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/poker.texas-bonus-v2.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/poker.texas-bonus-v2.desktop.b420ba4d.css",
+            "/frontend/panda/sicbo-video-settings/js/poker.texas-bonus-v2.desktop.b420ba4d.js"
+          ],
+          "loaderBackground": "/frontend/panda/sicbo-video-settings/images/poker.thb.e88b25c3.jpg"
+        },
+        "mobile": {
+          "logoImage": "/frontend/panda/sicbo-video-settings/images/poker.thblogo.641abc72.svg",
+          "loader": "/frontend/panda/sicbo-video-settings/poker.texas-bonus-v2.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/poker.texas-bonus-v2.mobile.c8484f0e.css",
+            "/frontend/panda/sicbo-video-settings/js/poker.texas-bonus-v2.mobile.c8484f0e.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "sicbo": {
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/sicbo.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/sicbo.desktop.aea32187.css",
+            "/frontend/panda/sicbo-video-settings/js/sicbo.desktop.aea32187.js"
+          ]
+        },
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/sicbo.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/sicbo.mobile.9c03413b.css",
+            "/frontend/panda/sicbo-video-settings/js/sicbo.mobile.9c03413b.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "lightningdice": {
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/lightningdice.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/lightningdice.desktop.5816afc7.css",
+            "/frontend/panda/sicbo-video-settings/js/lightningdice.desktop.5816afc7.js"
+          ]
+        },
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/lightningdice.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/lightningdice.mobile.050d6c8a.css",
+            "/frontend/panda/sicbo-video-settings/js/lightningdice.mobile.050d6c8a.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "craps": {
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/craps.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/craps.desktop.826300d2.css",
+            "/frontend/panda/sicbo-video-settings/js/craps.desktop.826300d2.js"
+          ]
+        },
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/craps.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/craps.mobile.b039f2d9.css",
+            "/frontend/panda/sicbo-video-settings/js/craps.mobile.b039f2d9.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "bacbo": {
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/bacbo.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/bacbo.mobile.244ac974.css",
+            "/frontend/panda/sicbo-video-settings/js/bacbo.mobile.244ac974.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/bacbo.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/bacbo.desktop.eb9a91a1.css",
+            "/frontend/panda/sicbo-video-settings/js/bacbo.desktop.eb9a91a1.js"
+          ]
+        }
+      },
+      "topdice": {
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/topdice.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/topdice.mobile.0b760a0e.css",
+            "/frontend/panda/sicbo-video-settings/js/topdice.mobile.0b760a0e.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/topdice.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/topdice.desktop.66c32b5f.css",
+            "/frontend/panda/sicbo-video-settings/js/topdice.desktop.66c32b5f.js"
+          ]
+        }
+      },
+      "rng-craps": {
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/rng-craps.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.rng.d5d90e1e.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.rng.d5d90e1e.js",
+            "/frontend/panda/sicbo-video-settings/styles/rng-craps.mobile.4829d90b.css",
+            "/frontend/panda/sicbo-video-settings/js/rng-craps.mobile.4829d90b.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "evo_rng_craps"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/rng-craps.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.rng.d5d90e1e.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.rng.d5d90e1e.js",
+            "/frontend/panda/sicbo-video-settings/styles/rng-craps.desktop.c2b66bce.css",
+            "/frontend/panda/sicbo-video-settings/js/rng-craps.desktop.c2b66bce.js"
+          ],
+          "ignoreVideo": true
+        }
+      },
+      "dealnodeal": {
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/dealnodeal.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/dealnodeal.desktop.233fabfc.css",
+            "/frontend/panda/sicbo-video-settings/js/dealnodeal.desktop.233fabfc.js"
+          ]
+        },
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/dealnodeal.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/dealnodeal.mobile.172e4c31.css",
+            "/frontend/panda/sicbo-video-settings/js/dealnodeal.mobile.172e4c31.js",
+            "/frontend/panda/sicbo-video-settings/styles/dealnodeal-global.92afaafc.css"
+          ],
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "rng-dealnodeal": {
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/rng-dealnodeal.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.rng.d5d90e1e.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.rng.d5d90e1e.js",
+            "/frontend/panda/sicbo-video-settings/styles/rng-dealnodeal.mobile.c780aca9.css",
+            "/frontend/panda/sicbo-video-settings/js/rng-dealnodeal.mobile.c780aca9.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "evo_rng_dealnodeal"
+        },
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/rng-dealnodeal.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.rng.d5d90e1e.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.rng.d5d90e1e.js",
+            "/frontend/panda/sicbo-video-settings/styles/rng-dealnodeal.desktop.9cc0d075.css",
+            "/frontend/panda/sicbo-video-settings/js/rng-dealnodeal.desktop.9cc0d075.js"
+          ],
+          "ignoreVideo": true
+        }
+      },
+      "megaball": {
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/megaball.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/megaball.desktop.20daa717.css",
+            "/frontend/panda/sicbo-video-settings/js/megaball.desktop.20daa717.js"
+          ]
+        },
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/megaball.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/megaball.mobile.63f1c1f8.css",
+            "/frontend/panda/sicbo-video-settings/js/megaball.mobile.63f1c1f8.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "rng-megaball": {
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/rng-megaball.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.rng.d5d90e1e.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.rng.d5d90e1e.js",
+            "/frontend/panda/sicbo-video-settings/styles/rng-megaball.desktop.7f348fa4.css",
+            "/frontend/panda/sicbo-video-settings/js/rng-megaball.desktop.7f348fa4.js"
+          ],
+          "ignoreVideo": true
+        },
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/rng-megaball.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.rng.d5d90e1e.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.rng.d5d90e1e.js",
+            "/frontend/panda/sicbo-video-settings/styles/rng-megaball.mobile.42e8acdc.css",
+            "/frontend/panda/sicbo-video-settings/js/rng-megaball.mobile.42e8acdc.js"
+          ],
+          "ignoreVideo": true,
+          "nativeBundle": "evo_rng_megaball"
+        }
+      },
+      "cashorcrash": {
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/cashorcrash.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/cashorcrash.desktop.3863e1a8.css",
+            "/frontend/panda/sicbo-video-settings/js/cashorcrash.desktop.3863e1a8.js"
+          ]
+        },
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/cashorcrash.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/cashorcrash.mobile.31c1c2ea.css",
+            "/frontend/panda/sicbo-video-settings/js/cashorcrash.mobile.31c1c2ea.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "monopolybigballer": {
+        "desktop": {
+          "loader": "/frontend/panda/sicbo-video-settings/monopolybigballer.desktop",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/monopolybigballer.desktop.f5a5b739.css",
+            "/frontend/panda/sicbo-video-settings/js/monopolybigballer.desktop.f5a5b739.js"
+          ]
+        },
+        "mobile": {
+          "loader": "/frontend/panda/sicbo-video-settings/monopolybigballer.mobile",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/styles/monopolybigballer.mobile.05289227.css",
+            "/frontend/panda/sicbo-video-settings/js/monopolybigballer.mobile.05289227.js"
+          ],
+          "nativeBundle": "evo_live_all"
+        }
+      },
+      "slots.ne": {
+        "adaptive": {
+          "loader": "/frontend/panda/sicbo-video-settings/slots.ne",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/js/commons.wrapped.2ea0a808.js",
+            "/frontend/panda/sicbo-video-settings/styles/slots.ne.d3909284.css",
+            "/frontend/panda/sicbo-video-settings/js/slots.ne.d3909284.js"
+          ],
+          "nativeBundle": "wrapped_ne",
+          "ignoreVideo": true,
+          "loaderResourcesCountingMode": "none"
+        }
+      },
+      "slots.rt": {
+        "adaptive": {
+          "loader": "/frontend/panda/sicbo-video-settings/slots.rt",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/js/commons.wrapped.2ea0a808.js",
+            "/frontend/panda/sicbo-video-settings/styles/slots.rt.908883c0.css",
+            "/frontend/panda/sicbo-video-settings/js/slots.rt.908883c0.js"
+          ],
+          "nativeBundle": "wrapped_rt",
+          "ignoreVideo": true,
+          "loaderResourcesCountingMode": "none"
+        }
+      },
+      "slots.btg": {
+        "adaptive": {
+          "loader": "/frontend/panda/sicbo-video-settings/slots.btg",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/js/commons.wrapped.2ea0a808.js",
+            "/frontend/panda/sicbo-video-settings/styles/slots.btg.da39a94f.css",
+            "/frontend/panda/sicbo-video-settings/js/slots.btg.da39a94f.js"
+          ],
+          "nativeBundle": "wrapped_btg",
+          "ignoreVideo": true
+        }
+      },
+      "live.ezugi": {
+        "adaptive": {
+          "loader": "/frontend/panda/sicbo-video-settings/live.ezugi",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/js/commons.wrapped.2ea0a808.js",
+            "/frontend/panda/sicbo-video-settings/styles/live.ezugi.c733aa9d.css",
+            "/frontend/panda/sicbo-video-settings/js/live.ezugi.c733aa9d.js"
+          ],
+          "nativeBundle": "wrapped_ezugi",
+          "ignoreVideo": true,
+          "loaderResourcesCountingMode": "none"
+        }
+      },
+      "slots.nlc": {
+        "adaptive": {
+          "loader": "/frontend/panda/sicbo-video-settings/slots.nlc",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/js/commons.wrapped.2ea0a808.js",
+            "/frontend/panda/sicbo-video-settings/styles/slots.nlc.8ac8b76a.css",
+            "/frontend/panda/sicbo-video-settings/js/slots.nlc.8ac8b76a.js"
+          ],
+          "ignoreVideo": true,
+          "loaderResourcesCountingMode": "none"
+        }
+      },
+      "valkyrie": {
+        "adaptive": {
+          "loader": "/frontend/panda/sicbo-video-settings/valkyrie",
+          "assets": [
+            "/frontend/panda/sicbo-video-settings/js/video.96b0dcd5.js",
+            "/frontend/panda/sicbo-video-settings/js/vendor.f4ab702d.js",
+            "/frontend/panda/sicbo-video-settings/styles/commons.2cde33fa.css",
+            "/frontend/panda/sicbo-video-settings/js/commons.2cde33fa.js",
+            "/frontend/panda/sicbo-video-settings/js/commons.wrapped.2ea0a808.js",
+            "/frontend/panda/sicbo-video-settings/styles/valkyrie.246d57d6.css",
+            "/frontend/panda/sicbo-video-settings/js/valkyrie.246d57d6.js"
+          ],
+          "ignoreVideo": true,
+          "loaderResourcesCountingMode": "none"
+        }
+      }
+    },
+    "build": {
+      "env": "production",
+      "version": "6.20221216.75858.19039-fbe311cd3f",
+      "publicPath": "/frontend/panda/sicbo-video-settings/"
+    }
+  }

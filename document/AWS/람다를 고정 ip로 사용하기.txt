@@ -1,0 +1,11 @@
+땅 사고 건물 허가 받기: VPC 생성
+건물 (층) 올리기: Private Subnet 생성
+전산실 만들기: Public Subnet 생성
+인터넷 계약하고 모뎀 임대하기: Internet Gateway 생성
+공유기 구매 후 모뎀과 연결: Public Routing Table 생성
+공유기 켜기: NAT Gateway 생성
+공유기에 LAN 케이블 연결: Private Routing Table 생성
+PC에 LAN 케이블 연결: AWS Lambda 설정 변경
+
+https://jetalog.net/90
+https://jetalog.net/91

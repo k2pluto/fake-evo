@@ -1,0 +1,12 @@
+- fake-api
+전반적으로 fake 클라이언트와 소통하기 위한 REST API 서버
+
+- fake-crawler
+바카라 테이블의 결과와 상태데이터를 크롤링 하기 위해 백그라운드에서 돌아가는 서버
+
+- fake-resolver
+crawler 에서 저장한 게임데이터를 토대로 베팅과 결과를 백그라운드에서 처리하는 서버
+
+- token-generator
+아너링크의 특정 IP 에서만 호출되는 토큰 API를 호출해서 토큰을 발급받는 용도
+fake-api 와 따로 나눈 이유는 게임제공사에서 IP 벤을 당하면 fake-api는 놔두고 token-generator만 바꾸기 위해서 만듬

@@ -1,0 +1,4 @@
+#! /bin/bash
+BASEDIR=$(dirname $0)
+cd $BASEDIR
+aws codebuild start-build --region ap-northeast-1 --profile faker --project-name "build-fake-korea"

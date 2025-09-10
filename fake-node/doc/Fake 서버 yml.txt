@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  fake-api:
+    image: 633624879762.dkr.ecr.ap-northeast-1.amazonaws.com/amd64-fake-api-node:korea
+    container_name: fake-api-container1
+    restart: always
+    deploy:
+      replicas: 1
+    #ports:
+    #  - "10001:4000"                               # 외부 10001번 포트에 매핑
+    expose:
+      - 4000
+    labels:
+      - "traefik.http.routers.fakeapi.rule=Host(`skylinekgon.evo-games-k.com`)" # Host 규칙: example.com으로 라우팅
+      - "traefik.http.routers.fakeapi.entrypoints=web"            # HTTP 엔트리포인트 사용
+      - "traefik.http.services.fakeapi.loadbalancer.server.port=4000" # 서비스 포트 4000으로 트래픽 전달
+      - "traefik.http.services.fakeapi.loadbalancer.healthcheck.path=/health"
+      # HTTPS 엔트리포인트 라우팅 규칙
+      - "traefik.http.routers.fakeapi_secure.rule=Host(`skylinekgon.evo-games-k.com`)"  # 도메인 규칙
+      - "traefik.http.routers.fakeapi_secure.entrypoints=websecure"     # HTTPS 엔트리포인트 (443)
+      - "traefik.http.routers.fakeapi_secure.tls.certresolver=myresolver" # Let's Encrypt로 SSL 인증서 발급
+      - "traefik.http.services.fakeapi_secure.loadbalancer.server.port=4000" # 서비스 포트
+      - "traefik.http.services.fakeapi_secure.loadbalancer.healthcheck.path=/health"
+
+    networks:
+      - traefik-net                                 # 네트워크 연결
+
+networks:
+  traefik-net:                                      # 네트워크 정의
+    external: true                                  # 외부에서 생성된 네트워크 사용

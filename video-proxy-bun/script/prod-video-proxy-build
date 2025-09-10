@@ -1,0 +1,4 @@
+#! /bin/bash
+BASEDIR=$(dirname $0)
+cd $BASEDIR/..
+sh docker/arm64-build-docker-image.sh arm64-fake-video-proxy prod

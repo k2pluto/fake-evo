@@ -1,0 +1,32 @@
+entryPoints:
+  web:
+    address: ":80"  # HTTP 엔트리포인트
+  websecure:
+    address: ":443"  # HTTPS 엔트리포인트
+
+providers:
+  swarm:
+    network: traefik-net
+    #endpoint: tcp://192.168.1.50.2377
+    endpoint: unix:///var/run/docker.sock
+  # docker: true
+
+#tls:
+#  certificates:
+#    - certFile: "/etc/ssl/certs/evo-games-k.com.crt"  # 수동 인증서 파일 경로
+#      keyFile: "/etc/ssl/private/evo-games-k.com.key"  # 수동 키 파일 경로
+
+certificatesresolvers:
+  myresolver:
+    acme:
+      email: goldkotlin@gmail.com
+      storage: "/traefik/acme.json"
+      httpChallenge:
+        entryPoint: web # 무조건 80 포트만 챌린지 되는듯
+
+log:
+  level: DEBUG
+
+api:
+  dashboard: true  # Traefik 대시보드 활성화
+  insecure: true  # HTTP 트래픽을 허용

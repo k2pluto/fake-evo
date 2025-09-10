@@ -1,0 +1,461 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "bun-api EVOLUTION",
+        "type": "bun",
+        "request": "launch",
+        "program": "src/fake-api/bun.ts",
+        "args": [],
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "STAGE_ENV": "remote-prod",
+          "FAKE_VENDOR": "fchev",
+          "FAKE_SERVER": "blue",
+          "DEBUG_MODE": "debug",
+        },
+        "strictEnv": false,
+        "runtimeArgs": [
+        ],
+      },
+      {
+        "name": "bun-api SWIX",
+        "type": "bun",
+        "request": "launch",
+        "program": "src/fake-api/bun.ts",
+        "args": [],
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "STAGE_ENV": "remote-prod",
+          "FAKE_VENDOR": "fcevo",
+          "FAKE_SERVER": "blue",
+          "DEBUG_MODE": "debug",
+        },
+        "strictEnv": false,
+        "runtimeArgs": [
+        ],
+      },
+      {
+        "name": "fake-api qa",
+        "type": "node",
+        "request": "launch",
+        "args": [ "${workspaceFolder}/src/fake-api/main.ts"],
+        "runtimeArgs": ["-r", "ts-node/register", "-r", "tsconfig-paths/register"],
+        "cwd": "${workspaceRoot}",
+        "env": {
+          "STAGE_ENV": "qa",
+        },
+        "internalConsoleOptions": "openOnSessionStart"
+      },
+      {
+        "name": "fake-api SWIX",
+        "type": "node",
+        "request": "launch",
+        "args": [ "${workspaceFolder}/src/fake-api/main.ts"],
+        "runtimeArgs": ["-r", "ts-node/register", "-r", "tsconfig-paths/register"],
+        "cwd": "${workspaceRoot}",
+        "env": {
+          "STAGE_ENV": "remote-prod",
+          //"STAGE_ENV": "lemon",
+          "FAKE_VENDOR": "fcevo",
+          "FAKE_SERVER": "blue",
+          "DEBUG_MODE": "debug",
+        },
+        "internalConsoleOptions": "openOnSessionStart"
+      },
+      {
+        "name": "fake-api SWIX http",
+        "type": "node",
+        "request": "launch",
+        "args": [ "${workspaceFolder}/src/fake-api/main.ts"],
+        "runtimeArgs": ["-r", "ts-node/register", "-r", "tsconfig-paths/register"],
+        "cwd": "${workspaceRoot}",
+        "env": {
+          "STAGE_ENV": "prod",
+          //"STAGE_ENV": "lemon",
+          "FAKE_VENDOR": "fcevo",
+          "FAKE_SERVER": "blue",
+          "DEBUG_MODE": "debug",
+        },
+        "internalConsoleOptions": "openOnSessionStart"
+      },
+      {
+        "name": "fake-api UNIONGAME",
+        "type": "node",
+        "request": "launch",
+        "args": [ "${workspaceFolder}/src/fake-api/main.ts"],
+        "runtimeArgs": ["-r", "ts-node/register", "-r", "tsconfig-paths/register"],
+        "cwd": "${workspaceRoot}",
+        "env": {
+          "STAGE_ENV": "remote-prod",
+          "FAKE_VENDOR": "fucev",
+          "FAKE_SERVER": "lemon",
+          "DEBUG_MODE": "debug",
+        },
+        "internalConsoleOptions": "openOnSessionStart"
+      },
+      {
+        "name": "fake-api EVOLUTION",
+        "type": "node",
+        "request": "launch",
+        "args": [ "${workspaceFolder}/src/fake-api/main.ts"],
+        "runtimeArgs": ["-r", "ts-node/register", "-r", "tsconfig-paths/register"],
+        "cwd": "${workspaceRoot}",
+        "env": {
+          "STAGE_ENV": "remote-prod",
+          "FAKE_VENDOR": "fchev",
+          "FAKE_SERVER": "green",
+          "DEBUG_MODE": "debug",
+        },
+        "internalConsoleOptions": "openOnSessionStart"
+      },
+      {
+        "name": "fake resolver prod",
+        "type": "bun",
+        "request": "launch",
+        "program": "src/fake-resolver/bun.ts",
+        "args": [],
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "STAGE_ENV": "prod",
+        },
+        "strictEnv": false,
+        "runtimeArgs": [
+        ],
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "fake crawler honorlink",
+        "env": {
+          "STAGE_ENV": "honorlink",
+        },
+        "program": "${workspaceFolder}/dist/fake-evo/src/fake-crawler/main.js"
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "fake crawler swix",
+        "env": {
+          "STAGE_ENV": "swix",
+        },
+        "program": "${workspaceFolder}/dist/fake-evo/src/fake-crawler/main.js"
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "fake crawler uniongame",
+        "env": {
+          "STAGE_ENV": "uniongame",
+        },
+        "program": "${workspaceFolder}/dist/fake-evo/src/fake-crawler/main.js"
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "fake socket client prod",
+        "env": {
+          "STAGE_ENV": "prod",
+        },
+        "program": "${workspaceFolder}/dist/fake-evo/src/fake-socket-client/main.js",
+        "console": "integratedTerminal"
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "fake-connector test",
+        "env": {
+          "STAGE_ENV": "test",
+        },
+        "program": "${workspaceFolder}/dist/fake-evo/src/fake-connector/main.js"
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "fake-connector prod",
+        "env": {
+          "STAGE_ENV": "prod",
+        },
+        "console": "integratedTerminal",
+        "program": "${workspaceFolder}/dist/fake-evo/src/fake-connector/main.js"
+      },
+      {
+        "name": "fake-connect-test",
+        "type": "node",
+        "request": "launch",
+        "args": [ "${workspaceFolder}/src/fake-connect-test/test.ts"],
+        "runtimeArgs": ["-r", "ts-node/register", "-r", "tsconfig-paths/register"],
+        "cwd": "${workspaceRoot}",
+        "internalConsoleOptions": "openOnSessionStart"
+      },
+      {
+        "name": "fake-history prod",
+        "type": "node",
+        "request": "launch",
+        "args": [ "${workspaceFolder}/src/fake-history/node.ts"],
+        "runtimeArgs": ["-r", "ts-node/register", "-r", "tsconfig-paths/register"],
+        "cwd": "${workspaceRoot}",
+        "env": {
+          "STAGE_ENV": "prod",
+        },
+        "internalConsoleOptions": "openOnSessionStart"
+      },
+      {
+        "name": "fake-history fake",
+        "type": "node",
+        "request": "launch",
+        "args": [ "${workspaceFolder}/src/fake-history/node.ts"],
+        "runtimeArgs": ["-r", "ts-node/register", "-r", "tsconfig-paths/register"],
+        "cwd": "${workspaceRoot}",
+        "env": {
+          "STAGE_ENV": "fake",
+        },
+        "internalConsoleOptions": "openOnSessionStart"
+      },
+      {
+        "name": "fake-history swix",
+        "type": "node",
+        "request": "launch",
+        "args": [ "${workspaceFolder}/src/fake-history/node.ts"],
+        "runtimeArgs": ["-r", "ts-node/register", "-r", "tsconfig-paths/register"],
+        "cwd": "${workspaceRoot}",
+        "env": {
+          "STAGE_ENV": "swix",
+        },
+        "internalConsoleOptions": "openOnSessionStart"
+      },
+      {
+        "name": "fake-history swix cider",
+        "type": "node",
+        "request": "launch",
+        "args": [ "${workspaceFolder}/src/fake-history/node.ts"],
+        "runtimeArgs": ["-r", "ts-node/register", "-r", "tsconfig-paths/register"],
+        "cwd": "${workspaceRoot}",
+        "env": {
+          "STAGE_ENV": "swix-cider",
+        },
+        "internalConsoleOptions": "openOnSessionStart"
+      },
+      {
+        "name": "fake-history fchev",
+        "type": "node",
+        "request": "launch",
+        "args": [ "${workspaceFolder}/src/fake-history/node.ts"],
+        "runtimeArgs": ["-r", "ts-node/register", "-r", "tsconfig-paths/register"],
+        "cwd": "${workspaceRoot}",
+        "env": {
+          "STAGE_ENV": "fchev",
+        },
+        "internalConsoleOptions": "openOnSessionStart"
+      },
+      {
+        "name": "fake-history uniongame",
+        "type": "node",
+        "request": "launch",
+        "args": [ "${workspaceFolder}/src/fake-history/node.ts"],
+        "runtimeArgs": ["-r", "ts-node/register", "-r", "tsconfig-paths/register"],
+        "cwd": "${workspaceRoot}",
+        "env": {
+          "STAGE_ENV": "uniongame",
+        },
+        "internalConsoleOptions": "openOnSessionStart"
+      },
+      {
+        "name": "seamless prod",
+        "type": "node",
+        "request": "launch",
+        "args": [ "${workspaceFolder}/src/seamless/main.ts"],
+        "runtimeArgs": ["-r", "ts-node/register", "-r", "tsconfig-paths/register"],
+        "cwd": "${workspaceRoot}",
+        "env": {
+          "STAGE_ENV": "prod",
+        },
+        "internalConsoleOptions": "openOnSessionStart"
+      },
+      {
+        "name": "token generator prod",
+        "type": "node",
+        "request": "launch",
+        "args": [ "${workspaceFolder}/src/token-generator/main.ts"],
+        "runtimeArgs": ["-r", "ts-node/register", "-r", "tsconfig-paths/register"],
+        "cwd": "${workspaceRoot}",
+        "env": {
+          "STAGE_ENV": "prod",
+        },
+        "internalConsoleOptions": "openOnSessionStart"
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "crawl-scripts",
+        "program": "${workspaceFolder}/dist/fake-evo/src/tools/crawl-scripts.js"
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "test resolve",
+        "env": {
+          "STAGE_ENV": "prod",
+        },
+        "program": "${workspaceFolder}/dist/fake-evo/src/tools/test-resolve.js"
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "test cancel",
+        "env": {
+          "STAGE_ENV": "prod",
+        },
+        "program": "${workspaceFolder}/dist/fake-evo/src/tools/test-cancel.js"
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "test bet",
+        "env": {
+          "STAGE_ENV": "prod",
+        },
+        "program": "${workspaceFolder}/dist/fake-evo/src/tools/test-bet.js"
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "test promise",
+        "env": {
+          "STAGE_ENV": "prod",
+        },
+        "program": "${workspaceFolder}/dist/fake-evo/src/tools/test-promise.js"
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "table sum",
+        "env": {
+          "STAGE_ENV": "prod",
+        },
+        "program": "${workspaceFolder}/dist/fake-evo/src/tools/table-sum.js"
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "table migration",
+        "env": {
+          "STAGE_ENV": "prod",
+        },
+        "program": "${workspaceFolder}/dist/fake-evo/src/tools/table-migration.js"
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "history migration",
+        "env": {
+          "STAGE_ENV": "prod",
+        },
+        "console": "integratedTerminal",
+        "program": "${workspaceFolder}/dist/fake-evo/src/tools/history-migration.js"
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "interval fake setup",
+        "env": {
+          "STAGE_ENV": "prod",
+        },
+        "console": "integratedTerminal",
+        "program": "${workspaceFolder}/dist/fake-evo/src/tools/interval-fake-setup.js"
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "call entry",
+        "env": {
+          "STAGE_ENV": "prod",
+        },
+        "console": "integratedTerminal",
+        "program": "${workspaceFolder}/dist/fake-evo/src/tools/call-entry.js"
+      },
+      {
+        "name": "evolution-history",
+        "type": "node",
+        "request": "launch",
+        "args": [ "${workspaceFolder}/src/tools/evolution-history.ts"],
+        "runtimeArgs": ["-r", "ts-node/register"],
+        "cwd": "${workspaceRoot}",
+        "env": {
+          "STAGE_ENV": "prod",
+        },
+        "internalConsoleOptions": "openOnSessionStart"
+      },
+      {
+        "name": "vendor join",
+        "type": "node",
+        "request": "launch",
+        "args": [ "${workspaceFolder}/src/tools/vendor-join.ts"],
+        "runtimeArgs": ["-r", "ts-node/register", "-r", "tsconfig-paths/register"],
+        "cwd": "${workspaceRoot}",
+        "env": {
+          "STAGE_ENV": "prod",
+          //"VENDOR_CODE": "ugcev",
+          "VENDOR_CODE": "fchev",
+          "USERNAME": "tttaa99"
+        },
+        "internalConsoleOptions": "openOnSessionStart"
+      },
+      {
+        "name": "webserver prod",
+        "type": "node",
+        "request": "launch",
+        "args": [ "${workspaceFolder}/src/web-server/main.ts"],
+        "runtimeArgs": ["-r", "ts-node/register", "-r", "tsconfig-paths/register"],
+        "cwd": "${workspaceRoot}",
+        "env": {
+          "STAGE_ENV": "prod",
+        },
+        "internalConsoleOptions": "openOnSessionStart"
+      },
+      {
+        "name": "regex test",
+        "type": "node",
+        "request": "launch",
+        "args": [ "${workspaceFolder}/src/tools/regex-test.ts"],
+        "runtimeArgs": ["-r", "ts-node/register", "-r", "tsconfig-paths/register"],
+        "cwd": "${workspaceRoot}",
+        "env": {
+          "STAGE_ENV": "prod",
+        },
+        "internalConsoleOptions": "openOnSessionStart"
+      },
+      {
+        "name": "search cipher",
+        "type": "node",
+        "request": "launch",
+        "args": [ "${workspaceFolder}/src/search-cipher/main.ts"],
+        "runtimeArgs": ["-r", "ts-node/register", "-r", "tsconfig-paths/register"],
+        "cwd": "${workspaceRoot}",
+        "env": {
+          "STAGE_ENV": "prod",
+        },
+        "internalConsoleOptions": "openOnSessionStart"
+      },
+      {
+        "name": "restore swix history",
+        "type": "node",
+        "request": "launch",
+        "args": [ "${workspaceFolder}/src/tools/restore-swix-history.ts"],
+        "runtimeArgs": ["-r", "ts-node/register"],
+        "cwd": "${workspaceRoot}",
+        "env": {
+          "STAGE_ENV": "prod",
+        },
+        "internalConsoleOptions": "openOnSessionStart"
+      }
+    ]
+
+  }
+
+  
+  // d:\WOKR\copy-game\pluto\fake-evo\dist\src\evo-control\main.js
+  //D:\WOKR\copy-game\pluto\fake-evo\.vscode\launch.json

@@ -1,0 +1,1496 @@
+{
+  "defaults": {
+    "customAppExample": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/light-intensity/custom-app-example",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/custom-app-example.6c0c63c3.js"
+        ],
+        "ignoreVideo": true
+      }
+    },
+    "tertius.example": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/light-intensity/tertius.example",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/tertius.example.543004db.css",
+          "/frontend/unicorn/light-intensity/js/tertius.example.543004db.js"
+        ],
+        "ignoreVideo": true,
+        "audioLibrary": "ecas"
+      }
+    },
+    "ne-template-pixi": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/light-intensity/ne-template-pixi",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/js/ne-template-pixi.0280d5e3.js"
+        ],
+        "ignoreVideo": true,
+        "audioLibrary": "ecas"
+      }
+    },
+    "abstractGame": {
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/abstractGame.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/abstractGame.mobile.b9bd8968.css",
+          "/frontend/unicorn/light-intensity/js/abstractGame.mobile.b9bd8968.js"
+        ]
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/abstractGame.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/abstractGame.desktop.e81b2f7b.css",
+          "/frontend/unicorn/light-intensity/js/abstractGame.desktop.e81b2f7b.js"
+        ]
+      }
+    },
+    "andarbahar": {
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/andarBahar.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/andarBahar.desktop.4140d690.css",
+          "/frontend/unicorn/light-intensity/js/andarBahar.desktop.4140d690.js"
+        ]
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/andarBahar.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/andarBahar.mobile.59cc555e.css",
+          "/frontend/unicorn/light-intensity/js/andarBahar.mobile.59cc555e.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "promotions": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/light-intensity/promotions",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/promotions.32f78612.css",
+          "/frontend/unicorn/light-intensity/js/promotions.32f78612.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "*"
+      }
+    },
+    "baccaratmultiplay": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/light-intensity/baccarat.multiplay",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/baccarat.multiplay.cbc0cb91.css",
+          "/frontend/unicorn/light-intensity/js/baccarat.multiplay.cbc0cb91.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "lobby": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/light-intensity/lobby",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/lobby.ae70709f.css",
+          "/frontend/unicorn/light-intensity/js/lobby.ae70709f.js",
+          "/frontend/unicorn/light-intensity/styles/lobby-3_0-global.71f036c8.css",
+          "/frontend/unicorn/light-intensity/styles/lobby-global.fd8a5f21.css"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "*"
+      }
+    },
+    "reserved-table": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/light-intensity/reserved-table",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/reserved-table.5f676de1.css",
+          "/frontend/unicorn/light-intensity/js/reserved-table.5f676de1.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "*"
+      }
+    },
+    "roulette": {
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/roulette.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/roulette.mobile.0d54e1d5.css",
+          "/frontend/unicorn/light-intensity/js/roulette.mobile.0d54e1d5.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/roulette.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/roulette.desktop.8d31253d.css",
+          "/frontend/unicorn/light-intensity/js/roulette.desktop.8d31253d.js"
+        ]
+      }
+    },
+    "moneywheel": {
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/moneywheel.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/moneywheel.mobile.81bad219.css",
+          "/frontend/unicorn/light-intensity/js/moneywheel.mobile.81bad219.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/moneywheel.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/moneywheel.desktop.96858455.css",
+          "/frontend/unicorn/light-intensity/js/moneywheel.desktop.96858455.js"
+        ]
+      }
+    },
+    "blackjack": {
+      "mobile": {
+        "logoImage": "/frontend/unicorn/light-intensity/images/blackjacka.b7ae15d9.svg",
+        "loader": "/frontend/unicorn/light-intensity/blackjack.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/blackjack.mobile.00ecc2ed.css",
+          "/frontend/unicorn/light-intensity/js/blackjack.mobile.00ecc2ed.js",
+          "/frontend/unicorn/light-intensity/styles/blackjack.mobile-global.84cb18b1.css"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loaderBackground": "/frontend/unicorn/light-intensity/images/blackjack.7106e9cd.jpg",
+        "loader": "/frontend/unicorn/light-intensity/blackjack.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/blackjack.desktop.8c656cb8.css",
+          "/frontend/unicorn/light-intensity/js/blackjack.desktop.8c656cb8.js"
+        ]
+      }
+    },
+    "blackjack.v3": {
+      "mobile": {
+        "logoImage": "/frontend/unicorn/light-intensity/images/blackjacka.b7ae15d9.svg",
+        "loader": "/frontend/unicorn/light-intensity/blackjack.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/blackjack.mobile.00ecc2ed.css",
+          "/frontend/unicorn/light-intensity/js/blackjack.mobile.00ecc2ed.js",
+          "/frontend/unicorn/light-intensity/styles/blackjack.mobile-global.84cb18b1.css"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loaderBackground": "/frontend/unicorn/light-intensity/images/blackjack.7106e9cd.jpg",
+        "loader": "/frontend/unicorn/light-intensity/blackjack.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/blackjack.desktop.8c656cb8.css",
+          "/frontend/unicorn/light-intensity/js/blackjack.desktop.8c656cb8.js"
+        ]
+      }
+    },
+    "rng-blackjack": {
+      "mobile": {
+        "logoImage": "/frontend/unicorn/light-intensity/images/rngblackja.2a0d4a80.svg",
+        "loader": "/frontend/unicorn/light-intensity/rng-blackjack.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/commons.rng.2fe6e9c4.css",
+          "/frontend/unicorn/light-intensity/js/commons.rng.2fe6e9c4.js",
+          "/frontend/unicorn/light-intensity/styles/rng-blackjack.mobile.57324d50.css",
+          "/frontend/unicorn/light-intensity/js/rng-blackjack.mobile.57324d50.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "evo_rng_blackjack"
+      },
+      "desktop": {
+        "loaderBackground": "/frontend/unicorn/light-intensity/images/rngblackja.4be746eb.jpg",
+        "loader": "/frontend/unicorn/light-intensity/rng-blackjack.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/commons.rng.2fe6e9c4.css",
+          "/frontend/unicorn/light-intensity/js/commons.rng.2fe6e9c4.js",
+          "/frontend/unicorn/light-intensity/styles/rng-blackjack.desktop.62e87b04.css",
+          "/frontend/unicorn/light-intensity/js/rng-blackjack.desktop.62e87b04.js"
+        ],
+        "ignoreVideo": true
+      }
+    },
+    "rng-blackjack.horizon.preview": {
+      "desktop": {
+        "loaderBackground": "/frontend/unicorn/light-intensity/images/rngblackja.4be746eb.jpg",
+        "loader": "/frontend/unicorn/light-intensity/rng-blackjack.horizon.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/commons.rng.2fe6e9c4.css",
+          "/frontend/unicorn/light-intensity/js/commons.rng.2fe6e9c4.js",
+          "/frontend/unicorn/light-intensity/styles/rng-blackjack.horizon.desktop.ee695fca.css",
+          "/frontend/unicorn/light-intensity/js/rng-blackjack.horizon.desktop.ee695fca.js"
+        ],
+        "ignoreVideo": true
+      },
+      "mobile": {
+        "logoImage": "/frontend/unicorn/light-intensity/images/rngblackja.2a0d4a80.svg",
+        "loader": "/frontend/unicorn/light-intensity/rng-blackjack.horizon.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/commons.rng.2fe6e9c4.css",
+          "/frontend/unicorn/light-intensity/js/commons.rng.2fe6e9c4.js",
+          "/frontend/unicorn/light-intensity/styles/rng-blackjack.horizon.mobile.a70ed57f.css",
+          "/frontend/unicorn/light-intensity/js/rng-blackjack.horizon.mobile.a70ed57f.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "evo_rng_blackjack"
+      }
+    },
+    "rng-blackjack.horizon": {
+      "desktop": {
+        "loaderBackground": "/frontend/unicorn/light-intensity/images/rngblackja.4be746eb.jpg",
+        "loader": "/frontend/unicorn/light-intensity/rng-blackjack.horizon.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/commons.rng.2fe6e9c4.css",
+          "/frontend/unicorn/light-intensity/js/commons.rng.2fe6e9c4.js",
+          "/frontend/unicorn/light-intensity/styles/rng-blackjack.horizon.desktop.ee695fca.css",
+          "/frontend/unicorn/light-intensity/js/rng-blackjack.horizon.desktop.ee695fca.js"
+        ],
+        "ignoreVideo": true
+      },
+      "mobile": {
+        "logoImage": "/frontend/unicorn/light-intensity/images/rngblackja.2a0d4a80.svg",
+        "loader": "/frontend/unicorn/light-intensity/rng-blackjack.horizon.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/commons.rng.2fe6e9c4.css",
+          "/frontend/unicorn/light-intensity/js/commons.rng.2fe6e9c4.js",
+          "/frontend/unicorn/light-intensity/styles/rng-blackjack.horizon.mobile.a70ed57f.css",
+          "/frontend/unicorn/light-intensity/js/rng-blackjack.horizon.mobile.a70ed57f.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "evo_rng_blackjack"
+      }
+    },
+    "scalableblackjack.v2": {
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/blackjack.scalable.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/blackjack.scalable.mobile.4fd76c0e.css",
+          "/frontend/unicorn/light-intensity/js/blackjack.scalable.mobile.4fd76c0e.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/blackjack.scalable.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/blackjack.scalable.desktop.ddb76a9f.css",
+          "/frontend/unicorn/light-intensity/js/blackjack.scalable.desktop.ddb76a9f.js"
+        ]
+      }
+    },
+    "scalableblackjack": {
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/blackjack.scalable.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/blackjack.scalable.mobile.4fd76c0e.css",
+          "/frontend/unicorn/light-intensity/js/blackjack.scalable.mobile.4fd76c0e.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/blackjack.scalable.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/blackjack.scalable.desktop.ddb76a9f.css",
+          "/frontend/unicorn/light-intensity/js/blackjack.scalable.desktop.ddb76a9f.js"
+        ]
+      }
+    },
+    "baccarat.v0": {
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/baccarat.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/baccarat.mobile.7e1b1e70.css",
+          "/frontend/unicorn/light-intensity/js/baccarat.mobile.7e1b1e70.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/baccarat.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/baccarat.desktop.c82632c9.css",
+          "/frontend/unicorn/light-intensity/js/baccarat.desktop.c82632c9.js"
+        ]
+      }
+    },
+    "baccarat.regular": {
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/baccarat.regular.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/js/baccarat.regular.desktop.4a352d66.js"
+        ]
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/baccarat.regular.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/js/baccarat.regular.mobile.eadbca59.js"
+        ]
+      }
+    },
+    "baccarat.xtreme": {
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/baccarat.xtreme.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/js/baccarat.xtreme.mobile.75baa084.js"
+        ]
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/baccarat.xtreme.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/js/baccarat.xtreme.desktop.5d3fa9d7.js"
+        ]
+      }
+    },
+    "rng-roulette": {
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/rng-roulette.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/commons.rng.2fe6e9c4.css",
+          "/frontend/unicorn/light-intensity/js/commons.rng.2fe6e9c4.js",
+          "/frontend/unicorn/light-intensity/styles/rng-roulette.mobile.9222893c.css",
+          "/frontend/unicorn/light-intensity/js/rng-roulette.mobile.9222893c.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "evo_rng_roulette"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/rng-roulette.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/commons.rng.2fe6e9c4.css",
+          "/frontend/unicorn/light-intensity/js/commons.rng.2fe6e9c4.js",
+          "/frontend/unicorn/light-intensity/styles/rng-roulette.desktop.51c21f53.css",
+          "/frontend/unicorn/light-intensity/js/rng-roulette.desktop.51c21f53.js"
+        ],
+        "ignoreVideo": true
+      }
+    },
+    "rng-roulette.horizon.preview": {
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/rng-roulette.horizon.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/commons.rng.2fe6e9c4.css",
+          "/frontend/unicorn/light-intensity/js/commons.rng.2fe6e9c4.js",
+          "/frontend/unicorn/light-intensity/styles/rng-roulette.horizon.desktop.4d9f0b45.css",
+          "/frontend/unicorn/light-intensity/js/rng-roulette.horizon.desktop.4d9f0b45.js"
+        ],
+        "ignoreVideo": true
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/rng-roulette.horizon.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/commons.rng.2fe6e9c4.css",
+          "/frontend/unicorn/light-intensity/js/commons.rng.2fe6e9c4.js",
+          "/frontend/unicorn/light-intensity/styles/rng-roulette.horizon.mobile.5ee058ee.css",
+          "/frontend/unicorn/light-intensity/js/rng-roulette.horizon.mobile.5ee058ee.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "evo_rng_roulette"
+      }
+    },
+    "rng-moneywheel.horizon": {
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/rng-moneywheel.horizon.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/commons.rng.2fe6e9c4.css",
+          "/frontend/unicorn/light-intensity/js/commons.rng.2fe6e9c4.js",
+          "/frontend/unicorn/light-intensity/styles/rng-moneywheel.horizon.desktop.a35dd8c9.css",
+          "/frontend/unicorn/light-intensity/js/rng-moneywheel.horizon.desktop.a35dd8c9.js"
+        ],
+        "ignoreVideo": true
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/rng-moneywheel.horizon.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/commons.rng.2fe6e9c4.css",
+          "/frontend/unicorn/light-intensity/js/commons.rng.2fe6e9c4.js",
+          "/frontend/unicorn/light-intensity/styles/rng-moneywheel.horizon.mobile.b5216af1.css",
+          "/frontend/unicorn/light-intensity/js/rng-moneywheel.horizon.mobile.b5216af1.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "evo_rng_moneywheel"
+      }
+    },
+    "rng-baccarat.v0": {
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/rng-baccarat.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/commons.rng.2fe6e9c4.css",
+          "/frontend/unicorn/light-intensity/js/commons.rng.2fe6e9c4.js",
+          "/frontend/unicorn/light-intensity/styles/rng-baccarat.mobile.612c5f1d.css",
+          "/frontend/unicorn/light-intensity/js/rng-baccarat.mobile.612c5f1d.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "evo_rng_baccarat"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/rng-baccarat.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/commons.rng.2fe6e9c4.css",
+          "/frontend/unicorn/light-intensity/js/commons.rng.2fe6e9c4.js",
+          "/frontend/unicorn/light-intensity/styles/rng-baccarat.desktop.386598af.css",
+          "/frontend/unicorn/light-intensity/js/rng-baccarat.desktop.386598af.js"
+        ],
+        "ignoreVideo": true
+      }
+    },
+    "monopoly": {
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/monopoly.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/monopoly.mobile.2584e84f.css",
+          "/frontend/unicorn/light-intensity/js/monopoly.mobile.2584e84f.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/monopoly.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/monopoly.desktop.c64ecf17.css",
+          "/frontend/unicorn/light-intensity/js/monopoly.desktop.c64ecf17.js"
+        ]
+      }
+    },
+    "crazytime": {
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/crazyTime.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/crazyTime.mobile.33ed7d7a.css",
+          "/frontend/unicorn/light-intensity/js/crazyTime.mobile.33ed7d7a.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/crazyTime.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/crazyTime.desktop.8f5fbb01.css",
+          "/frontend/unicorn/light-intensity/js/crazyTime.desktop.8f5fbb01.js"
+        ]
+      }
+    },
+    "gonzotreasurehunt": {
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/surprise.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/surprise.mobile.767c234d.css",
+          "/frontend/unicorn/light-intensity/js/surprise.mobile.767c234d.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/surprise.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/surprise.desktop.87e88cec.css",
+          "/frontend/unicorn/light-intensity/js/surprise.desktop.87e88cec.js"
+        ]
+      }
+    },
+    "gonzotreasuremap": {
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/gonzotreasuremap.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/gonzotreasuremap.mobile.ef8e1393.css",
+          "/frontend/unicorn/light-intensity/js/gonzotreasuremap.mobile.ef8e1393.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/gonzotreasuremap.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/gonzotreasuremap.desktop.982eae28.css",
+          "/frontend/unicorn/light-intensity/js/gonzotreasuremap.desktop.982eae28.js"
+        ]
+      }
+    },
+    "deadalive.v0": {
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/deadalive.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/deadalive.mobile.21dcbfdf.css",
+          "/frontend/unicorn/light-intensity/js/deadalive.mobile.21dcbfdf.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/deadalive.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/deadalive.desktop.d0b76980.css",
+          "/frontend/unicorn/light-intensity/js/deadalive.desktop.d0b76980.js"
+        ]
+      }
+    },
+    "fantan": {
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/fanTan.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/fanTan.mobile.83bed24f.css",
+          "/frontend/unicorn/light-intensity/js/fanTan.mobile.83bed24f.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/fanTan.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/fanTan.desktop.16944b1e.css",
+          "/frontend/unicorn/light-intensity/js/fanTan.desktop.16944b1e.js"
+        ]
+      }
+    },
+    "dragontiger.v0": {
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/dragonTiger.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/dragonTiger.mobile.72ef4141.css",
+          "/frontend/unicorn/light-intensity/js/dragonTiger.mobile.72ef4141.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/dragonTiger.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/dragonTiger.desktop.78bc7083.css",
+          "/frontend/unicorn/light-intensity/js/dragonTiger.desktop.78bc7083.js"
+        ]
+      }
+    },
+    "crazycoinflip": {
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/crazyCoinFlip.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/crazyCoinFlip.mobile.437dd07b.css",
+          "/frontend/unicorn/light-intensity/js/crazyCoinFlip.mobile.437dd07b.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/crazyCoinFlip.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/crazyCoinFlip.desktop.bd18ae49.css",
+          "/frontend/unicorn/light-intensity/js/crazyCoinFlip.desktop.bd18ae49.js"
+        ]
+      }
+    },
+    "rng-dragontiger.v0": {
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/rng-dragontiger.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/commons.rng.2fe6e9c4.css",
+          "/frontend/unicorn/light-intensity/js/commons.rng.2fe6e9c4.js",
+          "/frontend/unicorn/light-intensity/styles/rng-dragontiger.mobile.73bee320.css",
+          "/frontend/unicorn/light-intensity/js/rng-dragontiger.mobile.73bee320.js"
+        ],
+        "nativeBundle": "evo_rng_topcard"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/rng-dragontiger.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/commons.rng.2fe6e9c4.css",
+          "/frontend/unicorn/light-intensity/js/commons.rng.2fe6e9c4.js",
+          "/frontend/unicorn/light-intensity/styles/rng-dragontiger.desktop.2d597f23.css",
+          "/frontend/unicorn/light-intensity/js/rng-dragontiger.desktop.2d597f23.js"
+        ]
+      }
+    },
+    "holdem": {
+      "mobile": {
+        "logoImage": "/frontend/unicorn/light-intensity/images/holdemadap.209fb863.svg",
+        "loader": "/frontend/unicorn/light-intensity/poker.casino-holdem-v2.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/poker.casino-holdem-v2.mobile.352c8834.css",
+          "/frontend/unicorn/light-intensity/js/poker.casino-holdem-v2.mobile.352c8834.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/poker.casino-holdem-v2.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/poker.casino-holdem-v2.desktop.73dd6efc.css",
+          "/frontend/unicorn/light-intensity/js/poker.casino-holdem-v2.desktop.73dd6efc.js"
+        ],
+        "loaderBackground": "/frontend/unicorn/light-intensity/images/poker.chp.b03aa76f.jpg"
+      }
+    },
+    "uth": {
+      "mobile": {
+        "logoImage": "/frontend/unicorn/light-intensity/images/ultimatete.85204dea.svg",
+        "loader": "/frontend/unicorn/light-intensity/poker.ultimate-texas.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/poker.ultimate-texas.mobile.256c0711.css",
+          "/frontend/unicorn/light-intensity/js/poker.ultimate-texas.mobile.256c0711.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/poker.ultimate-texas.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/poker.ultimate-texas.desktop.07d13576.css",
+          "/frontend/unicorn/light-intensity/js/poker.ultimate-texas.desktop.07d13576.js"
+        ],
+        "loaderBackground": "/frontend/unicorn/light-intensity/images/poker.uth.a6b432c4.jpg"
+      }
+    },
+    "eth": {
+      "mobile": {
+        "logoImage": "/frontend/unicorn/light-intensity/images/poker.ethlogo.19897f94.svg",
+        "loader": "/frontend/unicorn/light-intensity/poker.ultimate-texas.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/poker.ultimate-texas.mobile.256c0711.css",
+          "/frontend/unicorn/light-intensity/js/poker.ultimate-texas.mobile.256c0711.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/poker.ultimate-texas.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/poker.ultimate-texas.desktop.07d13576.css",
+          "/frontend/unicorn/light-intensity/js/poker.ultimate-texas.desktop.07d13576.js"
+        ],
+        "loaderBackground": "/frontend/unicorn/light-intensity/images/poker.eth.2cb4da77.jpg"
+      }
+    },
+    "csp": {
+      "mobile": {
+        "logoImage": "/frontend/unicorn/light-intensity/images/caribbeans.2e7845c4.svg",
+        "loader": "/frontend/unicorn/light-intensity/poker.caribbean-stud-v2.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/poker.caribbean-stud-v2.mobile.364632e4.css",
+          "/frontend/unicorn/light-intensity/js/poker.caribbean-stud-v2.mobile.364632e4.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/poker.caribbean-stud-v2.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/poker.caribbean-stud-v2.desktop.e1587663.css",
+          "/frontend/unicorn/light-intensity/js/poker.caribbean-stud-v2.desktop.e1587663.js"
+        ],
+        "loaderBackground": "/frontend/unicorn/light-intensity/images/poker.csp.6a23c978.jpg"
+      }
+    },
+    "sidebetcity": {
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/poker.side-bet-city.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/poker.side-bet-city.desktop.f8b9258d.css",
+          "/frontend/unicorn/light-intensity/js/poker.side-bet-city.desktop.f8b9258d.js"
+        ],
+        "loaderBackground": "/frontend/unicorn/light-intensity/images/poker.sidebetcit.e1792367.jpg"
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/poker.side-bet-city.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/poker.side-bet-city.mobile.7f39270c.css",
+          "/frontend/unicorn/light-intensity/js/poker.side-bet-city.mobile.7f39270c.js"
+        ],
+        "logoImage": "/frontend/unicorn/light-intensity/images/sidebetcit.809487a7.svg",
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "tcp.v2": {
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/poker.three-card-v2.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/poker.three-card-v2.desktop.880ec3b4.css",
+          "/frontend/unicorn/light-intensity/js/poker.three-card-v2.desktop.880ec3b4.js"
+        ],
+        "loaderBackground": "/frontend/unicorn/light-intensity/images/poker.tcp.89318fb1.jpg"
+      },
+      "mobile": {
+        "logoImage": "/frontend/unicorn/light-intensity/images/threecarda.1a12d4df.svg",
+        "loader": "/frontend/unicorn/light-intensity/poker.three-card-v2.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/poker.three-card-v2.mobile.1d200459.css",
+          "/frontend/unicorn/light-intensity/js/poker.three-card-v2.mobile.1d200459.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "trp.v2": {
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/poker.three-card-v2.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/poker.three-card-v2.desktop.880ec3b4.css",
+          "/frontend/unicorn/light-intensity/js/poker.three-card-v2.desktop.880ec3b4.js"
+        ],
+        "loaderBackground": "/frontend/unicorn/light-intensity/images/poker.trp.559f7998.jpg"
+      },
+      "mobile": {
+        "logoImage": "/frontend/unicorn/light-intensity/images/triplecard.406123fc.svg",
+        "loader": "/frontend/unicorn/light-intensity/poker.three-card-v2.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/poker.three-card-v2.mobile.1d200459.css",
+          "/frontend/unicorn/light-intensity/js/poker.three-card-v2.mobile.1d200459.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "dhp": {
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/poker.double-hand-poker.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/poker.double-hand-poker.desktop.dfb84c87.css",
+          "/frontend/unicorn/light-intensity/js/poker.double-hand-poker.desktop.dfb84c87.js"
+        ],
+        "loaderBackground": "/frontend/unicorn/light-intensity/images/poker.dhp.23fdd72d.jpg"
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/poker.double-hand-poker.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/poker.double-hand-poker.mobile.f6bd8eda.css",
+          "/frontend/unicorn/light-intensity/js/poker.double-hand-poker.mobile.f6bd8eda.js"
+        ],
+        "logoImage": "/frontend/unicorn/light-intensity/images/2handcasin.6c94ff05.svg",
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "thb.v2": {
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/poker.texas-bonus-v2.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/poker.texas-bonus-v2.desktop.f0ee723b.css",
+          "/frontend/unicorn/light-intensity/js/poker.texas-bonus-v2.desktop.f0ee723b.js"
+        ],
+        "loaderBackground": "/frontend/unicorn/light-intensity/images/poker.thb.e88b25c3.jpg"
+      },
+      "mobile": {
+        "logoImage": "/frontend/unicorn/light-intensity/images/poker.thblogo.641abc72.svg",
+        "loader": "/frontend/unicorn/light-intensity/poker.texas-bonus-v2.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/poker.texas-bonus-v2.mobile.36cdb02b.css",
+          "/frontend/unicorn/light-intensity/js/poker.texas-bonus-v2.mobile.36cdb02b.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "sicbo": {
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/sicbo.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/sicbo.desktop.5ceadc13.css",
+          "/frontend/unicorn/light-intensity/js/sicbo.desktop.5ceadc13.js"
+        ]
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/sicbo.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/sicbo.mobile.62bcb961.css",
+          "/frontend/unicorn/light-intensity/js/sicbo.mobile.62bcb961.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "lightningdice": {
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/lightningdice.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/lightningdice.desktop.09d1f41d.css",
+          "/frontend/unicorn/light-intensity/js/lightningdice.desktop.09d1f41d.js"
+        ]
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/lightningdice.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/lightningdice.mobile.d9f5d4fa.css",
+          "/frontend/unicorn/light-intensity/js/lightningdice.mobile.d9f5d4fa.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "craps": {
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/craps.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/craps.desktop.ddfb68c0.css",
+          "/frontend/unicorn/light-intensity/js/craps.desktop.ddfb68c0.js"
+        ]
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/craps.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/craps.mobile.d20e8370.css",
+          "/frontend/unicorn/light-intensity/js/craps.mobile.d20e8370.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "bacbo": {
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/bacbo.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/bacbo.mobile.ba948e79.css",
+          "/frontend/unicorn/light-intensity/js/bacbo.mobile.ba948e79.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/bacbo.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/bacbo.desktop.a9f9e22f.css",
+          "/frontend/unicorn/light-intensity/js/bacbo.desktop.a9f9e22f.js"
+        ]
+      }
+    },
+    "topdice": {
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/topdice.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/topdice.mobile.71203319.css",
+          "/frontend/unicorn/light-intensity/js/topdice.mobile.71203319.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/topdice.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/topdice.desktop.02462138.css",
+          "/frontend/unicorn/light-intensity/js/topdice.desktop.02462138.js"
+        ]
+      }
+    },
+    "rng-craps": {
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/rng-craps.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/commons.rng.2fe6e9c4.css",
+          "/frontend/unicorn/light-intensity/js/commons.rng.2fe6e9c4.js",
+          "/frontend/unicorn/light-intensity/styles/rng-craps.mobile.8fe46063.css",
+          "/frontend/unicorn/light-intensity/js/rng-craps.mobile.8fe46063.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "evo_rng_craps"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/rng-craps.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/commons.rng.2fe6e9c4.css",
+          "/frontend/unicorn/light-intensity/js/commons.rng.2fe6e9c4.js",
+          "/frontend/unicorn/light-intensity/styles/rng-craps.desktop.ed9dc2d6.css",
+          "/frontend/unicorn/light-intensity/js/rng-craps.desktop.ed9dc2d6.js"
+        ],
+        "ignoreVideo": true
+      }
+    },
+    "dealnodeal": {
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/dealnodeal.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/dealnodeal.desktop.3562cb54.css",
+          "/frontend/unicorn/light-intensity/js/dealnodeal.desktop.3562cb54.js"
+        ]
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/dealnodeal.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/dealnodeal.mobile.ee83dfb4.css",
+          "/frontend/unicorn/light-intensity/js/dealnodeal.mobile.ee83dfb4.js",
+          "/frontend/unicorn/light-intensity/styles/dealnodeal-global.0e9a4d72.css"
+        ],
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "rng-dealnodeal": {
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/rng-dealnodeal.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/commons.rng.2fe6e9c4.css",
+          "/frontend/unicorn/light-intensity/js/commons.rng.2fe6e9c4.js",
+          "/frontend/unicorn/light-intensity/styles/rng-dealnodeal.mobile.2902ed8a.css",
+          "/frontend/unicorn/light-intensity/js/rng-dealnodeal.mobile.2902ed8a.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "evo_rng_dealnodeal"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/rng-dealnodeal.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/commons.rng.2fe6e9c4.css",
+          "/frontend/unicorn/light-intensity/js/commons.rng.2fe6e9c4.js",
+          "/frontend/unicorn/light-intensity/styles/rng-dealnodeal.desktop.f387beca.css",
+          "/frontend/unicorn/light-intensity/js/rng-dealnodeal.desktop.f387beca.js"
+        ],
+        "ignoreVideo": true
+      }
+    },
+    "megaball": {
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/megaball.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/megaball.desktop.2759200a.css",
+          "/frontend/unicorn/light-intensity/js/megaball.desktop.2759200a.js"
+        ]
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/megaball.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/megaball.mobile.406a4e4a.css",
+          "/frontend/unicorn/light-intensity/js/megaball.mobile.406a4e4a.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "rng-megaball": {
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/rng-megaball.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/commons.rng.2fe6e9c4.css",
+          "/frontend/unicorn/light-intensity/js/commons.rng.2fe6e9c4.js",
+          "/frontend/unicorn/light-intensity/styles/rng-megaball.desktop.0063df29.css",
+          "/frontend/unicorn/light-intensity/js/rng-megaball.desktop.0063df29.js"
+        ],
+        "ignoreVideo": true
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/rng-megaball.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/commons.rng.2fe6e9c4.css",
+          "/frontend/unicorn/light-intensity/js/commons.rng.2fe6e9c4.js",
+          "/frontend/unicorn/light-intensity/styles/rng-megaball.mobile.c6acb2bc.css",
+          "/frontend/unicorn/light-intensity/js/rng-megaball.mobile.c6acb2bc.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "evo_rng_megaball"
+      }
+    },
+    "cashorcrash": {
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/cashorcrash.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/cashorcrash.desktop.e76b374c.css",
+          "/frontend/unicorn/light-intensity/js/cashorcrash.desktop.e76b374c.js"
+        ]
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/cashorcrash.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/cashorcrash.mobile.92392fbc.css",
+          "/frontend/unicorn/light-intensity/js/cashorcrash.mobile.92392fbc.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "monopolybigballer": {
+      "desktop": {
+        "loader": "/frontend/unicorn/light-intensity/monopolybigballer.desktop",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/monopolybigballer.desktop.baa9b6d7.css",
+          "/frontend/unicorn/light-intensity/js/monopolybigballer.desktop.baa9b6d7.js"
+        ]
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/light-intensity/monopolybigballer.mobile",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/styles/monopolybigballer.mobile.adee3e05.css",
+          "/frontend/unicorn/light-intensity/js/monopolybigballer.mobile.adee3e05.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "slots.ne": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/light-intensity/slots.ne",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/js/commons.wrapped.53f9ce69.js",
+          "/frontend/unicorn/light-intensity/styles/slots.ne.37fb8a18.css",
+          "/frontend/unicorn/light-intensity/js/slots.ne.37fb8a18.js"
+        ],
+        "nativeBundle": "wrapped_ne",
+        "ignoreVideo": true,
+        "loaderResourcesCountingMode": "none"
+      }
+    },
+    "slots.rt": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/light-intensity/slots.rt",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/js/commons.wrapped.53f9ce69.js",
+          "/frontend/unicorn/light-intensity/styles/slots.rt.d1b20420.css",
+          "/frontend/unicorn/light-intensity/js/slots.rt.d1b20420.js"
+        ],
+        "nativeBundle": "wrapped_rt",
+        "ignoreVideo": true,
+        "loaderResourcesCountingMode": "none"
+      }
+    },
+    "slots.btg": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/light-intensity/slots.btg",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/js/commons.wrapped.53f9ce69.js",
+          "/frontend/unicorn/light-intensity/styles/slots.btg.9cac9ae1.css",
+          "/frontend/unicorn/light-intensity/js/slots.btg.9cac9ae1.js"
+        ],
+        "nativeBundle": "wrapped_btg",
+        "ignoreVideo": true
+      }
+    },
+    "live.ezugi": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/light-intensity/live.ezugi",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/js/commons.wrapped.53f9ce69.js",
+          "/frontend/unicorn/light-intensity/styles/live.ezugi.80bbe15f.css",
+          "/frontend/unicorn/light-intensity/js/live.ezugi.80bbe15f.js"
+        ],
+        "nativeBundle": "wrapped_ezugi",
+        "ignoreVideo": true,
+        "loaderResourcesCountingMode": "none"
+      }
+    },
+    "slots.nlc": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/light-intensity/slots.nlc",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/js/commons.wrapped.53f9ce69.js",
+          "/frontend/unicorn/light-intensity/styles/slots.nlc.323f268d.css",
+          "/frontend/unicorn/light-intensity/js/slots.nlc.323f268d.js"
+        ],
+        "ignoreVideo": true,
+        "loaderResourcesCountingMode": "none"
+      }
+    },
+    "valkyrie": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/light-intensity/valkyrie",
+        "assets": [
+          "/frontend/unicorn/light-intensity/js/video.d0ebcf9c.js",
+          "/frontend/unicorn/light-intensity/js/vendor.138233d9.js",
+          "/frontend/unicorn/light-intensity/styles/commons.f23f0cc4.css",
+          "/frontend/unicorn/light-intensity/js/commons.f23f0cc4.js",
+          "/frontend/unicorn/light-intensity/js/commons.wrapped.53f9ce69.js",
+          "/frontend/unicorn/light-intensity/styles/valkyrie.3b1a7720.css",
+          "/frontend/unicorn/light-intensity/js/valkyrie.3b1a7720.js"
+        ],
+        "ignoreVideo": true,
+        "loaderResourcesCountingMode": "none"
+      }
+    }
+  },
+  "build": {
+    "env": "production",
+    "version": "6.20221220.83737.19027-df294de34a",
+    "publicPath": "/frontend/unicorn/light-intensity/"
+  }
+}

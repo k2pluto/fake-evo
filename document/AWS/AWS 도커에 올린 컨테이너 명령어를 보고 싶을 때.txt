@@ -1,0 +1,3 @@
+https://stackoverflow.com/questions/32758793/how-to-show-the-run-command-of-a-docker-container
+
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro assaflavie/runlike YOUR-CONTAINER

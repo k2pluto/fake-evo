@@ -1,0 +1,16 @@
+db.getCollection("bet_data_casino").aggregate({
+    $match: {
+        vendor: 'fcevo',
+        betStatus: 'SETTLE',
+        betTime: { $gte: new Date('2023-04-11T00:00:00+09:00') }
+    }},
+ 
+    {$group:{
+        _id: '_id',
+        fakeBetMoney: { $sum: { $cond: [{ $eq: ['$isFake', true] }, '$fakeAmountBet', 0] } },
+        fakeWinMoney: { $sum: { $cond: [{ $eq: ['$isFake', true] }, '$fakeAmountWin', 0] } },
+        normalBetMoney: { $sum: { $cond: [{ $eq: ['$isFake', true] }, 0, '$amountBet'] } },
+        normalWinMoney: { $sum: { $cond: [{ $eq: ['$isFake', true] }, 0, '$amountWin'] } }
+    }}
+ 
+)

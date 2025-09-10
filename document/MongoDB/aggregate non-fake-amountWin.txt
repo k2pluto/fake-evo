@@ -1,0 +1,17 @@
+db.getCollection("bet_data_casino").aggregate({
+    $match: {
+        vendor: 'fcevo',
+        betStatus: 'SETTLE',
+        isFake: null,
+        betTime: { $gte: new Date('2023-04-11T00:00:00+09:00') }
+    }
+}, {
+    $group:{
+        _id: '$tableId',
+        profit: { $sum: { $subtract: [ "$amountBet", "$amountWin" ] } },
+    }
+}, {
+    $sort:{
+        profit:-1
+    }
+})

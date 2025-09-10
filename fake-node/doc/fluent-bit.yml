@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  fluent-bit:
+    image: fluent/fluent-bit:latest
+    deploy:
+      mode: global  # 모든 노드에 하나의 인스턴스만 실행
+    configs:
+      - source: fluent-bit-config  # Swarm에 저장된 설정 파일 사용
+        target: /fluent-bit/etc/fluent-bit.conf  # 컨테이너 내 경로
+    volumes:
+      - /var/log:/var/log  # 각 노드의 로그를 읽기 위한 볼륨 마운트
+    networks:
+      - logging
+    environment:
+      - FLUENT_ELASTICSEARCH_HOST=elasticsearch
+      - FLUENT_ELASTICSEARCH_PORT=9200
+
+networks:
+  logging:
+    driver: overlay
+
+configs:
+  fluent-bit-config:
+    external: true  # Swarm에 미리 올려둔 설정 파일 사용

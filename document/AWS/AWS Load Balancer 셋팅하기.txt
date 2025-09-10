@@ -1,0 +1,4 @@
+1. 로드밸런서를 생성한 후 타겟그룹 연결을 끊고 삭제한 후 ecs 서비스 생성할 때 만드는게 낫다.
+
+2. 타겟 그룹 Attributes 탭에서 Deregistration delay 수치를 300 seconds 에서 10 seconds 로 변경해줘야 draining이 빨리 끝난다.
+

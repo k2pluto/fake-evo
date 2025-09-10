@@ -1,0 +1,110 @@
+kubectl : 쿠버네티스 명령줄 클라이언트 도구
+kubeadm : 쿠버네티스 클러스터를 설치하고 부트스트랩 하는 도구
+kubelet : Pod 실행 및 관리 역할, 모니터링, 리소스 관리, 헬스 체크
+kube-apiserver : 쿠버네티스 api 서버 kube-apiserver 이름의 컴포넌트로 실행이 된다.
+
+1. 방화벽 열기
+6443
+2379
+2380
+10250
+10259
+
+10257
+30000-32767
+
+firewall-cmd --permanent --add-port=6433/tcp
+firewall-cmd --permanent --add-port=2379/tcp
+firewall-cmd --permanent --add-port=2380/tcp
+firewall-cmd --permanent --add-port=10250/tcp
+firewall-cmd --permanent --add-port=10257/tcp
+firewall-cmd --permanent --add-port=10259/tcp
+firewall-cmd --permanent --add-port=30000-32767/tcp
+
+#쿠버네티스 프록시 포트
+firewall-cmd --permanent --add-port=8001/tcp
+firewall-cmd --reload
+
+
+sudo swapoff -a
+sudo sed -i '/ swap / s/^\(.*\)$/#/g' /etc/fstab
+free -h
+
+# Set SELinux in permissive mode (effectively disabling it)
+sudo setenforce 0
+sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
+# 적용 확인
+sudo getenforce
+sudo cat /etc/selinux/config | grep SELINUX=
+
+cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+net.ipv4.ip_forward = 1
+EOF
+sudo sysctl --system
+
+sysctl net.ipv4.ip_forward
+
+# K8s 저장소 파일 생성
+cat <<EOF | tee /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=https://pkgs.k8s.io/core:/stable:/v1.30/rpm/
+enabled=1
+gpgcheck=1
+gpgkey=https://pkgs.k8s.io/core:/stable:/v1.30/rpm/repodata/repomd.xml.key
+EOF
+
+
+# CRI-O 저장소 파일 생성
+cat <<EOF | tee /etc/yum.repos.d/cri-o.repo
+[cri-o]
+name=CRI-O
+baseurl=https://pkgs.k8s.io/addons:/cri-o:/prerelease:/main/rpm/
+enabled=1
+gpgcheck=1
+gpgkey=https://pkgs.k8s.io/addons:/cri-o:/prerelease:/main/rpm/repodata/repomd.xml.key
+EOF
+
+cat << EOF | sudo tee -a /etc/hosts
+192.168.1.50 linuxadmin
+192.168.1.11 linux2nd
+192.168.1.32 alpine1st
+EOF
+
+dnf install -y conntrack container-selinux ebtables ethtool iptables socat
+
+dnf install -y --repo cri-o --repo kubernetes cri-o kubeadm kubectl kubelet
+
+# CRI-O, Kublet 활성화
+systemctl enable crio
+systemctl enable kubelet
+# 서비스 시작
+systemctl start crio
+# 확인
+systemctl status crio
+
+3. 클러스터 초기화 하기 (오래걸리므로 기다려야 함)
+kubeadm init --apiserver-advertise-address=203.109.4.238 --pod-network-cidr=192.168.0.0/16
+
+4. 클러스터 리셋 하기 (전체 삭제 그 후 다시 kubeadm init 가능)
+kubeadm reset
+
+5. CoreDNS 팟에서 CNI 플러그인이 필요하면 아래와 같이 calico를 설치한다.
+kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+
+6. 뭔가 잘 안될때는 reboot 명령어로 컴퓨터를 재시작 해본다. 재시작하고 kubeadm reset 후 kubeadm init 을 하니깐 잠시동안 되고 있다.
+
+7. 아래와 같이 .kube/config 를 복사해 줘야 kubectl get pods -n kube-system 로 kube-system 을 확인가능하다
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+8. 쿠버네티스 팟 확인하기
+kubectl get pods -n kube-system
+
+8. 로그 확인할려면
+kubectl logs -n kube-system kube-apiserver-localhost.localdomain 
+
+9. 방금 2379 포트가 안열려 있어서 kube-apiserver 에서 에러가 나고 있는걸 확인했다. 일단 시작전에 모든 방화벽 여는 작업을 하고 진행하자.
+
+# 참고자료
+https://gam1532.tistory.com/55

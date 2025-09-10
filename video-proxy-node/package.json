@@ -1,0 +1,26 @@
+{
+  "name": "video-proxy-node",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "scripts": {},
+  "dependencies": {
+    "bufferutil": "^4.0.8",
+    "mongodb": "^4.17.2",
+    "uWebSockets.js": "github:uNetworking/uWebSockets.js#v20.44.0",
+    "uuid": "^10.0.0",
+    "ws": "^8.17.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "@types/ws": "^8.5.10",
+    "eslint": "^8.57.0",
+    "eslint-config-love": "^52.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.5",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^3.15.0",
+    "typescript": "^5.4.5"
+  }
+}

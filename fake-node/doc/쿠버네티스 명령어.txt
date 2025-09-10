@@ -1,0 +1,44 @@
+
+3. 클러스터 초기화 하기 (오래걸리므로 기다려야 함)
+kubeadm init --apiserver-advertise-address=203.109.4.238 --pod-network-cidr=192.168.0.0/16
+
+4. 클러스터 리셋 하기 (전체 삭제 그 후 다시 kubeadm init 가능)
+kubeadm reset
+
+# 쿠버네티스 접속 토큰 리스트 확인하기
+kubeadm token list
+
+5. CoreDNS 팟에서 CNI 플러그인이 필요하면 아래와 같이 calico를 설치한다.
+kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+
+6. 뭔가 잘 안될때는 reboot 명령어로 컴퓨터를 재시작 해본다. 재시작하고 kubeadm reset 후 kubeadm init 을 하니깐 잠시동안 되고 있다.
+
+7. 아래와 같이 .kube/config 를 복사해 줘야 kubectl get pods -n kube-system 로 kube-system 을 확인가능하다
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+8. 쿠버네티스 팟 확인하기
+kubectl get pods -n kube-system
+
+9. 쿠버네티스 전체 네임스페이스의 팟 확인
+kubectl get pods --all-namespaces
+
+8. 로그 확인할려면
+kubectl logs -n kube-system kube-apiserver-localhost.localdomain
+kubectl logs -n kube-system kube-apiserver-linux2nd
+kubectl logs -n kubernetes-dashboard kubernetes-dashboard-6c8b589b99-86d84
+
+9. 죽었던 로그 확인하기
+kubectl logs -n kube-system kube-apiserver-linux2nd --previous
+
+10. 컨테이너 상태 확인
+kubectl describe pod kubernetes-dashboard-kong-7696bb8c88-nlr75 --namespace="kubernetes-dashboard"
+
+11. 쿠버네티스 스택 올리기
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.6.1/aio/deploy/recommended.yaml
+
+12. 쿠버네티스 스택 삭제
+kubectl delete -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.6.1/aio/deploy/recommended.yaml
+
+13. 모든 서비스 보기
+kubectl get services --all-namespaces

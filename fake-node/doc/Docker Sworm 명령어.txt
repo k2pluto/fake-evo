@@ -1,0 +1,17 @@
+# 도커 스웜 생성 명령어 (메니저 노드 자리에서 입력)
+docker swarm init
+
+2. 다른 도커 노드에 워커로 등록하는 토큰 발행하기
+docker swarm join-token worker
+
+2. 다른 도커 노드에 메니저 넘기는 토큰 발행하기
+docker swarm join-token manager
+
+2. 도커 스웜 히스토리 리미트 걸기
+docker swarm update --task-history-limit=100
+
+3. 도커 스웜용 네트워크 생성
+docker network create --driver=overlay traefik-net
+
+# 도커 서비스 로그 명령어
+docker service logs -t app_fake-api | grep "updateTlsSuites"

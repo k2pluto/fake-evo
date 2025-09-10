@@ -1,0 +1,13 @@
+https://magaetube.github.io/devops/Docker-NoSpaceLeft/
+
+1. 먼저 도커 로그 파일의 내용을 삭제한다
+cd /var/lib/docker/containers 안에 들어가서 로그파일 이름을 확인한 후
+아래와 같이 명령어를 입력한다.
+sudo truncate -s 0 e941de3b2cf970010b3727fddcb4e29a1c95e98e8471151e7a5b48c51572c9fa-json.log
+
+2. 도커로 컨테이너 올릴 때 로그 데이터 용량을 제한한다. 예)
+docker run -it --log-driver local --log-opt max-size=10m --log-opt max-file=3 alpine ash
+
+3. 임시로 EBS 용량을 올린다.
+(도커가 실행중일 때는 적용이 안된다. Device Busy가 뜸)
+https://m.blog.naver.com/jogilsang/221370362752

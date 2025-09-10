@@ -1,0 +1,14 @@
+{
+    "type": "mssql",
+    "host": "copyslot.database.windows.net",
+    "username": "copy",
+    "port": 1433,
+    "password": "Include123!@#",
+    "database": "copySlot",
+    "entities":["src/**/**.entity{.ts,.js}", "src/**/**/**.entity{.ts,.js}"],
+    "synchronize": true,
+    "options": {
+        "encrypt": true
+     }
+}
+

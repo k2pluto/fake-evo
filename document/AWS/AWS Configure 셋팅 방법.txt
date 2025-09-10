@@ -1,0 +1,7 @@
+1. 일반적인 default 셋팅 방법
+aws configure
+
+2. 프로필 넣는 방법.
+aws configure --profile ganymede
+
+로 하면 됨

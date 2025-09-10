@@ -1,0 +1,41 @@
+루트 권환 획득
+su root
+
+오픈 포트 확인
+netstat -plnt
+
+네트워크 장치 확인
+ifconfig
+
+# 방화벽 설치
+apk add ufw
+
+방화벽 열기
+ufw allow 22/tcp
+
+영구적으로 시스템 이름을 변경 (둘다 해주는게 좋음)
+echo "a10" > /etc/hostname
+
+//패키지 인스톨
+apk add [패키지]
+
+//패키지 삭제
+apk del [패키지]
+
+//서비스 추가
+rc-update add [서비스]
+
+//서비스 제거
+rc-update del [서비스]
+
+//서비스 제거
+systemctl disable [서비스]
+
+//서비스 시작
+rc-service {service-name} start
+
+//서비스 중지
+rc-service {service-name} stop
+
+//서비스 재시작
+rc-service {service-name} restart

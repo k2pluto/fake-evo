@@ -1,0 +1,57 @@
+
+services:
+  elasticsearch:
+    #image: docker.elastic.co/elasticsearch/elasticsearch:8.7.1
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.15.1
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager                   # Traefik은 manager 노드에서 실행
+      resources:
+        limits:
+          cpus: '2.0'
+        reservations:
+          cpus: '1.0'
+    environment:
+      - 'ES_JAVA_OPTS=-Xms2g -Xmx2g'
+      - 'bootstrap.memory_lock=true'
+      - 'network.bind_host=0.0.0.0'  # IPv4로 바인딩
+      - 'discovery.type=single-node'
+      - 'xpack.security.enabled=false'
+      - 'xpack.security.enrollment.enabled=false'
+    ports:
+      - 9200:9200
+    networks:
+      - elastic
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.15.1
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager                   # Traefik은 manager 노드에서 실행
+      resources:
+        limits:
+          cpus: '2.0'
+        reservations:
+          cpus: '1.0'
+    environment:
+      XPACK_ENCRYPTEDSAVEDOBJECTS_ENCRYPTIONKEY: d1a66dfd-c4d3-4a0a-8290-2abcb83ab3aa
+    ports:
+      - 9002:5601
+    networks:
+      - elastic
+
+networks:
+  elastic:
+    name: elastic_network
+    driver: overlay

@@ -1,0 +1,8 @@
+6. Docker Compose 실행
+docker compose -f ./docker-compose.prod.yml up
+6. Docker Compose Daemon 실행
+docker compose -f ./docker-compose.prod.yml up -d
+
+7 Docker Compose 중단 및 삭제
+docker compose stop
+docker compose rm

@@ -1,0 +1,10 @@
+1. 맥OS에서 실행 배치파일 만들기
+확장자가 꼭 없어야 한다.
+https://sansanji.tistory.com/entry/맥북에서-실행-배치파일-만들기
+
+2. Finder에서 Vscode 바로 열기 기능 
+https://mytutorials.tistory.com/287
+
+3. Varmilo 키보드에서 F5, F6 키가 안먹힐 때
+키를 윈도우 모드로 바꾼후에 KaraBiner를 설치한 뒤 Left Command와 Left Option 키를 서로 바꿔준다.
+https://www.cuonet.com/bbs/board.php?bo_table=community2&wr_id=8115447

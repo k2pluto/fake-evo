@@ -1,0 +1,14 @@
+1. yarn berry 버전으로 바꿔준다.
+yarn set version berry
+
+2. 커맨드에 yarn 으로 다시 인스톨 해준다.
+
+3. PnP 모드를 사용하기 위해서 .yarnrc.yml 에서 nodeLinker: node-modules 라인을 삭제한다.
+
+4. yarn berry를 typescript 셋팅으로 변경해 준다.
+yarn dlx @yarnpkg/sdks vscode
+yarn plugin import typescript
+
+5 yarn run tsc -watch 로 변경해 준다.
+
+https://kasterra.github.io/setting-yarn-berry/

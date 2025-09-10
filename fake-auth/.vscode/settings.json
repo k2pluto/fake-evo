@@ -1,0 +1,21 @@
+{
+    "files.exclude": {
+      "**/directory-you-want-to-exclude": true,
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/out": true,
+      "**/.DS_Store": true
+    },
+    "git.ignoreLimitWarning": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "[typescript]": {
+      "editor.formatOnSave": true
+    },
+    "[javascript]": {
+      "editor.formatOnSave": true
+    },
+    "jest.autoRun": {}
+  }

@@ -1,0 +1,44 @@
+2. 로드밸런서를 만든다.
+
+3. 대상 그룹을 1,2로 두개 만든다. 인스턴스가 아니라 ip 대상으로 만든다.
+
+4. 로드배런서에 대상 그룹을 연결해 둔다.
+
+1. ECS 클러스터를 생성한다.
+
+2. 클러스터에 서비스를 생성한다. 시작 유형을 선택하고 FARGATE로 설정한다.
+
+4. ECS에서 새로운 ECS 환경을 끄고 서비스를 만든다. (2023-10-17일 현재는 새로운 ECS 콘솔에서 만들어 지지 않는다.)
+
+5. 서비스를 만드는데 용량 공급자 전략으로는 블루/그린 배포가 안되니 시작 유형으로 전환한다.
+
+6. FARGATE와 EC2중에 선택하면 되는데 EC2 는 블루/그린 배포할려면 미리 두배의 컴퓨팅 자원을 잡아놔야 되므로 FARGATE로 만든다.
+
+7. FARGATE로 만들려면 작업 정의도 Fargate 로 만든다.
+
+8. CodeDeployRoleForECS 롤이 없으면 IAM 들어가서 만들어 준다. 사용 사례에서 CodeDeploy를 선택하고 CodeDeploy - ECS 를 선택한다.
+
+8. 로드 밸런싱할 컨테이너에 프로덕션 리스너 포트와 테스트 리스너 포트 둘다 등록 해야. 배포할 때 포트 두개가 바뀐다. 안그러면 프로덕션 리스너 포트 지정한 것만 바뀜
+
+9. 그 다음에 서비스 업데이트로 배포를 한번 해주면 배포가 완료 된다.
+
+10. 혹은 CodeDeploy의 어플리케이션/배포 그룹에서 배포 생성을 한 후 개 정 유형을 AppSpec의 JSON 으로 한 후에 아래와 비슷 하게 입력해 주면 된다. 이 부분은 서비스 업데이트로 배포를 한번 해주면 아래와 비슷하게 생성되는걸 그대로 사용하면 된다.
+{
+  "version": 1,
+  "Resources": [
+    {
+      "TargetService": {
+        "Type": "AWS::ECS::Service",
+        "Properties": {
+          "TaskDefinition": "arn:aws:ecs:ap-northeast-1:235825329579:task-definition/pluto-seamless-fargate-prod:3",
+          "LoadBalancerInfo": {
+            "ContainerName": "container1",
+            "ContainerPort": 4000
+          },
+          "PlatformVersion": "1.4.0"
+        }
+      }
+    }
+  ],
+  "Hooks": []
+}

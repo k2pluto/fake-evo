@@ -1,0 +1,12 @@
+1. Docker 설치
+
+2. Docker Swarm 모드 켜기
+
+3. Portainer 설치
+
+4. Portainer 에서 ECR 레지스트리 설정하기
+
+5. Stack 에서 원하는 compose 를 Stack 으로 올리기
+
+6. 업데이트 할 때 Service의 Change coantainer image 에서 원하는 이미지가 맞는지 확인하기
+

@@ -1,0 +1,14 @@
+db.getCollection("bet_data_casino").aggregate({
+    $match: {
+        vendor: 'fhsvo',
+        userId: 'you828600',
+        betStatus: 'SETTLE'
+    }},
+ 
+    {$group:{
+        _id: '_id',
+        amountBet: {$sum:'$amountBet'},
+        amountWin: {$sum:'$amountWin'}
+    }}
+ 
+)

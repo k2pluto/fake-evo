@@ -1,0 +1,23 @@
+db.getCollection("bet_data_casino").aggregate({
+    $match: {
+        vendor: 'fcevo',
+        betStatus: 'SETTLE',
+        agentId: {$ne:null},
+        tableId: 'npn3y3hkld2mcdjt',
+        betTime: { $gte: new Date('2023-06-22T00:00:00+09:00') }
+    }},
+ 
+    {$group:{
+        _id: '$agentId',
+        loseCount: { $sum: { $cond: [{ $gt: ['$amountBet', '$amountWin'] }, 1, 0] } },
+        winCount: { $sum: { $cond: [{ $gt: ['$amountWin', '$amountBet'] }, 1, 0] } },
+    }},
+    {$project:{
+        _id:0,
+        agentId: '$_id',
+        winRate: { $multiply: [{$divide:['$winCount', {$add:['$winCount', '$loseCount']}] }, 100]}
+    }},
+    {$sort:{
+        agentId:1
+    }}
+)

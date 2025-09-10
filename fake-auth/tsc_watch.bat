@@ -1,0 +1,3 @@
+
+tsc -watch
+pause 

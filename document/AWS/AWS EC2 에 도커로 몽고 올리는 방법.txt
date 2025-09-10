@@ -1,0 +1,38 @@
+1. EC2 서비스 선택 > 인스턴스 메뉴 선택
+2. 인스턴스 시작
+	1. 커뮤니티 AMI 메뉴 선택 > 기타 Linux 선택
+	3. Amazon Linux AMI 2018.03.0 (HVM), SSD Volume Type 버전 선택
+	7. 보안 그룹 셋팅
+	8. 생성
+3. 볼륨 추가(인슨턴스의 가용 영역에 추가한다 ap-northeast-2a or ap-northeast-2c)
+	1. 범용 SSD 선택
+	2. 크기 선택
+	3. 가용영역 설정 ap-northeast-2a
+	4. 생성
+3. ec2 접속
+	1. putty 에 주소 등록
+4. 원격 접속
+5. 설정 시작
+        1. 도커 설치
+		yum install docker
+		service docker start
+
+	2. 볼륨 마운트(마운트 폴더는 /adv/) 참고 - https://www.lesstif.com/pages/viewpage.action?pageId=36208717
+		0. sudo su
+		1. > lsblk 명령어로 마운트한 볼륨이름 확인 ex) xvdf 1000G disk
+		2. > sudo file -s /dev/nvme1n1
+		3. mkfs -t xfs /dev/nvme1n1 // 포맷 
+		4. mkdir /data
+		5. mount /dev/nvme1n1 /data
+		6. 재시작할 때 자동으로 볼륨 마운트 하기
+			1. 파일 열기 /etc/fstab
+			2. 내용 추가 /dev/nvme1n1 /data ext4 defaults,noatime 1 1
+
+	2. 마운트된 볼륨에 mongodb 데이터 패스 생성
+		1. mkdir /data/mongo
+
+6. docker 설치
+docker run -d --name mongo -v /data/mongo/:/data/db -e MONGO_INITDB_ROOT_USERNAME=min -e MONGO_INITDB_ROOT_PASSWORD=1234! -p 19123:27017 mongo:5
+
+도커 mongodb 로그 제한으로 실행
+docker run -d --log-driver json-file --log-opt max-size=10m --log-opt max-file=3 --name mongo -v /data/mongo/:/data/db -e MONGO_INITDB_ROOT_USERNAME=min -e MONGO_INITDB_ROOT_PASSWORD=1234! -p 19123:27017 mongo:7

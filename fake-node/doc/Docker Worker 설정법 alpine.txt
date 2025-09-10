@@ -1,0 +1,51 @@
+1. 알파인 리눅스 설정법
+
+루트 권한
+su root
+
+apk add nano
+
+레포지토리 파일을 열고
+nano /etc/apk/repositories
+
+커뮤니티 레포지토리를 주석 해제후 저장
+http://dl-cdn.alpinelinux.org/alpine/v3.20/community
+
+레포지토리 업데이트
+apk update
+
+도커 인스톨
+apk add docker
+
+도커 스웜에 워커로 등록한다.
+docker swarm join --token SWMTKN-1-44jpjpdfmmahid2l7nbd978hgkyv197gq9br111r3b0ctr1we6-822m3kubvgkoadp8ah3j3khv9 192.168.1.50:2377
+
+현재 부팅의 호스트 이름 변경 (둘다 해주는게 좋음)
+sudo hostname 새로운_호스트이름
+
+영구적으로 시스템 이름을 변경 (둘다 해주는게 좋음)
+echo "alpine1st" > /etc/hostname
+
+방화벽 설치
+apk add ufw
+
+방화벽 열기
+ufw allow 22/tcp
+ufw allow 2377/tcp
+ufw allow 4789/udp
+ufw allow 7946
+
+ufw enable
+
+
+방화벽을 연다.
+firewall-cmd --zone=public --add-port=포트번호/udp
+
+// 2377 TCP 스웜 매니저와 워커 간의 통신
+firewall-cmd --zone=public --add-port=2377/tcp
+
+// 4789 UDP 포트는 도커 스웜 워커에서 가장 중요한 포트이다.
+firewall-cmd --zone=public --add-port=4789/udp
+
+7946 (TCP/UDP): 노드 간 통신을 위한 포트
+firewall-cmd --zone=public --add-port=7946/tcp

@@ -1,0 +1,17 @@
+db.getCollection("bet_data_slot").aggregate({
+    $match: {
+        vendor: 'hbs',
+        betStatus: 'SETTLE',
+        betTime: {$gte:new Date('2023-06-29')}
+    }},
+ 
+    {$group:{
+       _id: '$gameId',
+        amountBet: {$sum:'$amountBet'},
+        amountWin: {$sum:'$amountWin'}
+    }},
+ 
+    {$sort:{
+        amountBet: -1,
+    }}
+)
