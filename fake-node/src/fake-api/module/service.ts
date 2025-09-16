@@ -408,7 +408,8 @@ export async function entryGame(options: EntryGameOptions) {
 
     console.log(JSON.stringify(launchRes))
 
-    const blacklistUser = await mongoDB.fakeBlacklistUser.findOne({ where: { username } })
+    // 블랙리스트 유저인지 확인
+    /*const blacklistUser = await mongoDB.fakeBlacklistUser.findOne({ where: { username } })
     if (blacklistUser != null) {
       await mainSQL.repos.user.update({ agentCode, userId }, { fakeMode: false })
 
@@ -416,9 +417,7 @@ export async function entryGame(options: EntryGameOptions) {
 
       // 블랙 걸린 애들은 정품으로 리디렉션 시킴
       return await reply.redirect(launchRes.gameUrl)
-    }
-
-    // return launchRes.gameUrl
+    }*/
 
     for (let i = 0; i < 3; i++) {
       const connectRes = await connectEvolution(launchRes.gameUrl, agentId, username, headers)
