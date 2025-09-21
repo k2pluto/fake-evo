@@ -1,9 +1,15 @@
 import axios, { type AxiosResponse } from 'axios'
+import { request as undiciRequest, Agent } from 'undici'
+import { gunzip, brotliDecompress } from 'zlib'
+import { promisify } from 'util'
 
 import tls from 'tls'
 import { type CallEvoOptions, type CallEvoResponse } from './call-evo'
 import { shuffleArray } from '@service/src/lib/utility/util'
 import parser from 'ua-parser-js'
+
+const gunzipAsync = promisify(gunzip)
+const brotliDecompressAsync = promisify(brotliDecompress)
 
 //console.log(tls.DEFAULT_CIPHERS.replaceAll(':', '\n'))
 
@@ -137,7 +143,7 @@ export async function callAxios(
       }
     }
 
-    const newCookie = cookies['EVOSESSIONID'] != null ? headers.cookie + '; ' + 'Domain=.evo-games.com' : headers.cookie
+    const newCookie = headers.cookie
 
     const referer = referers[stringToHashNumber(username) % referers.length]
 
@@ -147,10 +153,13 @@ export async function callAxios(
       ...(headers.referer != null && { referer }),
 
       accept: headers['accept'],
-      'accept-encoding': headers['accept-encoding'],
+      'accept-encoding': headers['accept-encoding'] ?? 'gzip, deflate, br',
       'accept-language': headers['accept-language'],
       'content-type': headers['content-type'],
       priority: headers['priority'],
+      'connection': 'keep-alive',
+      'upgrade-insecure-requests': '1',
+      'te': 'trailers',
 
       'user-agent': headers['user-agent'],
       cookie: newCookie,
@@ -181,6 +190,94 @@ export async function callAxios(
       }
     }
 
+    // HTTP/2 지원을 위한 undici 시도 (Akamai Bot Manager 우회)
+    console.log('=== UNDICI HTTP/2 REQUEST ===')
+    console.log('URL:', urlstr)
+    console.log('Method:', method ?? 'GET')
+    console.log('Headers being sent:', JSON.stringify(newHeaders, null, 2))
+
+    // HTTP/2 전용 agent 생성
+    const http2Agent = new Agent({
+      allowH2: true,
+      pipelining: 1,
+      connect: {
+        rejectUnauthorized: false,
+      },
+    })
+
+    try {
+      const undiciRes = await undiciRequest(urlstr, {
+        method: method ?? 'GET',
+        headers: newHeaders,
+        body: method === 'POST' ? body : undefined,
+        bodyTimeout: timeout,
+        headersTimeout: timeout,
+        dispatcher: http2Agent,
+      })
+
+      console.log('=== UNDICI RESPONSE ===')
+      console.log('Status:', undiciRes.statusCode)
+      console.log('HTTP Version:', (undiciRes.context as any)?.httpVersion)
+      console.log('Response headers:', JSON.stringify(Object.fromEntries(Object.entries(undiciRes.headers)), null, 2))
+
+      let rawData = Buffer.from(await undiciRes.body.arrayBuffer())
+
+      // 압축 해제 처리
+      const contentEncoding = undiciRes.headers['content-encoding'] as string
+      if (contentEncoding === 'gzip') {
+        rawData = Buffer.from(await gunzipAsync(rawData))
+      } else if (contentEncoding === 'br') {
+        rawData = Buffer.from(await brotliDecompressAsync(rawData))
+      }
+
+      let responseData = responseType === 'arraybuffer'
+        ? rawData
+        : rawData.toString('utf-8')
+
+      // HTML 응답에서 WebSocket URL을 프록시 서버로 리디렉션
+      if (typeof responseData === 'string' && undiciRes.headers['content-type']?.includes('text/html')) {
+        const evolutionHost = new URL(urlstr).host
+        const proxyHost = headers['host'] as string
+
+        // Evolution WebSocket URL을 프록시 서버로 변경
+        responseData = responseData
+          .replace(new RegExp(`wss://${evolutionHost}/public/`, 'g'), `wss://${proxyHost}/public/`)
+          .replace(new RegExp(`ws://${evolutionHost}/public/`, 'g'), `ws://${proxyHost}/public/`)
+      }
+
+      console.log('Response data preview:', typeof responseData === 'string' ? responseData.substring(0, 200) : 'Binary data')
+
+      const headerObj = Object.fromEntries(Object.entries(undiciRes.headers))
+      delete headerObj['content-encoding']
+      delete headerObj['access-control-allow-origin']
+      delete headerObj['cross-orgin-resource-policy']
+
+      return {
+        data: responseData,
+        recvHeaders: headerObj,
+        sendHeaders: newHeaders,
+        status: undiciRes.statusCode,
+      }
+    } catch (undiciError) {
+      console.log('=== UNDICI ERROR ===')
+      console.log('Error message:', undiciError.message)
+      console.log('Error code:', undiciError.code)
+      console.log('Error stack:', undiciError.stack)
+      console.log('Falling back to axios...')
+
+      if (undiciError.code === 'UND_ERR_BODY_TIMEOUT' || undiciError.code === 'UND_ERR_HEADERS_TIMEOUT') {
+        return {
+          sendHeaders: newHeaders,
+          status: 408,
+        }
+      }
+    }
+
+    console.log('=== AXIOS FALLBACK REQUEST ===')
+    console.log('URL:', urlstr)
+    console.log('Method:', method ?? 'GET')
+    console.log('Headers being sent:', JSON.stringify(newHeaders, null, 2))
+
     let res: AxiosResponse
     if (method === 'POST') {
       res = await axios.post(urlstr, body, {
@@ -200,6 +297,24 @@ export async function callAxios(
         maxRedirects: 0,
       })
     }
+
+    console.log('=== AXIOS RESPONSE ===')
+    console.log('Status:', res.status)
+    console.log('Response headers:', JSON.stringify(res.headers, null, 2))
+
+    // HTML 응답에서 WebSocket URL을 프록시 서버로 리디렉션
+    if (typeof res.data === 'string' && res.headers['content-type']?.includes('text/html')) {
+      const evolutionHost = new URL(urlstr).host
+      const proxyHost = headers['host'] as string
+
+      // Evolution WebSocket URL을 프록시 서버로 변경
+      res.data = res.data
+        .replace(new RegExp(`wss://${evolutionHost}/public/`, 'g'), `wss://${proxyHost}/public/`)
+        .replace(new RegExp(`ws://${evolutionHost}/public/`, 'g'), `ws://${proxyHost}/public/`)
+    }
+
+    console.log('Response data preview:', typeof res.data === 'string' ? res.data.substring(0, 200) : 'Binary data')
+
     const headerObj = res.headers as Record<string, string | string[]>
 
     delete headerObj['content-encoding']
@@ -213,8 +328,16 @@ export async function callAxios(
       status: res.status,
     }
   } catch (err) {
+    console.log('=== AXIOS ERROR ===')
+    console.log('Error message:', err.message)
+    console.log('Error code:', err.code)
+
     const { response } = err
     if (response != null) {
+      console.log('Error response status:', response.status)
+      console.log('Error response headers:', JSON.stringify(response.headers, null, 2))
+      console.log('Error response data preview:', typeof response.data === 'string' ? response.data.substring(0, 200) : 'Binary data')
+
       return {
         data: response.data,
         recvHeaders: response.headers,
@@ -222,12 +345,13 @@ export async function callAxios(
         status: response.status,
       }
     } else if (err.code === 'ECONNABORTED') {
-      // timeout 일 때
+      console.log('Request timed out')
       return {
         sendHeaders: newHeaders,
         status: 408, // timeout code
       }
     }
+    console.log('Throwing error:', err)
     throw err
   }
 }

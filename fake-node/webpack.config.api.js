@@ -12,7 +12,7 @@ console.log(STAGE_ENV)
 
 module.exports = {
   // entry를 따로 설정하지 않아도 됨
-  entry: './dist/fake-evo/src/fake-api/main.js',
+  entry: './dist/src/fake-api/main.js',
   target: 'node',
   //mode: serverlessWebpack.lib.webpack.isLocal ? 'development' : 'production',
   //mode: 'development',
@@ -27,6 +27,7 @@ module.exports = {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
     alias: {
       '@typeorm': path.resolve(__dirname, 'src/typeorm'),
+      '@service': path.resolve(__dirname, 'service'),
     },
   },
   //plugins: [new BundleAnalyzerPlugin()],

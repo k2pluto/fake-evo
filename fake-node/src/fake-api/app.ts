@@ -29,6 +29,36 @@ export const mainSQL = new PartialSQL(config.RDB_OPTIONS, ['user', 'agent', 'age
 export const authManager = new AuthManager(mainSQL)
 export const casinoManager = new CasinoTransactionManager(mongoDB, mainSQL)
 
+// 디버깅용: 테스트 사용자를 blacklist에서 제거
+async function removeTestUserFromBlacklist() {
+  try {
+    console.log('=== Starting blacklist cleanup ===')
+
+    // 먼저 현재 blacklist 상태 확인
+    const allBlacklist = await mongoDB.fakeBlacklistUser.find({})
+    console.log('Current blacklist users:', allBlacklist.map(u => u.username))
+
+    const testUsers = ['tttaa22', 'tttaa23', 'tttaa24'] // 테스트 사용자들
+    for (const username of testUsers) {
+      const existing = await mongoDB.fakeBlacklistUser.findOne({ where: { username } })
+      if (existing) {
+        console.log(`Found test user '${username}' in blacklist, removing...`)
+        const result = await mongoDB.fakeBlacklistUser.deleteOne({ where: { username } })
+        console.log(`🚀 Removed test user '${username}' from blacklist (debugging)`)
+      } else {
+        console.log(`Test user '${username}' not found in blacklist`)
+      }
+    }
+
+    // 제거 후 상태 확인
+    const afterBlacklist = await mongoDB.fakeBlacklistUser.find({})
+    console.log('Blacklist after cleanup:', afterBlacklist.map(u => u.username))
+
+  } catch (error) {
+    console.error('Error removing test users from blacklist:', error)
+  }
+}
+
 export let r2File = ''
 
 // export let globalBrowser: puppeteer.Browser
@@ -124,12 +154,21 @@ export async function createApp() {
       const params = new URLSearchParams(searchParamStr)
 
       let sessionId = params.get('EVOSESSIONID') ?? params.get('videoSessionId')?.split('-')[1]
+      console.log('=== WebSocket Auth Debug ===')
+      console.log('URL:', url)
+      console.log('Extracted sessionId:', sessionId)
+
       if (sessionId == null) {
         throw 'invalid sessionId url ' + url
       }
 
       const loginData = await mongoDB.fakeLoginData.findOne({ where: { sessionId } })
+      console.log('LoginData found:', loginData ? 'YES' : 'NO')
+
       if (loginData == null) {
+        // 세션ID의 일부만으로 검색 시도
+        const allLoginData = await mongoDB.fakeLoginData.find({})
+        console.log('All sessions in DB:', allLoginData.map(d => d.sessionId))
         throw 'can not find sessionId ' + sessionId + ' url ' + url
       }
 
@@ -147,10 +186,18 @@ export async function createApp() {
 
       username = user.agentCode + user.userId
 
+      console.log('=== Blacklist Check Debug ===')
+      console.log('Checking username:', username)
+
       const blacklistUser = await mongoDB.fakeBlacklistUser.findOne({ where: { username } })
+      console.log('Blacklist user found:', blacklistUser ? 'YES' : 'NO')
+
       if (blacklistUser != null) {
+        console.log('Blacklist user details:', blacklistUser)
         throw 'not allowed user'
       }
+
+      console.log('User passed blacklist check ✅')
 
       const requestAny = request as any
 
@@ -227,6 +274,9 @@ export async function initApp(_isLambda: boolean) {
   const promises = [createApp(), mainSQL.connect(), mongoDB.connect()]
 
   const [app] = await Promise.all(promises)
+
+  // 디버깅용: MongoDB 연결 후 테스트 사용자를 blacklist에서 제거
+  //await removeTestUserFromBlacklist()
 
   //r2File = await readFile('./public/r2.html', 'utf-8')
 

@@ -443,16 +443,37 @@ export async function entryGame(options: EntryGameOptions) {
     }
 
     // 페이크 접속이 안되면 블랙리스트에 추가한다. (봇일 가능성이 높다.)
-    await mongoDB.fakeBlacklistUser.updateOne(
-      { username },
-      {
-        $setOnInsert: {
-          createdAt: new Date(),
+    // 단, 모니터링/헬스체크/prefetch 요청은 제외
+    const userAgent = headers['user-agent'] as string
+    const purpose = headers['purpose'] as string
+    const secPurpose = headers['sec-purpose'] as string
+
+    const isMonitoringRequest = userAgent === 'node' ||
+                               userAgent?.includes('curl') ||
+                               userAgent?.includes('wget') ||
+                               headers['cdn-loop']?.includes('cloudflare')
+
+    const isPrefetchRequest = purpose === 'prefetch' ||
+                             secPurpose?.includes('prefetch') ||
+                             secPurpose?.includes('prerender')
+
+    if (!isMonitoringRequest && !isPrefetchRequest) {
+      console.log(`🚨 Adding user ${username} to blacklist due to fake connection failure`)
+      console.log(`   User-Agent: ${userAgent}, Purpose: ${purpose || secPurpose}`)
+      await mongoDB.fakeBlacklistUser.updateOne(
+        { username },
+        {
+          $setOnInsert: {
+            createdAt: new Date(),
+          },
+          $set: { agentId, username, headers, ip, updatedAt: new Date() },
         },
-        $set: { agentId, username, headers, ip, updatedAt: new Date() },
-      },
-      { upsert: true },
-    )
+        { upsert: true },
+      )
+    } else {
+      const reason = isMonitoringRequest ? 'monitoring' : 'prefetch'
+      console.log(`✅ Skipping blacklist for ${reason} request: ${userAgent || purpose || secPurpose}`)
+    }
 
     // 이미 세션이 지나갔으므로 한번 더 벤더사 로긴을 시도한다.
     launchRes = await loginVendor(username, headers)
@@ -573,7 +594,19 @@ export async function configService(req: FastifyRequest, reply: FastifyReply) {
       return await reply.status(configRes.status).headers(configRes.recvHeaders).send(configRes.data)
     }
 
-    const apiConfigData = configRes?.data as EvolutionConfigData
+    let apiConfigData: EvolutionConfigData
+
+    // JSON 응답 데이터를 파싱
+    if (typeof configRes?.data === 'string') {
+      try {
+        apiConfigData = JSON.parse(configRes.data) as EvolutionConfigData
+      } catch (parseError) {
+        console.log(`evolution config JSON parse error`, agentCode + userId, parseError.message)
+        return { status: FakeApiStatus.InternalServerError, message: 'Invalid JSON response from Evolution server' }
+      }
+    } else {
+      apiConfigData = configRes?.data as EvolutionConfigData
+    }
 
     // db에 값이 없을 때만 db에 insert 한다.
     // 옛날 클라이언트 버전에서 새로운 config 값이 에러를 일으 킬 수 있기 때문이다.

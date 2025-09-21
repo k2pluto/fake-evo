@@ -392,6 +392,15 @@ export function registerV2Controller(fastify: FastifyInstance) {
   fastify.get('/debugEntry', async (req, reply) => {
     const { username } = req.query as { username: string }
 
+    // Chrome의 Prefetch/Prerender 요청 무시
+    const purpose = req.headers['purpose'] as string
+    const secPurpose = req.headers['sec-purpose'] as string
+
+    if (purpose === 'prefetch' || secPurpose?.includes('prefetch') || secPurpose?.includes('prerender')) {
+      console.log(`🔄 Ignoring prefetch request for ${username}:`, purpose || secPurpose)
+      return reply.status(204).send() // No Content
+    }
+
     return await entryGame({
       username,
       ip: getFastifyIp(req),
