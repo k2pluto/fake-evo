@@ -19,11 +19,14 @@ import { isLightningTable } from '../common/fake-util'
 import { errorToString, sleep } from './util'
 
 const calcBonusOdds = (diffScore: number, natural: boolean) => {
+  // 무승부(Tie)는 Natural이든 Non-Natural이든 푸시(1배 환불)
+  if (diffScore === 0) return 1
+
   if (natural) {
-    // 네추럴승리면 2배, 비기면 1배 돌려준다
+    // 네추럴 승리면 2배
     if (diffScore > 0) return 2
-    if (diffScore === 0) return 1
   } else {
+    // Non-Natural 승리
     switch (diffScore) {
       case 4:
         return 2
@@ -263,6 +266,7 @@ export interface ManualSettleGameData {
   bankerHand: BaccaratHand
   lightningMultipliers?: LightningMultiplier[]
   redEnvelopePayouts?: { [key: string]: number }
+  winningSpots?: string[]
 }
 
 async function manualSettleBet(
@@ -276,17 +280,34 @@ async function manualSettleBet(
     let totalWinMoney = 0
 
     const bets: Record<string, { amount: number; payoff: number }> = {}
+
+    console.log('💰 [manualSettleBet] Starting settlement:', JSON.stringify({
+      username: bet.agentCode + bet.userId,
+      betAccepted: bet.betAccepted,
+      resultOddsTable,
+      gameData: {
+        playerHand: gameData.playerHand,
+        bankerHand: gameData.bankerHand,
+        result: gameData.result,
+        winningSpots: gameData.winningSpots,
+      },
+    }))
+
     for (const spot in bet.betAccepted ?? {}) {
       const betMoney = bet.betAccepted[spot]
 
       const winMoney = gameData.dealing === 'Cancelled' ? betMoney : betMoney * (resultOddsTable[spot] ?? 0)
       totalWinMoney += winMoney
 
+      console.log(`  💵 [manualSettleBet] ${spot}: ${betMoney} × ${resultOddsTable[spot] ?? 0} = ${winMoney}`)
+
       bets[spot] = {
         amount: betMoney,
         payoff: winMoney,
       }
     }
+
+    console.log(`💰 [manualSettleBet] Total win: ${totalWinMoney}`)
 
     const { agent, user } = await authManager.checkAuth(bet.agentCode + bet.userId)
 
@@ -428,10 +449,11 @@ export interface OddsTableOptions {
   bankerHand: BaccaratHand
   lightningMultipliers?: LightningMultiplier[]
   redEnvelopePayouts?: Record<string, number>
+  winningSpots?: string[]
 }
 
 export function makeOddsTable(tableId: string, options: OddsTableOptions) {
-  const { playerHand, bankerHand, lightningMultipliers } = options
+  const { playerHand, bankerHand, lightningMultipliers, winningSpots } = options
 
   const noCommission =
     tableId === 'ndgv76kehfuaaeec' ||
@@ -449,6 +471,28 @@ export function makeOddsTable(tableId: string, options: OddsTableOptions) {
     ? calcLightningOdds(playerHand, bankerHand, lightningMultipliers)
     : calcResultOdds(playerHand, bankerHand, noCommission)
 
+  console.log('🎰 [makeOddsTable] BEFORE winningSpots filter:', JSON.stringify({
+    tableId,
+    playerHand,
+    bankerHand,
+    resultOddsTable,
+    winningSpots,
+  }))
+
+  // winningSpots가 있으면 실제 당첨된 spot만 배당 적용
+  if (winningSpots != null) {
+    for (const spot in resultOddsTable) {
+      if (!winningSpots.includes(spot) && resultOddsTable[spot] > 0) {
+        console.log(`  ❌ [makeOddsTable] Filtering out ${spot}: was ${resultOddsTable[spot]}, now 0 (not in winningSpots)`)
+        resultOddsTable[spot] = 0
+      } else if (winningSpots.includes(spot)) {
+        console.log(`  ✅ [makeOddsTable] Keeping ${spot}: ${resultOddsTable[spot]} (in winningSpots)`)
+      }
+    }
+  } else {
+    console.log('  ⚠️ [makeOddsTable] No winningSpots provided, using calculated odds as-is')
+  }
+
   if (options.redEnvelopePayouts != null) {
     for (const key in options.redEnvelopePayouts) {
       if (resultOddsTable[key] > 0) {
@@ -456,6 +500,8 @@ export function makeOddsTable(tableId: string, options: OddsTableOptions) {
       }
     }
   }
+
+  console.log('🎰 [makeOddsTable] FINAL resultOddsTable:', JSON.stringify(resultOddsTable))
 
   return resultOddsTable
 }
@@ -490,17 +536,14 @@ export async function settleGame(
     })
 
     if (bets.length > 0) {
-      const { playerHand, bankerHand, lightningMultipliers } = gameData
+      const { playerHand, bankerHand, lightningMultipliers, winningSpots } = gameData
 
-      const noCommission =
-        tableId === 'ndgv76kehfuaaeec' ||
-        tableId === 'ocye5hmxbsoyrcii' ||
-        tableId === 'ovu5h6b3ujb4y53w' ||
-        tableId === 'NoCommBac0000001'
-
-      const resultOddsTable = isLightningTable(tableId)
-        ? calcLightningOdds(playerHand, bankerHand, lightningMultipliers)
-        : calcResultOdds(playerHand, bankerHand, noCommission)
+      const resultOddsTable = makeOddsTable(tableId, {
+        playerHand,
+        bankerHand,
+        lightningMultipliers,
+        winningSpots,
+      })
 
       const promises = []
       for (const bet of bets) {

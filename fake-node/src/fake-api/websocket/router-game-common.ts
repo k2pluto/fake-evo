@@ -511,11 +511,14 @@ export const resolved: ReceiveRouterType<Resolved> = async (packet, { socketData
   const { user, mongoDB } = socketData
   const { tableId } = tableData
 
-  const { gameId, bets } = packet.args
+  const { gameId, bets, result, winningSpots } = packet.args
 
   const username = user.agentCode + user.userId
 
-  console.log(`resolve ${username} tableId ${tableId} round ${gameId}`, JSON.stringify(packet))
+  console.log(`🎲 [resolved] Game result for ${username} tableId ${tableId} round ${gameId}`)
+  console.log(`   Result: Player ${result?.playerScore} vs Banker ${result?.bankerScore}`)
+  console.log(`   WinningSpots from Evolution: ${JSON.stringify(winningSpots)}`)
+  console.log(`   Full packet: ${JSON.stringify(packet)}`)
 
   const userGameData = tableData.getUserGameData(gameId)
 
