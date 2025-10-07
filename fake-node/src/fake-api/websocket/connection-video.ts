@@ -109,9 +109,12 @@ export async function connectionVideo(ws: WebSocket, request: FastifyRequest) {
     })
     videoWs.on('unexpected-response', (request, response) => {
       console.log(
-        'evolutionWs unexpected-response',
+        'videoWs unexpected-response',
         response.statusCode,
         response.statusMessage,
+        'request headers:',
+        JSON.stringify(sendHeaders),
+        'response headers:',
         JSON.stringify(response.headers),
       )
     })

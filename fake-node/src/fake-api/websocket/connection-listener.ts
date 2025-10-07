@@ -117,7 +117,7 @@ export async function connectionListener(ws: WebSocket, request: FastifyRequest)
       tableId,
       socketData.uuid,
       evolutionWsUrl,
-      //JSON.stringify(sendHeaders),
+      JSON.stringify(sendHeaders),
     )
     //console.log('ws client connected header', JSON.stringify(request.headers))
 
@@ -127,14 +127,60 @@ export async function connectionListener(ws: WebSocket, request: FastifyRequest)
       headers: sendHeaders,
     }) */
 
-    //const evolutionWs = new WebSocket(evolutionWsUrl)
+    // Chrome-like TLS configuration
+    const tlsOptions = {
+      minVersion: 'TLSv1.2' as const,
+      maxVersion: 'TLSv1.3' as const,
+      // Chrome's cipher suite order for TLS 1.3 and 1.2
+      ciphers: [
+        // TLS 1.3 ciphers
+        'TLS_AES_128_GCM_SHA256',
+        'TLS_AES_256_GCM_SHA384',
+        'TLS_CHACHA20_POLY1305_SHA256',
+        // TLS 1.2 ciphers (Chrome order)
+        'ECDHE-ECDSA-AES128-GCM-SHA256',
+        'ECDHE-RSA-AES128-GCM-SHA256',
+        'ECDHE-ECDSA-AES256-GCM-SHA384',
+        'ECDHE-RSA-AES256-GCM-SHA384',
+        'ECDHE-ECDSA-CHACHA20-POLY1305',
+        'ECDHE-RSA-CHACHA20-POLY1305',
+        'ECDHE-RSA-AES128-SHA',
+        'ECDHE-RSA-AES256-SHA',
+        'AES128-GCM-SHA256',
+        'AES256-GCM-SHA384',
+        'AES128-SHA',
+        'AES256-SHA',
+      ].join(':'),
+      // Enable ALPN but don't negotiate (WebSocket doesn't use it)
+      ALPNProtocols: [],
+      // Enable session resumption
+      sessionTimeout: 300,
+    }
+
     const evolutionWs = new WebSocket(evolutionWsUrl, {
       headers: sendHeaders,
+      ...tlsOptions,
     })
     /* const evolutionWs = new WebSocket('wss://3.35.224.12', {
       rejectUnauthorized: false,
       //headers: sendHeaders,
     }) */
+
+    // Log TLS version info
+    const req = (evolutionWs as any)._req
+    if (req) {
+      req.on('socket', (socket: any) => {
+        socket.on('secureConnect', () => {
+          console.log('TLS Info:', {
+            protocol: socket.getProtocol?.(),
+            cipher: socket.getCipher?.(),
+            alpnProtocol: socket.alpnProtocol,
+            username,
+            uuid: socketData.uuid,
+          })
+        })
+      })
+    }
 
     // console.log('evolutionWs sendHeaders', JSON.stringify((evolutionWs as any)._req._headers))
 
@@ -154,6 +200,9 @@ export async function connectionListener(ws: WebSocket, request: FastifyRequest)
         'evolutionWs unexpected-response',
         response.statusCode,
         response.statusMessage,
+        'request headers:',
+        JSON.stringify(sendHeaders),
+        'response headers:',
         JSON.stringify(response.headers),
       )
     })
