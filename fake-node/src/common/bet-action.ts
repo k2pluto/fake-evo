@@ -12,11 +12,16 @@ export const FakeChipDict = {
   // 5000: 1000,
   //5000: 2000,
   // 거의 모든 테이블의 최소 베팅이 1만칩 이상으로 변경되서 1만칩으로 수정
+ // 25000: 10000,
+ // 50000: 10000,
+ // 100000: 10000,
+ // 500000: 10000,
+ // 1000000: 25000,
   25000: 10000,
   50000: 10000,
-  100000: 10000,
-  500000: 10000,
-  1000000: 25000,
+  100000: 25000,
+  500000: 50000,
+  1000000: 100000,
 }
 
 export type SaveBetType = PlayerBetRequest & {
@@ -29,7 +34,7 @@ export type SaveBetType = PlayerBetRequest & {
 
 export function getFakeChip(orgAmount) {
   let fakeChip = FakeChipDict[orgAmount] == null ? orgAmount : FakeChipDict[orgAmount]
-  if (fakeChip >= 100000) {
+  if (fakeChip >= 1000000) {
     // 페이크 칩을 10만원으로 제한
     fakeChip = 100000
   }
