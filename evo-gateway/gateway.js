@@ -54,6 +54,7 @@ function pickNode(key) {
   return NODES[0];
 }
 
+// 개발용: /debugEntry (username 기반)
 app.get('/debugEntry', (req, res) => {
   const qs = req.originalUrl.includes('?') ? ('?' + req.originalUrl.split('?')[1]) : '';
   const assigned = req.cookies?.[COOKIE_NAME];
@@ -73,6 +74,29 @@ app.get('/debugEntry', (req, res) => {
   });
 
   res.redirect(302, `https://${target}/debugEntry${qs}`);
+});
+
+// 운영용: /entry (authToken 기반)
+app.get('/entry', (req, res) => {
+  const qs = req.originalUrl.includes('?') ? ('?' + req.originalUrl.split('?')[1]) : '';
+  const assigned = req.cookies?.[COOKIE_NAME];
+  let target = (assigned && healthy.has(assigned)) ? assigned : null;
+
+  if (!target) {
+    // authToken으로 분산 (authToken이 없으면 IP 사용)
+    const key = req.query.authToken || req.cookies?.uid || req.ip;
+    target = pickNode(key);
+  }
+
+  res.cookie(COOKIE_NAME, target, {
+    httpOnly: true,
+    sameSite: COOKIE_SAME_SITE,
+    secure: COOKIE_SECURE,
+    maxAge: COOKIE_MAX_AGE,
+    path: '/',
+  });
+
+  res.redirect(302, `https://${target}/entry${qs}`);
 });
 
 app.get('/status', (req, res) => res.json({ healthy: [...healthy] }));

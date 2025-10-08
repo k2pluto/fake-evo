@@ -12,6 +12,7 @@ import { type FastifyRequest } from 'fastify'
 
 import { getSelfUrl } from '../module/util'
 import { updateTlsSuites } from '../module/call-axios'
+import { getOrCreateBrowserAgent } from '../module/browser-tls-agent'
 
 export async function connectionListener(ws: WebSocket, request: FastifyRequest) {
   // request.url example
@@ -123,60 +124,64 @@ export async function connectionListener(ws: WebSocket, request: FastifyRequest)
 
     //updateTlsSuites(1000)
 
-    /* const evolutionWs = new WebSocket(evolutionWsUrl, {
-      headers: sendHeaders,
-    }) */
-
-    // Chrome-like TLS configuration
-    const tlsOptions = {
-      minVersion: 'TLSv1.2' as const,
-      maxVersion: 'TLSv1.3' as const,
-      // Chrome's cipher suite order for TLS 1.3 and 1.2
-      ciphers: [
-        // TLS 1.3 ciphers
-        'TLS_AES_128_GCM_SHA256',
-        'TLS_AES_256_GCM_SHA384',
-        'TLS_CHACHA20_POLY1305_SHA256',
-        // TLS 1.2 ciphers (Chrome order)
-        'ECDHE-ECDSA-AES128-GCM-SHA256',
-        'ECDHE-RSA-AES128-GCM-SHA256',
-        'ECDHE-ECDSA-AES256-GCM-SHA384',
-        'ECDHE-RSA-AES256-GCM-SHA384',
-        'ECDHE-ECDSA-CHACHA20-POLY1305',
-        'ECDHE-RSA-CHACHA20-POLY1305',
-        'ECDHE-RSA-AES128-SHA',
-        'ECDHE-RSA-AES256-SHA',
-        'AES128-GCM-SHA256',
-        'AES256-GCM-SHA384',
-        'AES128-SHA',
-        'AES256-SHA',
-      ].join(':'),
-      // Enable ALPN but don't negotiate (WebSocket doesn't use it)
-      ALPNProtocols: [],
-      // Enable session resumption
-      sessionTimeout: 300,
-    }
+    // Use browser-specific pooled agent for better TLS fingerprint consistency
+    const userAgent = headers['user-agent'] as string
+    const customAgent = getOrCreateBrowserAgent(evolutionUrl.host, userAgent)
 
     const evolutionWs = new WebSocket(evolutionWsUrl, {
       headers: sendHeaders,
-      ...tlsOptions,
+      agent: customAgent,
     })
     /* const evolutionWs = new WebSocket('wss://3.35.224.12', {
       rejectUnauthorized: false,
       //headers: sendHeaders,
     }) */
 
-    // Log TLS version info
+    // Enhanced TLS debugging
     const req = (evolutionWs as any)._req
     if (req) {
       req.on('socket', (socket: any) => {
+        // Log connection attempt
+        console.log('WebSocket connection attempt:', {
+          username,
+          uuid: socketData.uuid,
+          host: evolutionUrl.host,
+          url: evolutionWsUrl,
+        })
+
         socket.on('secureConnect', () => {
-          console.log('TLS Info:', {
-            protocol: socket.getProtocol?.(),
-            cipher: socket.getCipher?.(),
-            alpnProtocol: socket.alpnProtocol,
+          const tlsSocket = socket
+          const cipher = tlsSocket.getCipher?.()
+          const protocol = tlsSocket.getProtocol?.()
+          const alpn = tlsSocket.alpnProtocol
+
+          console.log('✓ TLS Handshake Success:', {
             username,
             uuid: socketData.uuid,
+            protocol,
+            cipherName: cipher?.name,
+            cipherVersion: cipher?.version,
+            alpnProtocol: alpn || 'none',
+            authorized: tlsSocket.authorized,
+            peerCertificate: tlsSocket.getPeerCertificate?.()?.subject,
+          })
+        })
+
+        socket.on('error', (err: Error) => {
+          console.error('✗ Socket Error:', {
+            username,
+            uuid: socketData.uuid,
+            host: evolutionUrl.host,
+            error: err.message,
+            stack: err.stack,
+          })
+        })
+
+        socket.on('timeout', () => {
+          console.error('✗ Socket Timeout:', {
+            username,
+            uuid: socketData.uuid,
+            host: evolutionUrl.host,
           })
         })
       })
@@ -196,15 +201,53 @@ export async function connectionListener(ws: WebSocket, request: FastifyRequest)
       //console.log('evolutionWs upgrade', response.statusCode, response.statusMessage, JSON.stringify(response.headers))
     })
     evolutionWs.on('unexpected-response', (request, response) => {
-      console.log(
-        'evolutionWs unexpected-response',
-        response.statusCode,
-        response.statusMessage,
-        'request headers:',
-        JSON.stringify(sendHeaders),
-        'response headers:',
-        JSON.stringify(response.headers),
-      )
+      console.error('✗ WebSocket Unexpected Response:', {
+        username,
+        uuid: socketData.uuid,
+        statusCode: response.statusCode,
+        statusMessage: response.statusMessage,
+        responseHeaders: response.headers,
+        requestHeaders: sendHeaders,
+        url: evolutionWsUrl,
+      })
+
+      // Read response body for debugging
+      let body = ''
+      response.on('data', (chunk) => {
+        body += chunk.toString()
+      })
+      response.on('end', () => {
+        if (body) {
+          console.error('✗ Response Body:', body.substring(0, 500))
+        }
+      })
+    })
+
+    evolutionWs.on('error', (err) => {
+      console.error('✗ WebSocket Error:', {
+        username,
+        uuid: socketData.uuid,
+        error: err.message,
+        stack: err.stack,
+        url: evolutionWsUrl,
+      })
+    })
+
+    evolutionWs.on('open', () => {
+      console.log('✓ WebSocket Connected:', {
+        username,
+        uuid: socketData.uuid,
+        url: evolutionWsUrl,
+      })
+    })
+
+    evolutionWs.on('close', (code, reason) => {
+      console.log('WebSocket Closed:', {
+        username,
+        uuid: socketData.uuid,
+        code,
+        reason: reason.toString(),
+      })
     })
 
     /* const websocketReq = (evolutionWs as any)._req
