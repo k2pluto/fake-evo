@@ -562,7 +562,7 @@ export async function callAxios(
 
     newHeaders = {
       host: url.host,
-      ...(headers.origin != null && { origin: url.origin }),
+      origin: url.origin,  // 항상 Evolution origin (프록시 증거 제거)
       ...(headers.referer != null && { referer }),
 
       accept: headers['accept'],
@@ -582,7 +582,7 @@ export async function callAxios(
       'sec-ch-ua-platform': headers['sec-ch-ua-platform'],
       'sec-fetch-dest': headers['sec-fetch-dest'] ?? 'document',
       'sec-fetch-mode': headers['sec-fetch-mode'] ?? 'navigate',
-      'sec-fetch-site': headers['sec-fetch-site'] ?? 'none',
+      'sec-fetch-site': 'none',  // 항상 'none' - 직접 연결 (프록시 증거 제거)
       'sec-fetch-user': headers['sec-fetch-user'] ?? '?1',
     } as Record<string, string | string[]>
 
