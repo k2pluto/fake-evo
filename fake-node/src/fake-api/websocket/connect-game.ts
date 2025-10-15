@@ -47,7 +47,15 @@ export async function connectGame(
         socketData.evolutionPackets[packetTime] = jsonObj
       }
 
-      // console.log(jsonStr)
+      // JWT 포함 여부 확인을 위한 상세 로그
+      if (jsonStr.includes('videoToken') || jsonStr.includes('token') || jsonStr.includes('video')) {
+        console.log('===== GAME WebSocket Message (Video/Token) =====')
+        console.log('Username:', username)
+        console.log('TableId:', tableId)
+        console.log('Type:', jsonObj.type)
+        console.log('Full message:', jsonStr)
+        console.log('================================================')
+      }
 
       // 먼저 밸런스를 수정한다.
       await balanceProcess(jsonObj, socketData.user)

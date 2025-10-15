@@ -21,7 +21,14 @@ export async function connectLobby(socketData: SocketData, clientWs: WebSocket, 
       const jsonStr = data.toString()
       const jsonObj = JSON.parse(jsonStr)
 
-      // console.log('lobby data', socketData.username, jsonStr)
+      // JWT 포함 여부 확인을 위한 상세 로그
+      if (jsonStr.includes('videoToken') || jsonStr.includes('token') || jsonStr.includes('video')) {
+        console.log('===== LOBBY WebSocket Message (Video/Token) =====')
+        console.log('Username:', socketData.username)
+        console.log('Type:', jsonObj.type)
+        console.log('Full message:', jsonStr)
+        console.log('==================================================')
+      }
 
       const router = ReceiveRouters[jsonObj.type]
       // console.log(jsonObj.type)
