@@ -45,16 +45,38 @@ export async function connectEvolution(
       const currentCookie = Object.entries(evolutionAccumCookie)
         .map(([key, value]) => `${key}=${value}`)
         .join('; ')
+
+      // Evolution 도메인으로 직접 연결한 것처럼 헤더 재구성 (프록시 증거 제거)
+      const cleanHeaders = {
+        host: evolutionEntryUrl.host,
+        origin: evolutionUrl,
+        accept: headers['accept'],
+        'accept-encoding': headers['accept-encoding'] ?? 'gzip, deflate, br',
+        'accept-language': headers['accept-language'],
+        'user-agent': headers['user-agent'],
+        'sec-ch-ua': headers['sec-ch-ua'],
+        'sec-ch-ua-mobile': headers['sec-ch-ua-mobile'],
+        'sec-ch-ua-platform': headers['sec-ch-ua-platform'],
+        'sec-fetch-dest': headers['sec-fetch-dest'] ?? 'document',
+        'sec-fetch-mode': headers['sec-fetch-mode'] ?? 'navigate',
+        'sec-fetch-site': 'none',
+        'sec-fetch-user': headers['sec-fetch-user'] ?? '?1',
+        'upgrade-insecure-requests': '1',
+        cookie: currentCookie,
+      }
+
+      console.log('===== connectEvolution: Sending headers to Evolution =====')
+      console.log('Username:', username, 'URL:', evolutionEntryUrl.toString())
+      console.log('Header keys:', Object.keys(cleanHeaders).join(', '))
+      for (const key of ['host', 'origin', 'sec-fetch-site']) {
+        console.log(`  ${key}: ${cleanHeaders[key]}`)
+      }
+      console.log('==========================================================')
+
       const fetchRes = await callEvo(evolutionEntryUrl.toString(), {
-        headers: {
-          ...headers,
-          //cookie: evolutionCookie,
-          cookie: currentCookie,
-        },
+        headers: cleanHeaders,
         username,
-        //timeout: 1,
         timeout: 2000,
-        //timeout: 10000,
       })
       // const data = await callHttp2('https://google.com')
 
