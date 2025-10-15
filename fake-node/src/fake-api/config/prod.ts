@@ -9,30 +9,7 @@ export default {
   FAKE_CONFIG_KEY: 'FAKE_CONFIG',
 
   FASTIFY_OPTIONS: {
-    logger: {
-      serializers: {
-        res(reply) {
-          // The default
-          return {
-            statusCode: reply.statusCode,
-          }
-        },
-        req(request) {
-          return {
-            method: request.method,
-            url: request.url,
-            path: request.routeOptions.url,
-            parameters: request.params,
-            // Including the headers in the log could be in violation
-            // of privacy laws, e.g. GDPR. You should use the "redact" option to
-            // remove sensitive fields. It could also leak authentication data in
-            // the logs.
-            body: request.body,
-            headers: request.headers,
-          }
-        },
-      },
-    },
+    logger: false,
   },
 
   fakeDragonTiger: false,

@@ -223,12 +223,9 @@ export async function defaultAppRouter(req: FastifyRequest, reply: FastifyReply)
       return await reply.headers(res.recvHeaders).status(res.status).send(res.data)
     }
 
-    //const selfHost = new URL(config.SELF_URL).host
-    //const selfHost = 'seoa-mdp-e08.a-evo-games.com'
-    const selfHost = config.VIDEO_HOST
-    for (let i of data.streams) {
-      i.url = i.url.replace(loginData.streamHost2, selfHost)
-    }
+    // 사용자가 Evolution 영상 서버에 직접 연결 (URL 교체하지 않음)
+    console.log('defaultAppRouter', loginData?.username, req.url, 'streamHost2:', loginData.streamHost2)
+    console.log('defaultAppRouter streams:', data.streams.map(s => s.url))
 
     return await reply.headers(res.recvHeaders).status(res.status).send(res.data)
   } catch (err) {

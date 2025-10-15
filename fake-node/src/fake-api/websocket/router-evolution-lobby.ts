@@ -95,7 +95,8 @@ export async function lobbyVideo(
     globalStore.setStreamHost1(streamHost1)
   }
 
-  packet.args.video.vmh = config.VIDEO_HOST
+  // 사용자가 Evolution 영상 서버에 직접 연결 (URL 교체하지 않음)
+  console.log('lobbyVideo - Evolution original vmh:', packet.args.video.vmh)
 
   /*await mongoDB.fakeLoginData.updateOne(
     {
@@ -107,10 +108,6 @@ export async function lobbyVideo(
       },
     },
   )*/
-
-  for (const key in packet.args.video) {
-    packet.args.video[key] = packet.args.video[key].replace('https://' + streamHost1, selfUrl)
-  }
 
   return packet
 }

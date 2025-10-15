@@ -294,11 +294,22 @@ export async function loginSwix(username: string, headers: Record<string, string
     delete newHeaders['x-forwarded-for']
     delete newHeaders['x-forwarded-proto']
     delete newHeaders['x-forwarded-port']
+    delete newHeaders['x-forwarded-host']
+    delete newHeaders['x-real-ip']
     delete newHeaders['x-amzn-trace-id']
     delete newHeaders['if-none-match']
     delete newHeaders['if-modified-since']
     delete newHeaders['host']
     delete newHeaders['cookie']
+    delete newHeaders['origin']
+
+    console.log('===== loginSwix: Sending headers to Evolution =====')
+    console.log('URL:', linkUrl)
+    console.log('Header keys:', Object.keys(newHeaders).join(', '))
+    for (const key of ['host', 'origin', 'referer', 'x-forwarded-host', 'x-real-ip', 'user-agent']) {
+      if (newHeaders[key]) console.log(`  ${key}: ${newHeaders[key]}`)
+    }
+    console.log('===================================================')
 
     const linkRes = await axios
       .get(linkUrl, {
