@@ -31,7 +31,12 @@ export async function connectionVideo(ws: WebSocket, request: FastifyRequest) {
     })
     // on close 도 위쪽에 있어야 웹소켓이 바로 끊겼을 때 메시지를 수신 가능하다.
     ws.on('close', (code, reason) => {
-      console.log('client video ws close', uuid, code, reason)
+      console.log('client video ws close', {
+        username,
+        uuid,
+        code,
+        reason: reason.toString(),
+      })
       try {
         if (videoWs?.readyState === WebSocket.OPEN) {
           videoWs?.close(0, reason)
@@ -67,14 +72,14 @@ export async function connectionVideo(ws: WebSocket, request: FastifyRequest) {
     const evolutionWsUrl = requestUrl.href
 
     const sendHeaders = {
-      CacheControl: 'no-cache',
+      'Cache-Control': 'no-cache',
       Cookie: request.headers.cookie ?? '',
       Pragma: 'no-cache',
-      Origin: loginData.evolutionUrl,
+      Origin: `https://${requestUrl.host}`,
       Host: requestUrl.host,
       'User-Agent': request.headers['user-agent'],
-      'Accep-Encoding': request.headers['accept-encoding'],
-      'Accep-Language': request.headers['accept-language'],
+      'Accept-Encoding': request.headers['accept-encoding'],
+      'Accept-Language': request.headers['accept-language'],
     }
 
     console.log('connected video socket', username, request.url, evolutionWsUrl, JSON.stringify(sendHeaders))
@@ -119,7 +124,13 @@ export async function connectionVideo(ws: WebSocket, request: FastifyRequest) {
       )
     })
     videoWs.on('close', (code, reason) => {
-      console.log('videoWs close', uuid, code, reason)
+      console.log('videoWs close', {
+        username,
+        uuid,
+        code,
+        reason: reason.toString(),
+        evolutionWsUrl,
+      })
       if (ws.readyState === WebSocket.OPEN) {
         ws?.close(code, reason)
       }
