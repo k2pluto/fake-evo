@@ -287,35 +287,38 @@ export async function loginSwix(username: string, headers: Record<string, string
 
     const linkUrl = matchRes[0].substring(0, matchRes[0].length - 1)
 
-    const newHeaders = { ...headers }
-
-    delete newHeaders['content-length']
-    delete newHeaders.referer
-    delete newHeaders['x-forwarded-for']
-    delete newHeaders['x-forwarded-proto']
-    delete newHeaders['x-forwarded-port']
-    delete newHeaders['x-forwarded-host']
-    delete newHeaders['x-real-ip']
-    delete newHeaders['x-amzn-trace-id']
-    delete newHeaders['if-none-match']
-    delete newHeaders['if-modified-since']
-    delete newHeaders['host']
-    delete newHeaders['cookie']
-    delete newHeaders['origin']
+    // Evolution 도메인으로 직접 연결한 것처럼 헤더 재구성 (프록시 증거 모두 제거)
+    const url = new URL(linkUrl)
+    const newHeaders = {
+      host: url.host,                                      // Evolution host
+      origin: url.origin,                                  // Evolution origin
+      accept: headers['accept'],
+      'accept-encoding': headers['accept-encoding'] ?? 'gzip, deflate, br',
+      'accept-language': headers['accept-language'],
+      'user-agent': headers['user-agent'],
+      'sec-ch-ua': headers['sec-ch-ua'],
+      'sec-ch-ua-mobile': headers['sec-ch-ua-mobile'],
+      'sec-ch-ua-platform': headers['sec-ch-ua-platform'],
+      'sec-fetch-dest': headers['sec-fetch-dest'] ?? 'document',
+      'sec-fetch-mode': headers['sec-fetch-mode'] ?? 'navigate',
+      'sec-fetch-site': 'none',                            // 직접 연결
+      'sec-fetch-user': headers['sec-fetch-user'] ?? '?1',
+      'upgrade-insecure-requests': '1',
+      'connection': 'keep-alive',
+      // 프록시 증거 제거: x-forwarded-*, x-real-ip, cf-*, cdn-loop, via, referer, cookie 모두 제외
+    }
 
     console.log('===== loginSwix: Sending headers to Evolution =====')
     console.log('URL:', linkUrl)
     console.log('Header keys:', Object.keys(newHeaders).join(', '))
-    for (const key of ['host', 'origin', 'referer', 'x-forwarded-host', 'x-real-ip', 'user-agent']) {
+    for (const key of ['host', 'origin', 'referer', 'x-forwarded-host', 'x-real-ip', 'user-agent', 'sec-fetch-site']) {
       if (newHeaders[key]) console.log(`  ${key}: ${newHeaders[key]}`)
     }
     console.log('===================================================')
 
     const linkRes = await axios
       .get(linkUrl, {
-        headers: {
-          ...newHeaders,
-        },
+        headers: newHeaders,
         maxRedirects: 0,
       })
       .catch((err) => {
