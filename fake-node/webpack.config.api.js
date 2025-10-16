@@ -2,6 +2,7 @@ const path = require('path')
 const nodeExternals = require('webpack-node-externals')
 const CopyPlugin = require('copy-webpack-plugin')
 const { DefinePlugin } = require('webpack')
+const TerserPlugin = require('terser-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 console.log(__dirname)
@@ -22,6 +23,20 @@ module.exports = {
   externals: [nodeExternals()],
   // inline-source-map을 켜두면 소스 용량이 너무 커져서 cold launch 시간이 너무 오래걸림
   devtool: STAGE_ENV === 'prod' ? undefined : 'inline-source-map',
+  // console.log 제거 설정
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          compress: {
+            drop_console: true, // 모든 console.* 제거
+            pure_funcs: ['console.log', 'console.info', 'console.debug'], // 특정 console 메서드만 제거
+          },
+        },
+      }),
+    ],
+  },
   //devtool: 'inline-source-map',
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],

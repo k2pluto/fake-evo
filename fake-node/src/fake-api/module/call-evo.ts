@@ -4,6 +4,7 @@ import { callAxios } from './call-axios'
 
 export interface CallEvoOptions {
   username?: string
+  evolutionUrl?: string  // Evolution 메인 도메인 (예: https://babylonvg.evo-games.com)
   headers?: Record<string, string | string[]>
   responseType?: ResponseType
   method?: Method

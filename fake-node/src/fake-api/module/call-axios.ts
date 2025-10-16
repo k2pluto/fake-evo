@@ -350,8 +350,38 @@ async function callCustomAgent(
   }
 
   console.log('=== CUSTOM AGENT RESPONSE ===')
+  console.log('Req url :', urlstr)
   console.log('Status:', res.status)
   console.log('Response headers:', JSON.stringify(res.headers, null, 2))
+
+  // JWT videoToken 추적 로그 (string, object, Buffer 모두 지원)
+  let dataStr = ''
+  if (typeof res.data === 'string') {
+    dataStr = res.data
+  } else if (Buffer.isBuffer(res.data)) {
+    dataStr = res.data.toString('utf-8')
+  } else if (typeof res.data === 'object') {
+    dataStr = JSON.stringify(res.data)
+  }
+
+  if (dataStr) {
+    const videoTokenMatch = dataStr.match(/videoToken[=:]([^&"\s,}]+)/i)
+    if (videoTokenMatch) {
+      console.log('🔍 JWT videoToken FOUND in custom-agent response!')
+      console.log('   URL:', urlstr)
+      console.log('   Token preview:', videoTokenMatch[1].substring(0, 50) + '...')
+      try {
+        const parts = videoTokenMatch[1].split('.')
+        if (parts.length === 3) {
+          const payload = JSON.parse(Buffer.from(parts[1], 'base64').toString())
+          console.log('   JWT payload dlh:', payload.dlh)
+          console.log('   JWT payload sub:', payload.sub)
+        }
+      } catch (e) {
+        console.log('   (Failed to decode JWT)')
+      }
+    }
+  }
 
   // HTML 응답에서 WebSocket URL을 프록시 서버로 리디렉션
   if (typeof res.data === 'string' && res.headers['content-type']?.includes('text/html')) {
@@ -419,6 +449,29 @@ async function callUndici(
   console.log('Response headers:', JSON.stringify(Object.fromEntries(Object.entries(undiciRes.headers)), null, 2))
 
   let rawData = Buffer.from(await undiciRes.body.arrayBuffer())
+
+  // JWT videoToken 추적 로그 (압축 해제 전 확인)
+  try {
+    const rawDataStr = rawData.toString('utf-8')
+    const videoTokenMatch = rawDataStr.match(/videoToken[=:]([^&"\s,}]+)/i)
+    if (videoTokenMatch) {
+      console.log('🔍 JWT videoToken FOUND in undici response!')
+      console.log('   URL:', urlstr)
+      console.log('   Token preview:', videoTokenMatch[1].substring(0, 50) + '...')
+      try {
+        const parts = videoTokenMatch[1].split('.')
+        if (parts.length === 3) {
+          const payload = JSON.parse(Buffer.from(parts[1], 'base64').toString())
+          console.log('   JWT payload dlh:', payload.dlh)
+          console.log('   JWT payload sub:', payload.sub)
+        }
+      } catch (e) {
+        console.log('   (Failed to decode JWT)')
+      }
+    }
+  } catch (e) {
+    // Buffer to string 실패시 무시
+  }
 
   // 압축 해제 처리
   const contentEncoding = undiciRes.headers['content-encoding'] as string
@@ -494,6 +547,35 @@ async function callAxiosBackend(
   console.log('Status:', res.status)
   console.log('Response headers:', JSON.stringify(res.headers, null, 2))
 
+  // JWT videoToken 추적 로그 (string, object, Buffer 모두 지원)
+  let dataStr = ''
+  if (typeof res.data === 'string') {
+    dataStr = res.data
+  } else if (Buffer.isBuffer(res.data)) {
+    dataStr = res.data.toString('utf-8')
+  } else if (typeof res.data === 'object') {
+    dataStr = JSON.stringify(res.data)
+  }
+
+  if (dataStr) {
+    const videoTokenMatch = dataStr.match(/videoToken[=:]([^&"\s,}]+)/i)
+    if (videoTokenMatch) {
+      console.log('🔍 JWT videoToken FOUND in axios response!')
+      console.log('   URL:', urlstr)
+      console.log('   Token preview:', videoTokenMatch[1].substring(0, 50) + '...')
+      try {
+        const parts = videoTokenMatch[1].split('.')
+        if (parts.length === 3) {
+          const payload = JSON.parse(Buffer.from(parts[1], 'base64').toString())
+          console.log('   JWT payload dlh:', payload.dlh)
+          console.log('   JWT payload sub:', payload.sub)
+        }
+      } catch (e) {
+        console.log('   (Failed to decode JWT)')
+      }
+    }
+  }
+
   // HTML 응답에서 WebSocket URL을 프록시 서버로 리디렉션
   if (typeof res.data === 'string' && res.headers['content-type']?.includes('text/html')) {
     const evolutionHost = new URL(urlstr).host
@@ -524,7 +606,7 @@ export async function callAxios(
   urlstr: string,
   options: CallEvoOptions,
 ): Promise<CallEvoResponse> {
-  const { headers, username } = options
+  const { headers, username, evolutionUrl } = options
 
   // ==========================================
   // MODE 1: curl-impersonate (TLS 1.3 강제)
@@ -557,13 +639,28 @@ export async function callAxios(
     }
 
     const newCookie = headers.cookie
+    const fixEvourl = 'https://babylonvg.evo-games.com'
+    // Origin과 Referer는 Evolution 메인 도메인으로 설정 (비디오 서버에 요청해도 Origin은 메인 도메인)
+    const mainOrigin = evolutionUrl || fixEvourl
+    const referer = `${mainOrigin}/`
 
-    const referer = referers[stringToHashNumber(username) % referers.length]
+    // 디버깅: evolutionUrl 전달 여부 확인
+    console.log(`🔍 callAxios Origin setting:`)
+    console.log(`   Request URL: ${urlstr}`)
+    console.log(`   evolutionUrl param: ${evolutionUrl || 'NOT PROVIDED'}`)
+    console.log(`   url.origin: ${url.origin}`)
+    console.log(`   Final origin: ${mainOrigin}`)
+
+    if (evolutionUrl && evolutionUrl !== url.origin) {
+      console.log(`🔧 Using Evolution main domain for Origin/Referer:`)
+      console.log(`   Request URL: ${urlstr}`)
+      console.log(`   Origin: ${mainOrigin} (not ${url.origin})`)
+    }
 
     newHeaders = {
       host: url.host,
-      origin: url.origin,  // 항상 Evolution origin (프록시 증거 제거)
-      ...(headers.referer != null && { referer }),
+      origin: mainOrigin,  // Evolution 메인 도메인 (예: https://babylonvg.evo-games.com)
+      ...(headers.referer != null && { referer }),  // Evolution 메인 도메인 referer
 
       accept: headers['accept'],
       'accept-encoding': headers['accept-encoding'] ?? 'gzip, deflate, br',

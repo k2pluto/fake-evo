@@ -153,8 +153,39 @@ async function defaultCdnRouter(req: FastifyRequest, reply: FastifyReply) {
   try {
     const url = `https://${streamHost1}${req.originalUrl}`
 
+    // Evolution CDN에 요청할 때 헤더를 Evolution 도메인으로 정리 (프록시 증거 제거)
+    const cleanHeaders = {
+      'accept': req.headers['accept'],
+      'accept-encoding': req.headers['accept-encoding'] ?? 'gzip, deflate, br',
+      'accept-language': req.headers['accept-language'],
+      'user-agent': req.headers['user-agent'],
+      'sec-ch-ua': req.headers['sec-ch-ua'],
+      'sec-ch-ua-mobile': req.headers['sec-ch-ua-mobile'],
+      'sec-ch-ua-platform': req.headers['sec-ch-ua-platform'],
+      'sec-fetch-dest': req.headers['sec-fetch-dest'] ?? 'empty',
+      'sec-fetch-mode': req.headers['sec-fetch-mode'] ?? 'cors',
+      'sec-fetch-site': 'none',  // 직접 연결로 위장
+      'priority': req.headers['priority'],
+      'cookie': req.headers['cookie'],
+    }
+
+    // undefined 값 제거
+    Object.keys(cleanHeaders).forEach(key => {
+      if (cleanHeaders[key] === undefined) {
+        delete cleanHeaders[key]
+      }
+    })
+
+    console.log('===== defaultCdnRouter: Cleaned headers for Evolution CDN =====')
+    console.log('Username:', loginData?.username, 'URL:', url)
+    console.log('Original Referer:', req.headers['referer'], '(removed)')
+    console.log('sec-fetch-site:', cleanHeaders['sec-fetch-site'])
+    console.log('================================================================')
+
     const res = await callEvo(url, {
-      headers: req.headers,
+      headers: cleanHeaders,
+      username: loginData?.username,
+      evolutionUrl: loginData.evolutionUrl,  // Evolution 메인 도메인 전달
     })
 
     if (res.data?.indexOf('http') < 0) {
@@ -223,9 +254,19 @@ export async function defaultAppRouter(req: FastifyRequest, reply: FastifyReply)
       return await reply.headers(res.recvHeaders).status(res.status).send(res.data)
     }
 
-    // 사용자가 Evolution 영상 서버에 직접 연결 (URL 교체하지 않음)
-    console.log('defaultAppRouter', loginData?.username, req.url, 'streamHost2:', loginData.streamHost2)
-    console.log('defaultAppRouter streams:', data.streams.map(s => s.url))
+    // fake-evo가 비디오 WebSocket을 중계하도록 URL을 fake-evo 주소로 변경
+    const selfUrl = getSelfUrl(req)
+    const selfHost = new URL(selfUrl).host
+    console.log('🎥 Video stream URLs (proxied through fake-evo):')
+    console.log(`   selfUrl: ${selfUrl}`)
+    console.log(`   Original streamHost2: ${loginData.streamHost2}`)
+    console.log(`   Replacing with selfHost: ${selfHost}`)
+
+    for (let i of data.streams) {
+      const originalUrl = i.url
+      i.url = i.url.replace(loginData.streamHost2, selfHost)
+      console.log(`   ${originalUrl} → ${i.url}`)
+    }
 
     return await reply.headers(res.recvHeaders).status(res.status).send(res.data)
   } catch (err) {
@@ -388,15 +429,6 @@ export function registerV2Controller(fastify: FastifyInstance) {
   // set-cookie path가 지정되어 있지 않아서 /debug/entry 이렇게 사용하면 set-cookie가 정상적으로 작동하지 않는다.
   fastify.get('/debugEntry', async (req, reply) => {
     const { username } = req.query as { username: string }
-
-    // Chrome의 Prefetch/Prerender 요청 무시
-    const purpose = req.headers['purpose'] as string
-    const secPurpose = req.headers['sec-purpose'] as string
-
-    if (purpose === 'prefetch' || secPurpose?.includes('prefetch') || secPurpose?.includes('prerender')) {
-      console.log(`🔄 Ignoring prefetch request for ${username}:`, purpose || secPurpose)
-      return reply.status(204).send() // No Content
-    }
 
     return await entryGame({
       username,
@@ -656,6 +688,7 @@ export function registerV2Controller(fastify: FastifyInstance) {
       const res = await callEvo(`${evolutionUrl}${req.url}`, {
         headers: req.headers,
         responseType: 'arraybuffer',
+        evolutionUrl: evolutionUrl,  // Evolution 메인 도메인 전달
       })
       await reply.header('Content-Type', res.recvHeaders['content-type']).status(res.status).send(res.data)
     } catch (err) {
@@ -684,6 +717,7 @@ export function registerV2Controller(fastify: FastifyInstance) {
       const res = await callEvo(`${evolutionUrl}${req.url}`, {
         headers: req.headers,
         method: 'POST',
+        evolutionUrl: evolutionUrl,  // Evolution 메인 도메인 전달
       })
       await reply.header('Content-Type', res.recvHeaders['content-type']).status(res.status).send(res.data)
     } catch (err) {
