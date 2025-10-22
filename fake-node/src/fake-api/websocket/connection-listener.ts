@@ -94,6 +94,17 @@ export async function connectionListener(ws: WebSocket, request: FastifyRequest)
 
     const { headers } = request
 
+    // Firefox는 Akamai WAF가 TLS fingerprint로 차단하므로 Chrome으로 위장
+    const originalUserAgent = headers['user-agent'] as string
+    const isFirefox = originalUserAgent?.toLowerCase().includes('firefox')
+
+    let spoofedUserAgent = originalUserAgent
+    if (isFirefox) {
+      // Firefox → Chrome User-Agent로 변경 (Akamai 우회)
+      spoofedUserAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'
+      console.log('[Akamai Bypass] Firefox → Chrome User-Agent')
+    }
+
     const sendHeaders = {
       //...request.headers,
       host: evolutionUrl.host,
@@ -105,28 +116,65 @@ export async function connectionListener(ws: WebSocket, request: FastifyRequest)
       ...(headers['content-type'] != null && { ['content-type']: headers['content-type'] as string }),
       ...(headers.priority != null && { priority: headers.priority as string }),
 
-      'user-agent': headers['user-agent'] as string,
+      'user-agent': spoofedUserAgent,
       ...(headers.cookie != null && { cookie: headers.cookie as string }),
 
       connection: 'upgrade',
+      upgrade: 'websocket',
+
+      // Safari/Firefox 호환성: sec-websocket 헤더들을 명시적으로 전달
+      ...(headers['sec-websocket-version'] != null && { 'sec-websocket-version': headers['sec-websocket-version'] as string }),
+      ...(headers['sec-websocket-key'] != null && { 'sec-websocket-key': headers['sec-websocket-key'] as string }),
+      ...(headers['sec-websocket-extensions'] != null && { 'sec-websocket-extensions': headers['sec-websocket-extensions'] as string }),
+      ...(headers['sec-websocket-protocol'] != null && { 'sec-websocket-protocol': headers['sec-websocket-protocol'] as string }),
+
+      // Safari/Firefox sec-fetch-* 헤더 (Akamai WAF 통과용)
+      ...(headers['sec-fetch-site'] != null && { 'sec-fetch-site': headers['sec-fetch-site'] as string }),
+      ...(headers['sec-fetch-mode'] != null && { 'sec-fetch-mode': headers['sec-fetch-mode'] as string }),
+      ...(headers['sec-fetch-dest'] != null && { 'sec-fetch-dest': headers['sec-fetch-dest'] as string }),
+
+      // Safari 추가 헤더
+      ...(headers['sec-ch-ua'] != null && { 'sec-ch-ua': headers['sec-ch-ua'] as string }),
+      ...(headers['sec-ch-ua-mobile'] != null && { 'sec-ch-ua-mobile': headers['sec-ch-ua-mobile'] as string }),
+      ...(headers['sec-ch-ua-platform'] != null && { 'sec-ch-ua-platform': headers['sec-ch-ua-platform'] as string }),
     }
 
+    // Use browser-specific pooled agent for better TLS fingerprint consistency
+    const userAgent = headers['user-agent'] as string
+    // Firefox는 Chrome TLS fingerprint 사용 (Akamai 우회)
+    const customAgent = getOrCreateBrowserAgent(evolutionUrl.host, isFirefox ? spoofedUserAgent : userAgent)
+
+    // 브라우저 감지 로그
+    const detectedBrowser = userAgent?.toLowerCase().includes('safari') && !userAgent?.toLowerCase().includes('chrome')
+      ? 'Safari'
+      : userAgent?.toLowerCase().includes('firefox')
+      ? 'Firefox'
+      : 'Chrome'
+
     console.log(
-      'ws client connected',
+      `ws client connected [${detectedBrowser}]`,
       username,
       type,
       tableId,
       socketData.uuid,
       evolutionWsUrl,
-      JSON.stringify(sendHeaders),
     )
+
+    // Safari/Firefox는 상세 헤더 로그
+    if (detectedBrowser === 'Safari' || detectedBrowser === 'Firefox') {
+      console.log(`[${detectedBrowser}] Request Headers:`, JSON.stringify({
+        'user-agent': sendHeaders['user-agent'],
+        'sec-fetch-site': sendHeaders['sec-fetch-site'],
+        'sec-fetch-mode': sendHeaders['sec-fetch-mode'],
+        'sec-fetch-dest': sendHeaders['sec-fetch-dest'],
+        'sec-websocket-version': sendHeaders['sec-websocket-version'],
+        'sec-websocket-key': sendHeaders['sec-websocket-key']?.substring(0, 20) + '...',
+        'sec-websocket-extensions': sendHeaders['sec-websocket-extensions'],
+      }, null, 2))
+    }
     //console.log('ws client connected header', JSON.stringify(request.headers))
 
     //updateTlsSuites(1000)
-
-    // Use browser-specific pooled agent for better TLS fingerprint consistency
-    const userAgent = headers['user-agent'] as string
-    const customAgent = getOrCreateBrowserAgent(evolutionUrl.host, userAgent)
 
     const evolutionWs = new WebSocket(evolutionWsUrl, {
       headers: sendHeaders,

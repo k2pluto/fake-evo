@@ -1,21 +1,14 @@
 // gateway.js - main.gangnam555.com 게이트웨이(리다이렉트 전용, DB 없음)
 const express = require('express');
-const cookieParser = require('cookie-parser');
-const crypto = require('crypto');
 
 const app = express();
-app.use(cookieParser());
 
 // 환경변수/기본값
 const NODES = (process.env.NODES || 'evo01.gangnam555.com,evo02.gangnam555.com,evo03.gangnam555.com')
   .split(',').map(s => s.trim()).filter(Boolean);
 const HEALTH_PATH = process.env.HEALTH_PATH || '/health';
 const HEALTH_INTERVAL_MS = parseInt(process.env.HEALTH_INTERVAL_MS || '15000', 10);
-const COOKIE_NAME = process.env.COOKIE_NAME || 'assigned';
-const COOKIE_MAX_AGE = parseInt(process.env.COOKIE_MAX_AGE || String(1000*60*60*24*30), 10);
 const REQUIRE_HTTPS = String(process.env.REQUIRE_HTTPS || 'true').toLowerCase() === 'true';
-const COOKIE_SAME_SITE = process.env.COOKIE_SAME_SITE || 'Lax';
-const COOKIE_SECURE = String(process.env.COOKIE_SECURE || (REQUIRE_HTTPS ? 'true' : 'false')).toLowerCase() === 'true';
 const PORT = parseInt(process.env.PORT || '3000', 10);
 
 // http→https 강제(프록시 뒤 인식용)
@@ -29,6 +22,8 @@ if (REQUIRE_HTTPS) {
 }
 
 let healthy = new Set(NODES);
+let roundRobinIndex = 0;
+
 async function refreshHealth() {
   const results = await Promise.allSettled(NODES.map(async host => {
     const url = `https://${host}${HEALTH_PATH}`;
@@ -44,58 +39,35 @@ async function refreshHealth() {
 setInterval(() => refreshHealth().catch(()=>{}), HEALTH_INTERVAL_MS);
 refreshHealth().catch(()=>{});
 
-function pickNode(key) {
-  const h = crypto.createHash('md5').update(String(key)).digest();
-  for (let i=0; i<h.length; i++) {
-    const idx = h[i] % NODES.length;
-    const cand = NODES[idx];
-    if (healthy.has(cand)) return cand;
-  }
-  return NODES[0];
+// Round Robin으로 노드 선택 (완전 균등 분산)
+function pickNode() {
+  const healthyArray = Array.from(healthy);
+  if (healthyArray.length === 0) return NODES[0];
+
+  const node = healthyArray[roundRobinIndex % healthyArray.length];
+  roundRobinIndex++;
+  return node;
 }
 
-// 개발용: /debugEntry (username 기반)
+// 개발용: /debugEntry
 app.get('/debugEntry', (req, res) => {
   const qs = req.originalUrl.includes('?') ? ('?' + req.originalUrl.split('?')[1]) : '';
-  const assigned = req.cookies?.[COOKIE_NAME];
-  let target = (assigned && healthy.has(assigned)) ? assigned : null;
 
-  if (!target) {
-    const key = req.query.username || req.cookies?.uid || req.ip;
-    target = pickNode(key);
-  }
+  // 매번 Round Robin으로 균등 분산 (쿠키 사용 안 함)
+  const target = pickNode();
 
-  res.cookie(COOKIE_NAME, target, {
-    httpOnly: true,
-    sameSite: COOKIE_SAME_SITE,   // None이면 Secure 필수
-    secure: COOKIE_SECURE,
-    maxAge: COOKIE_MAX_AGE,
-    path: '/',
-  });
-
+  console.log(`[debugEntry] -> ${target}`);
   res.redirect(302, `https://${target}/debugEntry${qs}`);
 });
 
-// 운영용: /entry (authToken 기반)
+// 운영용: /entry
 app.get('/entry', (req, res) => {
   const qs = req.originalUrl.includes('?') ? ('?' + req.originalUrl.split('?')[1]) : '';
-  const assigned = req.cookies?.[COOKIE_NAME];
-  let target = (assigned && healthy.has(assigned)) ? assigned : null;
 
-  if (!target) {
-    // authToken으로 분산 (authToken이 없으면 IP 사용)
-    const key = req.query.authToken || req.cookies?.uid || req.ip;
-    target = pickNode(key);
-  }
+  // 매번 Round Robin으로 균등 분산 (쿠키 사용 안 함)
+  const target = pickNode();
 
-  res.cookie(COOKIE_NAME, target, {
-    httpOnly: true,
-    sameSite: COOKIE_SAME_SITE,
-    secure: COOKIE_SECURE,
-    maxAge: COOKIE_MAX_AGE,
-    path: '/',
-  });
-
+  console.log(`[entry] -> ${target}`);
   res.redirect(302, `https://${target}/entry${qs}`);
 });
 
