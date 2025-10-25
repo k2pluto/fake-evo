@@ -30,8 +30,8 @@ module.exports = {
       new TerserPlugin({
         terserOptions: {
           compress: {
-            drop_console: true, // 모든 console.* 제거
-            pure_funcs: ['console.log', 'console.info', 'console.debug'], // 특정 console 메서드만 제거
+            drop_console: false, // console.* 유지
+            pure_funcs: [], // console 메서드 제거하지 않음
           },
         },
       }),

@@ -388,17 +388,26 @@ export async function entryGame(options: EntryGameOptions) {
   let userId: string
 
   try {
-    console.log('entryGame', options.username, options.authToken, options.ip)
+    console.log('===== entryGame START =====')
+    console.log('Options:', { username: options.username, authToken: options.authToken, ip: options.ip })
+
+    console.log(`Calling ${authToken != null ? 'balanceByToken' : 'balanceByUsername'}`)
     const balanceRes = await (authToken != null
       ? authManager.balanceByToken(authToken)
       : authManager.balanceByUsername(options.username))
 
+    console.log('balanceRes:', JSON.stringify(balanceRes))
+    console.log('balanceRes.status:', balanceRes.status)
+    console.log('CommonReturnType.Success:', CommonReturnType.Success)
+
     if (balanceRes.status !== CommonReturnType.Success) {
+      console.log('❌ Balance check failed - throwing 4444 error')
       throw {
         status: 4444,
         message: '파라미터 에러입니다. 다시 한번 확인해 주세요.',
       }
     }
+    console.log('✅ Balance check passed')
 
     const userInfo = balanceRes.user
     const { agentCode, userId, agentId } = userInfo

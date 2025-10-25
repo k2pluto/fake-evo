@@ -43,6 +43,11 @@ interface TransactionBody {
 }
 
 export async function callSeamlessBalance(seamlessUrl: string, username: string): Promise<BalanceResult> {
+  console.log('===== callSeamlessBalance START =====')
+  console.log('URL:', seamlessUrl)
+  console.log('Username:', username)
+  console.log('Request body:', { packet: 'BALANCE', username })
+
   try {
     const seamlessRes = await axios.post(
       seamlessUrl,
@@ -55,21 +60,34 @@ export async function callSeamlessBalance(seamlessUrl: string, username: string)
       },
     )
 
+    console.log('Seamless API response status:', seamlessRes.status)
+    console.log('Seamless API response data:', JSON.stringify(seamlessRes.data))
+
     let transRes = seamlessRes.data
     if (transRes?.status === null) {
+      console.log('⚠️ transRes.status is null, returning SeamlessInternalError')
       transRes = {
         status: CommonReturnType.SeamlessInternalError,
       }
     }
 
+    console.log('Final transRes:', JSON.stringify(transRes))
     return transRes
   } catch (err) {
+    console.log('❌ callSeamlessBalance ERROR')
+    console.log('Error code:', err?.code)
+    console.log('Error message:', err?.message)
+    console.log('Error response status:', err?.response?.status)
+    console.log('Error response data:', JSON.stringify(err?.response?.data))
+
     if (err?.code === 'ECONNABORTED') {
+      console.log('Returning SeamlessNoResponse (timeout)')
       return {
         status: CommonReturnType.SeamlessNoResponse,
       }
     }
 
+    console.log('Returning SeamlessInternalError')
     return {
       status: CommonReturnType.SeamlessInternalError,
     }

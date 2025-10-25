@@ -191,7 +191,7 @@ export class AuthManager {
 
     // seamlessUrl이 있으면 agent의 심리스 서버로 패킷을 날리고 받는다.
     if (walletMode === WalletMode.seamless) {
-      if (seamlessUrl != null && seamlessUrl !== '') {
+      if (seamlessUrl == null || seamlessUrl === '') {
         return {
           status: CommonReturnType.InternalServerError,
         }
@@ -266,7 +266,7 @@ export class AuthManager {
 
     // seamlessUrl이 있으면 agent의 심리스 서버로 패킷을 날리고 받는다.
     if (walletMode === WalletMode.seamless) {
-      if (seamlessUrl != null && seamlessUrl !== '') {
+      if (seamlessUrl == null || seamlessUrl === '') {
         return {
           status: CommonReturnType.InternalServerError,
         }
@@ -294,6 +294,9 @@ export class AuthManager {
       agent?: Agent
     }
   > {
+    console.log('===== balanceByToken START =====')
+    console.log('Input gameToken:', gameToken)
+
     const user = await this.getUser({
       select: [GameMoneyField, 'agentCode', 'agentId', 'userId', 'idx', 'type', 'balanceVersion'],
       where: {
@@ -302,32 +305,48 @@ export class AuthManager {
       },
     })
 
+    console.log('DB query result - user found:', user != null)
+    if (user) {
+      console.log('User info:', { agentCode: user.agentCode, userId: user.userId, agentId: user.agentId })
+    } else {
+      console.log('❌ User NOT found with gameToken:', gameToken)
+    }
+
     if (user == null) {
+      console.log('Returning UserNotFound status')
       return {
         status: CommonReturnType.UserNotFound,
       }
     }
 
     const { agentCode, userId } = user
+    console.log('Fetching agent for agentCode:', agentCode)
     const agent = await this.getAgent(agentCode)
 
     if (agent == null) {
+      console.log('❌ Agent NOT found for agentCode:', agentCode)
       return {
         status: CommonReturnType.UserNotFound,
       }
     }
 
+    console.log('✅ Agent found:', { agentCode: agent.agentCode, walletMode: agent.walletMode })
+
     const { seamlessUrl, walletMode } = agent
 
     // seamlessUrl이 있으면 agent의 심리스 서버로 패킷을 날리고 받는다.
     if (walletMode === WalletMode.seamless) {
-      if (seamlessUrl != null && seamlessUrl !== '') {
+      console.log('Wallet mode: seamless, seamlessUrl:', seamlessUrl)
+      if (seamlessUrl == null || seamlessUrl === '') {
+        console.log('❌ Invalid seamlessUrl configuration - seamlessUrl is empty')
         return {
           status: CommonReturnType.InternalServerError,
         }
       }
 
+      console.log('✅ Calling seamless balance API:', seamlessUrl)
       const res = await callSeamlessBalance(seamlessUrl, userId)
+      console.log('Seamless balance result:', res)
       return {
         ...res,
         user,
@@ -335,6 +354,7 @@ export class AuthManager {
       }
     }
 
+    console.log('✅ Returning Success with balance:', user.balance)
     return {
       status: CommonReturnType.Success,
       balance: user.balance,
