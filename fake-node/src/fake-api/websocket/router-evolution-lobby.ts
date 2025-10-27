@@ -143,7 +143,9 @@ export async function lobbyPreview(
   packet.args.stream.vmh = new URL(selfUrl).host
 
   for (const key in packet.args.stream) {
-    packet.args.stream[key] = packet.args.stream[key].replace('https://' + streamHost1, selfUrl)
+    if (typeof packet.args.stream[key] === 'string') {
+      packet.args.stream[key] = packet.args.stream[key].replace('https://' + streamHost1, selfUrl)
+    }
   }
 
   return packet
