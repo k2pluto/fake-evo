@@ -39,7 +39,7 @@ export async function connectionVideo(ws: WebSocket, request: FastifyRequest) {
       })
       try {
         if (videoWs?.readyState === WebSocket.OPEN) {
-          videoWs?.close(0, reason)
+          videoWs?.close(1000, reason)
         }
       } catch (err) {
         console.log('client video ws close error', uuid, errorToString(err))
