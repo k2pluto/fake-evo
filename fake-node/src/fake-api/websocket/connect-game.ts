@@ -48,7 +48,7 @@ export async function connectGame(
       }
 
       // JWT 포함 여부 확인을 위한 상세 로그
-      if (jsonStr.includes('videoToken') || jsonStr.includes('token') || jsonStr.includes('video')) {
+      if (jsonStr.includes('videoToken') || jsonStr.includes('eyJhbGciOiJS')) {
         console.log('===== GAME WebSocket Message (Video/Token) =====')
         console.log('Username:', username)
         console.log('TableId:', tableId)

@@ -22,7 +22,7 @@ export async function connectLobby(socketData: SocketData, clientWs: WebSocket, 
       const jsonObj = JSON.parse(jsonStr)
 
       // JWT 포함 여부 확인을 위한 상세 로그
-      if (jsonStr.includes('videoToken') || jsonStr.includes('token') || jsonStr.includes('video')) {
+      if (jsonStr.includes('videoToken') || jsonStr.includes('eyJhbGciOiJS')) {
         console.log('===== LOBBY WebSocket Message (Video/Token) =====')
         console.log('Username:', socketData.username)
         console.log('Type:', jsonObj.type)

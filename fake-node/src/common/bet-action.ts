@@ -24,6 +24,7 @@ export const FakeChipDict = {
   1000000: 100000,
 }
 
+
 export type SaveBetType = PlayerBetRequest & {
   Undo?: boolean
   proceed?: boolean

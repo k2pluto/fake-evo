@@ -373,21 +373,45 @@ export async function loginSwix(username: string, headers: Record<string, string
     console.log('Swix URL:', res.gameUrl)
 
     // Swix 페이지도 curl-impersonate로 요청 (Cloudflare 우회)
+    // followRedirects = false: 첫 번째 요청도 302를 받아야 함!
     const swixHeaders = {
       'user-agent': headers['user-agent'] as string,
       'accept': headers['accept'] as string,
       'accept-language': headers['accept-language'] as string,
       'accept-encoding': 'gzip, deflate, br',
     }
-    const swixRes = await curlImpersonate(res.gameUrl, swixHeaders)
+    const swixRes = await curlImpersonate(res.gameUrl, swixHeaders, false)
 
     console.log('Swix response status:', swixRes.status)
     console.log('Swix response headers:', JSON.stringify(swixRes.headers))
 
-    // Swix에서 받은 쿠키 추출 (curl stderr에서 set-cookie 파싱 필요)
-    const swixCookies = undefined // curl-impersonate는 set-cookie를 헤더로 파싱 안함
-    console.log('Swix cookies:', swixCookies)
+    // 302 리다이렉트를 받았는지 확인
+    if (swixRes.status === 302 && swixRes.headers.location) {
+      // 302로 Evolution URL을 받음 - 이것이 정상 흐름
+      const linkUrl = swixRes.headers.location
+      console.log('✅ Got 302 redirect to Evolution URL:', linkUrl)
 
+      // 이제 Evolution URL로 다시 요청 (여기서도 302를 받아야 함)
+      const evolutionRes = await curlImpersonate(linkUrl, swixHeaders, false)
+
+      console.log('Evolution response status:', evolutionRes.status)
+      console.log('Evolution Location header:', evolutionRes.headers.location)
+
+      if (evolutionRes.status === 302 && evolutionRes.headers.location) {
+        res.gameUrl = evolutionRes.headers.location
+        res.status = 0
+        console.log('✅ Final game URL:', res.gameUrl)
+        return res
+      } else {
+        throw {
+          status: 100,
+          message: 'Evolution did not return 302 redirect',
+        }
+      }
+    }
+
+    // 200 OK를 받은 경우 - HTML에서 URL 추출 (기존 로직)
+    console.log('⚠️ Got 200 OK instead of 302, trying to extract URL from HTML')
     const matchRes = swixRes.data.match(/https:\/\/play[^"]*"/g)
 
     if (matchRes == null || matchRes.length === 0) {
@@ -400,24 +424,10 @@ export async function loginSwix(username: string, headers: Record<string, string
     }
 
     const linkUrl = matchRes[0].substring(0, matchRes[0].length - 1)
-    console.log('✅ Extracted Evolution URL:', linkUrl)
+    console.log('✅ Extracted Evolution URL from HTML:', linkUrl)
 
     // Evolution 도메인으로 직접 연결한 것처럼 헤더 재구성 (프록시 증거 모두 제거)
     const url = new URL(linkUrl)
-
-    // Swix 쿠키를 Evolution 도메인용 쿠키로 변환
-    let cookieHeader = ''
-    if (swixCookies && swixCookies.length > 0) {
-      // Set-Cookie 헤더에서 쿠키 이름=값만 추출
-      cookieHeader = swixCookies
-        .map(cookie => {
-          const match = cookie.match(/^([^=]+=[^;]+)/)
-          return match ? match[1] : ''
-        })
-        .filter(Boolean)
-        .join('; ')
-      console.log('Cookie header to send:', cookieHeader)
-    }
 
     const newHeaders = {
       host: url.host,                                      // Evolution host
@@ -435,7 +445,6 @@ export async function loginSwix(username: string, headers: Record<string, string
       'sec-fetch-user': headers['sec-fetch-user'] ?? '?1',
       'upgrade-insecure-requests': '1',
       'connection': 'keep-alive',
-      ...(cookieHeader && { cookie: cookieHeader }),       // Swix에서 받은 쿠키 포함
       // 프록시 증거 제거: x-forwarded-*, x-real-ip, cf-*, cdn-loop, via, referer 제외
     }
 
