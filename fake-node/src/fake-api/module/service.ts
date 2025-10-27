@@ -44,7 +44,10 @@ import path from 'path'
 const execFileAsync = promisify(execFile)
 
 // curl-impersonate 경로
-const CURL_CHROME_PATH = path.join(__dirname, '../../../curl_chrome116')
+// 빌드 후: /home/evoserverXX/out/main.js
+// curl 위치: /home/evoserverXX/curl_chrome116
+// 따라서 out 디렉토리 기준 상대 경로: ../curl_chrome116
+const CURL_CHROME_PATH = path.join(__dirname, '../curl_chrome116')
 
 // curl-impersonate로 요청하는 함수
 async function curlImpersonate(url: string, headers: Record<string, string | string[]>) {
