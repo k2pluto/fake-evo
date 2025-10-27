@@ -49,15 +49,49 @@ function pickNode() {
   return node;
 }
 
+// 검은 배경 리다이렉트 HTML 생성
+function createRedirectPage(targetUrl) {
+  return `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="0;url=${targetUrl}">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+    .loading {
+      color: #ffffff;
+      font-size: 18px;
+    }
+  </style>
+  <script>
+    window.location.href = '${targetUrl}';
+  </script>
+</head>
+<body>
+  <div class="loading">Loading...</div>
+</body>
+</html>`;
+}
+
 // 개발용: /debugEntry
 app.get('/debugEntry', (req, res) => {
   const qs = req.originalUrl.includes('?') ? ('?' + req.originalUrl.split('?')[1]) : '';
 
   // 매번 Round Robin으로 균등 분산 (쿠키 사용 안 함)
   const target = pickNode();
+  const targetUrl = `https://${target}/debugEntry${qs}`;
 
   console.log(`[debugEntry] -> ${target}`);
-  res.redirect(302, `https://${target}/debugEntry${qs}`);
+  res.send(createRedirectPage(targetUrl));
 });
 
 // 운영용: /entry
@@ -66,9 +100,10 @@ app.get('/entry', (req, res) => {
 
   // 매번 Round Robin으로 균등 분산 (쿠키 사용 안 함)
   const target = pickNode();
+  const targetUrl = `https://${target}/entry${qs}`;
 
   console.log(`[entry] -> ${target}`);
-  res.redirect(302, `https://${target}/entry${qs}`);
+  res.send(createRedirectPage(targetUrl));
 });
 
 app.get('/status', (req, res) => res.json({ healthy: [...healthy] }));

@@ -1,0 +1,1511 @@
+{
+  "defaults": {
+    "customAppExample": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/multiplay-release/custom-app-example",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/custom-app-example.173c1502.js"
+        ],
+        "ignoreVideo": true
+      }
+    },
+    "tertius.example": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/multiplay-release/tertius.example",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/tertius.example.ba5c751f.css",
+          "/frontend/unicorn/multiplay-release/js/tertius.example.ba5c751f.js"
+        ],
+        "ignoreVideo": true,
+        "audioLibrary": "ecas"
+      }
+    },
+    "ne-jack-and-beanstalk": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/multiplay-release/ne-jack-and-beanstalk",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/js/ne-jack-and-beanstalk.0a152537.js"
+        ],
+        "ignoreVideo": true,
+        "audioLibrary": "ecas"
+      }
+    },
+    "ne-template-pixi": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/multiplay-release/ne-template-pixi",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/ne-template-pixi.0cb2db56.css",
+          "/frontend/unicorn/multiplay-release/js/ne-template-pixi.0cb2db56.js"
+        ],
+        "ignoreVideo": true,
+        "audioLibrary": "ecas"
+      }
+    },
+    "abstractGame": {
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/abstractGame.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/abstractGame.mobile.5a7339e1.css",
+          "/frontend/unicorn/multiplay-release/js/abstractGame.mobile.5a7339e1.js"
+        ]
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/abstractGame.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/abstractGame.desktop.8352300a.css",
+          "/frontend/unicorn/multiplay-release/js/abstractGame.desktop.8352300a.js"
+        ]
+      }
+    },
+    "andarbahar": {
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/andarBahar.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/andarBahar.desktop.91975816.css",
+          "/frontend/unicorn/multiplay-release/js/andarBahar.desktop.91975816.js"
+        ]
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/andarBahar.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/andarBahar.mobile.80918d37.css",
+          "/frontend/unicorn/multiplay-release/js/andarBahar.mobile.80918d37.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "promotions": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/multiplay-release/promotions",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/promotions.fe280687.css",
+          "/frontend/unicorn/multiplay-release/js/promotions.fe280687.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "*"
+      }
+    },
+    "baccaratmultiplay": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/multiplay-release/baccarat.multiplay",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/baccarat.multiplay.b8ec073a.css",
+          "/frontend/unicorn/multiplay-release/js/baccarat.multiplay.b8ec073a.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "lobby": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/multiplay-release/lobby",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/lobby.91083802.css",
+          "/frontend/unicorn/multiplay-release/js/lobby.91083802.js",
+          "/frontend/unicorn/multiplay-release/styles/lobby-3_0-global.9c9ec3a1.css",
+          "/frontend/unicorn/multiplay-release/styles/lobby-global.07cf8c03.css"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "*"
+      }
+    },
+    "reserved-table": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/multiplay-release/reserved-table",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/reserved-table.dd8890b6.css",
+          "/frontend/unicorn/multiplay-release/js/reserved-table.dd8890b6.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "*"
+      }
+    },
+    "roulette": {
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/roulette.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/roulette.mobile.e71820c7.css",
+          "/frontend/unicorn/multiplay-release/js/roulette.mobile.e71820c7.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/roulette.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/roulette.desktop.ed13ba32.css",
+          "/frontend/unicorn/multiplay-release/js/roulette.desktop.ed13ba32.js"
+        ]
+      }
+    },
+    "moneywheel": {
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/moneywheel.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/moneywheel.mobile.691b0137.css",
+          "/frontend/unicorn/multiplay-release/js/moneywheel.mobile.691b0137.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/moneywheel.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/moneywheel.desktop.c5e04178.css",
+          "/frontend/unicorn/multiplay-release/js/moneywheel.desktop.c5e04178.js"
+        ]
+      }
+    },
+    "blackjack": {
+      "mobile": {
+        "logoImage": "/frontend/unicorn/multiplay-release/images/blackjacka.b7ae15d9.svg",
+        "loader": "/frontend/unicorn/multiplay-release/blackjack.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/blackjack.mobile.18ccde00.css",
+          "/frontend/unicorn/multiplay-release/js/blackjack.mobile.18ccde00.js",
+          "/frontend/unicorn/multiplay-release/styles/blackjack.mobile-global.7df6e4ff.css"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loaderBackground": "/frontend/unicorn/multiplay-release/images/blackjack.7106e9cd.jpg",
+        "loader": "/frontend/unicorn/multiplay-release/blackjack.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/blackjack.desktop.754842c6.css",
+          "/frontend/unicorn/multiplay-release/js/blackjack.desktop.754842c6.js"
+        ]
+      }
+    },
+    "blackjack.v3": {
+      "mobile": {
+        "logoImage": "/frontend/unicorn/multiplay-release/images/blackjacka.b7ae15d9.svg",
+        "loader": "/frontend/unicorn/multiplay-release/blackjack.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/blackjack.mobile.18ccde00.css",
+          "/frontend/unicorn/multiplay-release/js/blackjack.mobile.18ccde00.js",
+          "/frontend/unicorn/multiplay-release/styles/blackjack.mobile-global.7df6e4ff.css"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loaderBackground": "/frontend/unicorn/multiplay-release/images/blackjack.7106e9cd.jpg",
+        "loader": "/frontend/unicorn/multiplay-release/blackjack.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/blackjack.desktop.754842c6.css",
+          "/frontend/unicorn/multiplay-release/js/blackjack.desktop.754842c6.js"
+        ]
+      }
+    },
+    "rng-blackjack": {
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/rng-blackjack.horizon.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.rng.43eaff2a.css",
+          "/frontend/unicorn/multiplay-release/js/commons.rng.43eaff2a.js",
+          "/frontend/unicorn/multiplay-release/styles/rng-blackjack.horizon.desktop.a9262a23.css",
+          "/frontend/unicorn/multiplay-release/js/rng-blackjack.horizon.desktop.a9262a23.js"
+        ],
+        "ignoreVideo": true
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/rng-blackjack.horizon.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.rng.43eaff2a.css",
+          "/frontend/unicorn/multiplay-release/js/commons.rng.43eaff2a.js",
+          "/frontend/unicorn/multiplay-release/styles/rng-blackjack.horizon.mobile.5fc43d08.css",
+          "/frontend/unicorn/multiplay-release/js/rng-blackjack.horizon.mobile.5fc43d08.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "evo_rng_blackjack"
+      }
+    },
+    "rng-blackjack.horizon.preview": {
+      "desktop": {
+        "loaderBackground": "/frontend/unicorn/multiplay-release/images/rngblackja.4be746eb.jpg",
+        "loader": "/frontend/unicorn/multiplay-release/rng-blackjack.horizon.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.rng.43eaff2a.css",
+          "/frontend/unicorn/multiplay-release/js/commons.rng.43eaff2a.js",
+          "/frontend/unicorn/multiplay-release/styles/rng-blackjack.horizon.desktop.a9262a23.css",
+          "/frontend/unicorn/multiplay-release/js/rng-blackjack.horizon.desktop.a9262a23.js"
+        ],
+        "ignoreVideo": true
+      },
+      "mobile": {
+        "logoImage": "/frontend/unicorn/multiplay-release/images/rngblackja.2a0d4a80.svg",
+        "loader": "/frontend/unicorn/multiplay-release/rng-blackjack.horizon.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.rng.43eaff2a.css",
+          "/frontend/unicorn/multiplay-release/js/commons.rng.43eaff2a.js",
+          "/frontend/unicorn/multiplay-release/styles/rng-blackjack.horizon.mobile.5fc43d08.css",
+          "/frontend/unicorn/multiplay-release/js/rng-blackjack.horizon.mobile.5fc43d08.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "evo_rng_blackjack"
+      }
+    },
+    "rng-blackjack.horizon": {
+      "desktop": {
+        "loaderBackground": "/frontend/unicorn/multiplay-release/images/rngblackja.4be746eb.jpg",
+        "loader": "/frontend/unicorn/multiplay-release/rng-blackjack.horizon.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.rng.43eaff2a.css",
+          "/frontend/unicorn/multiplay-release/js/commons.rng.43eaff2a.js",
+          "/frontend/unicorn/multiplay-release/styles/rng-blackjack.horizon.desktop.a9262a23.css",
+          "/frontend/unicorn/multiplay-release/js/rng-blackjack.horizon.desktop.a9262a23.js"
+        ],
+        "ignoreVideo": true
+      },
+      "mobile": {
+        "logoImage": "/frontend/unicorn/multiplay-release/images/rngblackja.2a0d4a80.svg",
+        "loader": "/frontend/unicorn/multiplay-release/rng-blackjack.horizon.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.rng.43eaff2a.css",
+          "/frontend/unicorn/multiplay-release/js/commons.rng.43eaff2a.js",
+          "/frontend/unicorn/multiplay-release/styles/rng-blackjack.horizon.mobile.5fc43d08.css",
+          "/frontend/unicorn/multiplay-release/js/rng-blackjack.horizon.mobile.5fc43d08.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "evo_rng_blackjack"
+      }
+    },
+    "scalableblackjack.v2": {
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/blackjack.scalable.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/blackjack.scalable.mobile.2d286a64.css",
+          "/frontend/unicorn/multiplay-release/js/blackjack.scalable.mobile.2d286a64.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/blackjack.scalable.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/blackjack.scalable.desktop.3dbb2624.css",
+          "/frontend/unicorn/multiplay-release/js/blackjack.scalable.desktop.3dbb2624.js"
+        ]
+      }
+    },
+    "scalableblackjack": {
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/blackjack.scalable.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/blackjack.scalable.mobile.2d286a64.css",
+          "/frontend/unicorn/multiplay-release/js/blackjack.scalable.mobile.2d286a64.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/blackjack.scalable.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/blackjack.scalable.desktop.3dbb2624.css",
+          "/frontend/unicorn/multiplay-release/js/blackjack.scalable.desktop.3dbb2624.js"
+        ]
+      }
+    },
+    "baccarat.v0": {
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/baccarat.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/baccarat.mobile.6165d992.css",
+          "/frontend/unicorn/multiplay-release/js/baccarat.mobile.6165d992.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/baccarat.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/baccarat.desktop.6380f2a2.css",
+          "/frontend/unicorn/multiplay-release/js/baccarat.desktop.6380f2a2.js"
+        ]
+      }
+    },
+    "baccarat.regular": {
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/baccarat.regular.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/baccarat.regular.desktop.3c73cf32.css",
+          "/frontend/unicorn/multiplay-release/js/baccarat.regular.desktop.3c73cf32.js"
+        ]
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/baccarat.regular.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/js/baccarat.regular.mobile.b819fb2e.js"
+        ]
+      }
+    },
+    "baccarat.xtreme": {
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/baccarat.xtreme.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/js/baccarat.xtreme.mobile.97061c9c.js"
+        ]
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/baccarat.xtreme.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/baccarat.xtreme.desktop.8446757a.css",
+          "/frontend/unicorn/multiplay-release/js/baccarat.xtreme.desktop.8446757a.js"
+        ]
+      }
+    },
+    "rng-roulette": {
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/rng-roulette.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.rng.43eaff2a.css",
+          "/frontend/unicorn/multiplay-release/js/commons.rng.43eaff2a.js",
+          "/frontend/unicorn/multiplay-release/styles/rng-roulette.mobile.d825c2d5.css",
+          "/frontend/unicorn/multiplay-release/js/rng-roulette.mobile.d825c2d5.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "evo_rng_roulette"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/rng-roulette.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.rng.43eaff2a.css",
+          "/frontend/unicorn/multiplay-release/js/commons.rng.43eaff2a.js",
+          "/frontend/unicorn/multiplay-release/styles/rng-roulette.desktop.438d25ad.css",
+          "/frontend/unicorn/multiplay-release/js/rng-roulette.desktop.438d25ad.js"
+        ],
+        "ignoreVideo": true
+      }
+    },
+    "rng-roulette.horizon.preview": {
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/rng-roulette.horizon.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.rng.43eaff2a.css",
+          "/frontend/unicorn/multiplay-release/js/commons.rng.43eaff2a.js",
+          "/frontend/unicorn/multiplay-release/styles/rng-roulette.horizon.desktop.a8567ebf.css",
+          "/frontend/unicorn/multiplay-release/js/rng-roulette.horizon.desktop.a8567ebf.js"
+        ],
+        "ignoreVideo": true
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/rng-roulette.horizon.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.rng.43eaff2a.css",
+          "/frontend/unicorn/multiplay-release/js/commons.rng.43eaff2a.js",
+          "/frontend/unicorn/multiplay-release/styles/rng-roulette.horizon.mobile.f3460e71.css",
+          "/frontend/unicorn/multiplay-release/js/rng-roulette.horizon.mobile.f3460e71.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "evo_rng_roulette"
+      }
+    },
+    "rng-moneywheel.horizon": {
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/rng-moneywheel.horizon.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.rng.43eaff2a.css",
+          "/frontend/unicorn/multiplay-release/js/commons.rng.43eaff2a.js",
+          "/frontend/unicorn/multiplay-release/styles/rng-moneywheel.horizon.desktop.10c15a20.css",
+          "/frontend/unicorn/multiplay-release/js/rng-moneywheel.horizon.desktop.10c15a20.js"
+        ],
+        "ignoreVideo": true
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/rng-moneywheel.horizon.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.rng.43eaff2a.css",
+          "/frontend/unicorn/multiplay-release/js/commons.rng.43eaff2a.js",
+          "/frontend/unicorn/multiplay-release/styles/rng-moneywheel.horizon.mobile.3721e12e.css",
+          "/frontend/unicorn/multiplay-release/js/rng-moneywheel.horizon.mobile.3721e12e.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "evo_rng_moneywheel"
+      }
+    },
+    "rng-baccarat.v0": {
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/rng-baccarat.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.rng.43eaff2a.css",
+          "/frontend/unicorn/multiplay-release/js/commons.rng.43eaff2a.js",
+          "/frontend/unicorn/multiplay-release/styles/rng-baccarat.mobile.a5e6ea77.css",
+          "/frontend/unicorn/multiplay-release/js/rng-baccarat.mobile.a5e6ea77.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "evo_rng_baccarat"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/rng-baccarat.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.rng.43eaff2a.css",
+          "/frontend/unicorn/multiplay-release/js/commons.rng.43eaff2a.js",
+          "/frontend/unicorn/multiplay-release/styles/rng-baccarat.desktop.5fa74b3b.css",
+          "/frontend/unicorn/multiplay-release/js/rng-baccarat.desktop.5fa74b3b.js"
+        ],
+        "ignoreVideo": true
+      }
+    },
+    "monopoly": {
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/monopoly.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/monopoly.mobile.e93bd0a8.css",
+          "/frontend/unicorn/multiplay-release/js/monopoly.mobile.e93bd0a8.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/monopoly.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/monopoly.desktop.757862ab.css",
+          "/frontend/unicorn/multiplay-release/js/monopoly.desktop.757862ab.js"
+        ]
+      }
+    },
+    "crazytime": {
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/crazyTime.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/crazyTime.mobile.562c4ce2.css",
+          "/frontend/unicorn/multiplay-release/js/crazyTime.mobile.562c4ce2.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/crazyTime.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/crazyTime.desktop.c315ffd5.css",
+          "/frontend/unicorn/multiplay-release/js/crazyTime.desktop.c315ffd5.js"
+        ]
+      }
+    },
+    "gonzotreasurehunt": {
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/surprise.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/surprise.mobile.b3b99472.css",
+          "/frontend/unicorn/multiplay-release/js/surprise.mobile.b3b99472.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/surprise.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/surprise.desktop.df698379.css",
+          "/frontend/unicorn/multiplay-release/js/surprise.desktop.df698379.js"
+        ]
+      }
+    },
+    "gonzotreasuremap": {
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/gonzotreasuremap.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/gonzotreasuremap.mobile.56b91851.css",
+          "/frontend/unicorn/multiplay-release/js/gonzotreasuremap.mobile.56b91851.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/gonzotreasuremap.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/gonzotreasuremap.desktop.7ab8875f.css",
+          "/frontend/unicorn/multiplay-release/js/gonzotreasuremap.desktop.7ab8875f.js"
+        ]
+      }
+    },
+    "deadalive.v0": {
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/deadalive.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/deadalive.mobile.caedd9c9.css",
+          "/frontend/unicorn/multiplay-release/js/deadalive.mobile.caedd9c9.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/deadalive.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/deadalive.desktop.1974da67.css",
+          "/frontend/unicorn/multiplay-release/js/deadalive.desktop.1974da67.js"
+        ]
+      }
+    },
+    "fantan": {
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/fanTan.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/fanTan.mobile.1f092e94.css",
+          "/frontend/unicorn/multiplay-release/js/fanTan.mobile.1f092e94.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/fanTan.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/fanTan.desktop.d8ee44f6.css",
+          "/frontend/unicorn/multiplay-release/js/fanTan.desktop.d8ee44f6.js"
+        ]
+      }
+    },
+    "dragontiger.v0": {
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/dragonTiger.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/dragonTiger.mobile.49706b0b.css",
+          "/frontend/unicorn/multiplay-release/js/dragonTiger.mobile.49706b0b.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/dragonTiger.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/dragonTiger.desktop.e630df35.css",
+          "/frontend/unicorn/multiplay-release/js/dragonTiger.desktop.e630df35.js"
+        ]
+      }
+    },
+    "crazycoinflip": {
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/crazyCoinFlip.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/crazyCoinFlip.mobile.15476584.css",
+          "/frontend/unicorn/multiplay-release/js/crazyCoinFlip.mobile.15476584.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/crazyCoinFlip.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/crazyCoinFlip.desktop.f9467a69.css",
+          "/frontend/unicorn/multiplay-release/js/crazyCoinFlip.desktop.f9467a69.js"
+        ]
+      }
+    },
+    "rng-dragontiger.v0": {
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/rng-dragontiger.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.rng.43eaff2a.css",
+          "/frontend/unicorn/multiplay-release/js/commons.rng.43eaff2a.js",
+          "/frontend/unicorn/multiplay-release/styles/rng-dragontiger.mobile.51941080.css",
+          "/frontend/unicorn/multiplay-release/js/rng-dragontiger.mobile.51941080.js"
+        ],
+        "nativeBundle": "evo_rng_topcard"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/rng-dragontiger.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.rng.43eaff2a.css",
+          "/frontend/unicorn/multiplay-release/js/commons.rng.43eaff2a.js",
+          "/frontend/unicorn/multiplay-release/styles/rng-dragontiger.desktop.bb9a8d22.css",
+          "/frontend/unicorn/multiplay-release/js/rng-dragontiger.desktop.bb9a8d22.js"
+        ]
+      }
+    },
+    "holdem": {
+      "mobile": {
+        "logoImage": "/frontend/unicorn/multiplay-release/images/holdemadap.209fb863.svg",
+        "loader": "/frontend/unicorn/multiplay-release/poker.casino-holdem-v2.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/poker.casino-holdem-v2.mobile.cb7b95d4.css",
+          "/frontend/unicorn/multiplay-release/js/poker.casino-holdem-v2.mobile.cb7b95d4.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/poker.casino-holdem-v2.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/poker.casino-holdem-v2.desktop.1bdd94d8.css",
+          "/frontend/unicorn/multiplay-release/js/poker.casino-holdem-v2.desktop.1bdd94d8.js"
+        ],
+        "loaderBackground": "/frontend/unicorn/multiplay-release/images/poker.chp.b03aa76f.jpg"
+      }
+    },
+    "uth": {
+      "mobile": {
+        "logoImage": "/frontend/unicorn/multiplay-release/images/ultimatete.85204dea.svg",
+        "loader": "/frontend/unicorn/multiplay-release/poker.ultimate-texas.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/poker.ultimate-texas.mobile.767b8a7e.css",
+          "/frontend/unicorn/multiplay-release/js/poker.ultimate-texas.mobile.767b8a7e.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/poker.ultimate-texas.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/poker.ultimate-texas.desktop.c056082e.css",
+          "/frontend/unicorn/multiplay-release/js/poker.ultimate-texas.desktop.c056082e.js"
+        ],
+        "loaderBackground": "/frontend/unicorn/multiplay-release/images/poker.uth.a6b432c4.jpg"
+      }
+    },
+    "eth": {
+      "mobile": {
+        "logoImage": "/frontend/unicorn/multiplay-release/images/poker.ethlogo.19897f94.svg",
+        "loader": "/frontend/unicorn/multiplay-release/poker.ultimate-texas.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/poker.ultimate-texas.mobile.767b8a7e.css",
+          "/frontend/unicorn/multiplay-release/js/poker.ultimate-texas.mobile.767b8a7e.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/poker.ultimate-texas.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/poker.ultimate-texas.desktop.c056082e.css",
+          "/frontend/unicorn/multiplay-release/js/poker.ultimate-texas.desktop.c056082e.js"
+        ],
+        "loaderBackground": "/frontend/unicorn/multiplay-release/images/poker.eth.2cb4da77.jpg"
+      }
+    },
+    "csp": {
+      "mobile": {
+        "logoImage": "/frontend/unicorn/multiplay-release/images/caribbeans.2e7845c4.svg",
+        "loader": "/frontend/unicorn/multiplay-release/poker.caribbean-stud-v2.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/poker.caribbean-stud-v2.mobile.1e4ce8cb.css",
+          "/frontend/unicorn/multiplay-release/js/poker.caribbean-stud-v2.mobile.1e4ce8cb.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/poker.caribbean-stud-v2.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/poker.caribbean-stud-v2.desktop.c466fc06.css",
+          "/frontend/unicorn/multiplay-release/js/poker.caribbean-stud-v2.desktop.c466fc06.js"
+        ],
+        "loaderBackground": "/frontend/unicorn/multiplay-release/images/poker.csp.6a23c978.jpg"
+      }
+    },
+    "sidebetcity": {
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/poker.side-bet-city.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/poker.side-bet-city.desktop.2859def4.css",
+          "/frontend/unicorn/multiplay-release/js/poker.side-bet-city.desktop.2859def4.js"
+        ],
+        "loaderBackground": "/frontend/unicorn/multiplay-release/images/poker.sidebetcit.e1792367.jpg"
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/poker.side-bet-city.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/poker.side-bet-city.mobile.82990a7c.css",
+          "/frontend/unicorn/multiplay-release/js/poker.side-bet-city.mobile.82990a7c.js"
+        ],
+        "logoImage": "/frontend/unicorn/multiplay-release/images/sidebetcit.809487a7.svg",
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "tcp.v2": {
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/poker.three-card-v2.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/poker.three-card-v2.desktop.d761656b.css",
+          "/frontend/unicorn/multiplay-release/js/poker.three-card-v2.desktop.d761656b.js"
+        ],
+        "loaderBackground": "/frontend/unicorn/multiplay-release/images/poker.tcp.89318fb1.jpg"
+      },
+      "mobile": {
+        "logoImage": "/frontend/unicorn/multiplay-release/images/threecarda.1a12d4df.svg",
+        "loader": "/frontend/unicorn/multiplay-release/poker.three-card-v2.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/poker.three-card-v2.mobile.b38c0f05.css",
+          "/frontend/unicorn/multiplay-release/js/poker.three-card-v2.mobile.b38c0f05.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "trp.v2": {
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/poker.three-card-v2.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/poker.three-card-v2.desktop.d761656b.css",
+          "/frontend/unicorn/multiplay-release/js/poker.three-card-v2.desktop.d761656b.js"
+        ],
+        "loaderBackground": "/frontend/unicorn/multiplay-release/images/poker.trp.559f7998.jpg"
+      },
+      "mobile": {
+        "logoImage": "/frontend/unicorn/multiplay-release/images/triplecard.406123fc.svg",
+        "loader": "/frontend/unicorn/multiplay-release/poker.three-card-v2.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/poker.three-card-v2.mobile.b38c0f05.css",
+          "/frontend/unicorn/multiplay-release/js/poker.three-card-v2.mobile.b38c0f05.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "dhp": {
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/poker.double-hand-poker.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/poker.double-hand-poker.desktop.b9707141.css",
+          "/frontend/unicorn/multiplay-release/js/poker.double-hand-poker.desktop.b9707141.js"
+        ],
+        "loaderBackground": "/frontend/unicorn/multiplay-release/images/poker.dhp.23fdd72d.jpg"
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/poker.double-hand-poker.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/poker.double-hand-poker.mobile.01c68ea2.css",
+          "/frontend/unicorn/multiplay-release/js/poker.double-hand-poker.mobile.01c68ea2.js"
+        ],
+        "logoImage": "/frontend/unicorn/multiplay-release/images/2handcasin.6c94ff05.svg",
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "thb.v2": {
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/poker.texas-bonus-v2.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/poker.texas-bonus-v2.desktop.91071329.css",
+          "/frontend/unicorn/multiplay-release/js/poker.texas-bonus-v2.desktop.91071329.js"
+        ],
+        "loaderBackground": "/frontend/unicorn/multiplay-release/images/poker.thb.e88b25c3.jpg"
+      },
+      "mobile": {
+        "logoImage": "/frontend/unicorn/multiplay-release/images/poker.thblogo.641abc72.svg",
+        "loader": "/frontend/unicorn/multiplay-release/poker.texas-bonus-v2.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/poker.texas-bonus-v2.mobile.eeaa83ae.css",
+          "/frontend/unicorn/multiplay-release/js/poker.texas-bonus-v2.mobile.eeaa83ae.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "sicbo": {
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/sicbo.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/sicbo.desktop.5a7047fc.css",
+          "/frontend/unicorn/multiplay-release/js/sicbo.desktop.5a7047fc.js"
+        ]
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/sicbo.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/sicbo.mobile.16c5f276.css",
+          "/frontend/unicorn/multiplay-release/js/sicbo.mobile.16c5f276.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "lightningdice": {
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/lightningdice.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/lightningdice.desktop.52fb1a9a.css",
+          "/frontend/unicorn/multiplay-release/js/lightningdice.desktop.52fb1a9a.js"
+        ]
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/lightningdice.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/lightningdice.mobile.ce0129d6.css",
+          "/frontend/unicorn/multiplay-release/js/lightningdice.mobile.ce0129d6.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "craps": {
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/craps.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/craps.desktop.9466f70a.css",
+          "/frontend/unicorn/multiplay-release/js/craps.desktop.9466f70a.js"
+        ]
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/craps.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/craps.mobile.c42b2417.css",
+          "/frontend/unicorn/multiplay-release/js/craps.mobile.c42b2417.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "bacbo": {
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/bacbo.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/bacbo.mobile.cabe8e06.css",
+          "/frontend/unicorn/multiplay-release/js/bacbo.mobile.cabe8e06.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/bacbo.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/bacbo.desktop.58b5cab2.css",
+          "/frontend/unicorn/multiplay-release/js/bacbo.desktop.58b5cab2.js"
+        ]
+      }
+    },
+    "topdice": {
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/topdice.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/topdice.mobile.532a1512.css",
+          "/frontend/unicorn/multiplay-release/js/topdice.mobile.532a1512.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/topdice.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/topdice.desktop.716ec947.css",
+          "/frontend/unicorn/multiplay-release/js/topdice.desktop.716ec947.js"
+        ]
+      }
+    },
+    "rng-craps": {
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/rng-craps.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.rng.43eaff2a.css",
+          "/frontend/unicorn/multiplay-release/js/commons.rng.43eaff2a.js",
+          "/frontend/unicorn/multiplay-release/styles/rng-craps.mobile.4797c2c1.css",
+          "/frontend/unicorn/multiplay-release/js/rng-craps.mobile.4797c2c1.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "evo_rng_craps"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/rng-craps.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.rng.43eaff2a.css",
+          "/frontend/unicorn/multiplay-release/js/commons.rng.43eaff2a.js",
+          "/frontend/unicorn/multiplay-release/styles/rng-craps.desktop.00a9821e.css",
+          "/frontend/unicorn/multiplay-release/js/rng-craps.desktop.00a9821e.js"
+        ],
+        "ignoreVideo": true
+      }
+    },
+    "dealnodeal": {
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/dealnodeal.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/dealnodeal.desktop.caea2feb.css",
+          "/frontend/unicorn/multiplay-release/js/dealnodeal.desktop.caea2feb.js"
+        ]
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/dealnodeal.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/dealnodeal.mobile.991c2a73.css",
+          "/frontend/unicorn/multiplay-release/js/dealnodeal.mobile.991c2a73.js",
+          "/frontend/unicorn/multiplay-release/styles/dealnodeal-global.0972727f.css"
+        ],
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "rng-dealnodeal": {
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/rng-dealnodeal.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.rng.43eaff2a.css",
+          "/frontend/unicorn/multiplay-release/js/commons.rng.43eaff2a.js",
+          "/frontend/unicorn/multiplay-release/styles/rng-dealnodeal.mobile.429455c7.css",
+          "/frontend/unicorn/multiplay-release/js/rng-dealnodeal.mobile.429455c7.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "evo_rng_dealnodeal"
+      },
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/rng-dealnodeal.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.rng.43eaff2a.css",
+          "/frontend/unicorn/multiplay-release/js/commons.rng.43eaff2a.js",
+          "/frontend/unicorn/multiplay-release/styles/rng-dealnodeal.desktop.dad4ad7a.css",
+          "/frontend/unicorn/multiplay-release/js/rng-dealnodeal.desktop.dad4ad7a.js"
+        ],
+        "ignoreVideo": true
+      }
+    },
+    "megaball": {
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/megaball.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/megaball.desktop.a45074f6.css",
+          "/frontend/unicorn/multiplay-release/js/megaball.desktop.a45074f6.js"
+        ]
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/megaball.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/megaball.mobile.5d3ab111.css",
+          "/frontend/unicorn/multiplay-release/js/megaball.mobile.5d3ab111.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "rng-megaball": {
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/rng-megaball.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.rng.43eaff2a.css",
+          "/frontend/unicorn/multiplay-release/js/commons.rng.43eaff2a.js",
+          "/frontend/unicorn/multiplay-release/styles/rng-megaball.desktop.59eaa9b8.css",
+          "/frontend/unicorn/multiplay-release/js/rng-megaball.desktop.59eaa9b8.js"
+        ],
+        "ignoreVideo": true
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/rng-megaball.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.rng.43eaff2a.css",
+          "/frontend/unicorn/multiplay-release/js/commons.rng.43eaff2a.js",
+          "/frontend/unicorn/multiplay-release/styles/rng-megaball.mobile.fa816ca0.css",
+          "/frontend/unicorn/multiplay-release/js/rng-megaball.mobile.fa816ca0.js"
+        ],
+        "ignoreVideo": true,
+        "nativeBundle": "evo_rng_megaball"
+      }
+    },
+    "cashorcrash": {
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/cashorcrash.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/cashorcrash.desktop.8796ec46.css",
+          "/frontend/unicorn/multiplay-release/js/cashorcrash.desktop.8796ec46.js"
+        ]
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/cashorcrash.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/cashorcrash.mobile.7d66d181.css",
+          "/frontend/unicorn/multiplay-release/js/cashorcrash.mobile.7d66d181.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "monopolybigballer": {
+      "desktop": {
+        "loader": "/frontend/unicorn/multiplay-release/monopolybigballer.desktop",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/monopolybigballer.desktop.71d186a8.css",
+          "/frontend/unicorn/multiplay-release/js/monopolybigballer.desktop.71d186a8.js"
+        ]
+      },
+      "mobile": {
+        "loader": "/frontend/unicorn/multiplay-release/monopolybigballer.mobile",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/styles/monopolybigballer.mobile.910dda27.css",
+          "/frontend/unicorn/multiplay-release/js/monopolybigballer.mobile.910dda27.js"
+        ],
+        "nativeBundle": "evo_live_all"
+      }
+    },
+    "slots.ne": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/multiplay-release/slots.ne",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/js/commons.wrapped.bd3c049a.js",
+          "/frontend/unicorn/multiplay-release/styles/slots.ne.e0d0c6db.css",
+          "/frontend/unicorn/multiplay-release/js/slots.ne.e0d0c6db.js"
+        ],
+        "nativeBundle": "wrapped_ne",
+        "ignoreVideo": true,
+        "loaderResourcesCountingMode": "none"
+      }
+    },
+    "slots.rt": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/multiplay-release/slots.rt",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/js/commons.wrapped.bd3c049a.js",
+          "/frontend/unicorn/multiplay-release/styles/slots.rt.f310bee2.css",
+          "/frontend/unicorn/multiplay-release/js/slots.rt.f310bee2.js"
+        ],
+        "nativeBundle": "wrapped_rt",
+        "ignoreVideo": true,
+        "loaderResourcesCountingMode": "none"
+      }
+    },
+    "slots.btg": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/multiplay-release/slots.btg",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/js/commons.wrapped.bd3c049a.js",
+          "/frontend/unicorn/multiplay-release/styles/slots.btg.168933de.css",
+          "/frontend/unicorn/multiplay-release/js/slots.btg.168933de.js"
+        ],
+        "nativeBundle": "wrapped_btg",
+        "ignoreVideo": true
+      }
+    },
+    "live.ezugi": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/multiplay-release/live.ezugi",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/js/commons.wrapped.bd3c049a.js",
+          "/frontend/unicorn/multiplay-release/styles/live.ezugi.2b4c6d6e.css",
+          "/frontend/unicorn/multiplay-release/js/live.ezugi.2b4c6d6e.js"
+        ],
+        "nativeBundle": "wrapped_ezugi",
+        "ignoreVideo": true,
+        "loaderResourcesCountingMode": "none"
+      }
+    },
+    "slots.nlc": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/multiplay-release/slots.nlc",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/js/commons.wrapped.bd3c049a.js",
+          "/frontend/unicorn/multiplay-release/styles/slots.nlc.bc54f9ff.css",
+          "/frontend/unicorn/multiplay-release/js/slots.nlc.bc54f9ff.js"
+        ],
+        "ignoreVideo": true,
+        "loaderResourcesCountingMode": "none"
+      }
+    },
+    "valkyrie": {
+      "adaptive": {
+        "loader": "/frontend/unicorn/multiplay-release/valkyrie",
+        "assets": [
+          "/frontend/unicorn/multiplay-release/js/video.e486147d.js",
+          "/frontend/unicorn/multiplay-release/js/vendor.d319362a.js",
+          "/frontend/unicorn/multiplay-release/styles/commons.076559f5.css",
+          "/frontend/unicorn/multiplay-release/js/commons.076559f5.js",
+          "/frontend/unicorn/multiplay-release/js/commons.wrapped.bd3c049a.js",
+          "/frontend/unicorn/multiplay-release/styles/valkyrie.bdb13cb9.css",
+          "/frontend/unicorn/multiplay-release/js/valkyrie.bdb13cb9.js"
+        ],
+        "ignoreVideo": true,
+        "loaderResourcesCountingMode": "none"
+      }
+    }
+  },
+  "build": {
+    "env": "production",
+    "version": "6.20230106.171534.19802-1c94cb46c1",
+    "publicPath": "/frontend/unicorn/multiplay-release/"
+  }
+}

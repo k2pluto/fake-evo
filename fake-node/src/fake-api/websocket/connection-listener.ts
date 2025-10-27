@@ -137,6 +137,9 @@ export async function connectionListener(ws: WebSocket, request: FastifyRequest)
       ...(headers['sec-ch-ua'] != null && { 'sec-ch-ua': headers['sec-ch-ua'] as string }),
       ...(headers['sec-ch-ua-mobile'] != null && { 'sec-ch-ua-mobile': headers['sec-ch-ua-mobile'] as string }),
       ...(headers['sec-ch-ua-platform'] != null && { 'sec-ch-ua-platform': headers['sec-ch-ua-platform'] as string }),
+
+      // 사용자 실제 IP를 Evolution에 전달 (JWT cip와 일치시키기 위해)
+      'x-forwarded-for': socketData.ip,
     }
 
     // Use browser-specific pooled agent for better TLS fingerprint consistency
