@@ -339,13 +339,20 @@ export async function loginSwix(username: string, headers: Record<string, string
     console.log('===== loginSwix: Fetching Swix page =====')
     console.log('Swix URL:', res.gameUrl)
 
-    const swixRes = await axios.get(res.gameUrl)
+    // Swix 페이지도 curl-impersonate로 요청 (Cloudflare 우회)
+    const swixHeaders = {
+      'user-agent': headers['user-agent'] as string,
+      'accept': headers['accept'] as string,
+      'accept-language': headers['accept-language'] as string,
+      'accept-encoding': 'gzip, deflate, br',
+    }
+    const swixRes = await curlImpersonate(res.gameUrl, swixHeaders)
 
     console.log('Swix response status:', swixRes.status)
     console.log('Swix response headers:', JSON.stringify(swixRes.headers))
 
-    // Swix에서 받은 쿠키 추출
-    const swixCookies = swixRes.headers['set-cookie']
+    // Swix에서 받은 쿠키 추출 (curl stderr에서 set-cookie 파싱 필요)
+    const swixCookies = undefined // curl-impersonate는 set-cookie를 헤더로 파싱 안함
     console.log('Swix cookies:', swixCookies)
 
     const matchRes = swixRes.data.match(/https:\/\/play[^"]*"/g)
