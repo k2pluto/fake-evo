@@ -243,9 +243,14 @@ export async function createApp() {
     url: '/app/*',
     handler: defaultAppRouter,
     wsHandler: (conn, req) => {
-      connectionVideo(conn, req).catch((err) => {
-        console.log(err)
-      })
+      // DISABLED FOR TESTING: Check if game works without video WebSocket
+      console.log('🚫 Video WebSocket connection blocked for testing')
+      console.log('   Request URL:', req.url)
+      conn.close(1000, 'Video disabled for testing')
+
+      // connectionVideo(conn, req).catch((err) => {
+      //   console.log(err)
+      // })
       // connectionListener2(conn.socket, req)
     },
   })
