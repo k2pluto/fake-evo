@@ -37,6 +37,65 @@ import { getEvolutionUrl } from './util'
 
 import fs from 'fs'
 import { match } from 'assert'
+import { execFile } from 'child_process'
+import { promisify } from 'util'
+import path from 'path'
+
+const execFileAsync = promisify(execFile)
+
+// curl-impersonate 경로
+const CURL_CHROME_PATH = path.join(__dirname, '../../../curl_chrome116')
+
+// curl-impersonate로 요청하는 함수
+async function curlImpersonate(url: string, headers: Record<string, string | string[]>) {
+  const args = [
+    url,
+    '-v', // verbose
+    '--http2', // HTTP/2 사용
+    '--compressed', // gzip/brotli 자동 처리
+  ]
+
+  // 헤더 추가
+  for (const [key, value] of Object.entries(headers)) {
+    if (value) {
+      const headerValue = Array.isArray(value) ? value.join(', ') : value
+      args.push('-H', `${key}: ${headerValue}`)
+    }
+  }
+
+  try {
+    console.log('🌐 Using curl-impersonate:', CURL_CHROME_PATH)
+    console.log('URL:', url)
+    console.log('Headers:', headers)
+
+    const { stdout, stderr } = await execFileAsync(CURL_CHROME_PATH, args, {
+      maxBuffer: 10 * 1024 * 1024, // 10MB
+    })
+
+    console.log('curl stderr (headers/status):', stderr)
+
+    // stderr에서 HTTP 상태코드와 헤더 파싱
+    const statusMatch = stderr.match(/< HTTP\/\d\.\d (\d+)/)
+    const status = statusMatch ? parseInt(statusMatch[1]) : 200
+
+    const locationMatch = stderr.match(/< [Ll]ocation: (.+)/)
+    const location = locationMatch ? locationMatch[1].trim() : undefined
+
+    console.log('curl status:', status)
+    console.log('curl location:', location)
+
+    return {
+      status,
+      headers: {
+        location,
+      },
+      data: stdout,
+    }
+  } catch (err) {
+    console.error('❌ curl-impersonate error:', err)
+    throw err
+  }
+}
 
 export const fakeCasinoId = 'babylonagst30001'
 export const fakeServerHost = 'evotrf.ximaxmanager.com'
@@ -345,17 +404,8 @@ export async function loginSwix(username: string, headers: Record<string, string
     }
     console.log('===================================================')
 
-    const linkRes = await axios
-      .get(linkUrl, {
-        headers: newHeaders,
-        maxRedirects: 0,
-      })
-      .catch((err) => {
-        if (err.response?.status === 302) {
-          return err.response
-        }
-        throw err
-      })
+    // curl-impersonate 사용 (Cloudflare 봇 감지 우회)
+    const linkRes = await curlImpersonate(linkUrl, newHeaders)
 
     console.log('linkRes.status:', linkRes.status)
     console.log('linkRes.headers.location:', linkRes.headers.location)
