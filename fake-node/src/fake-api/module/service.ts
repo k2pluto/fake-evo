@@ -274,11 +274,23 @@ export async function loginSwix(username: string, headers: Record<string, string
       }
     }
 
+    console.log('===== loginSwix: Fetching Swix page =====')
+    console.log('Swix URL:', res.gameUrl)
+
     const swixRes = await axios.get(res.gameUrl)
+
+    console.log('Swix response status:', swixRes.status)
+    console.log('Swix response headers:', JSON.stringify(swixRes.headers))
+
+    // Swix에서 받은 쿠키 추출
+    const swixCookies = swixRes.headers['set-cookie']
+    console.log('Swix cookies:', swixCookies)
 
     const matchRes = swixRes.data.match(/https:\/\/play[^"]*"/g)
 
     if (matchRes == null || matchRes.length === 0) {
+      console.log('❌ No Evolution URL found in Swix response')
+      console.log('Swix response data preview:', typeof swixRes.data === 'string' ? swixRes.data.substring(0, 500) : JSON.stringify(swixRes.data))
       throw {
         status: 100,
         message: 'swix game url not found',
@@ -286,9 +298,25 @@ export async function loginSwix(username: string, headers: Record<string, string
     }
 
     const linkUrl = matchRes[0].substring(0, matchRes[0].length - 1)
+    console.log('✅ Extracted Evolution URL:', linkUrl)
 
     // Evolution 도메인으로 직접 연결한 것처럼 헤더 재구성 (프록시 증거 모두 제거)
     const url = new URL(linkUrl)
+
+    // Swix 쿠키를 Evolution 도메인용 쿠키로 변환
+    let cookieHeader = ''
+    if (swixCookies && swixCookies.length > 0) {
+      // Set-Cookie 헤더에서 쿠키 이름=값만 추출
+      cookieHeader = swixCookies
+        .map(cookie => {
+          const match = cookie.match(/^([^=]+=[^;]+)/)
+          return match ? match[1] : ''
+        })
+        .filter(Boolean)
+        .join('; ')
+      console.log('Cookie header to send:', cookieHeader)
+    }
+
     const newHeaders = {
       host: url.host,                                      // Evolution host
       origin: url.origin,                                  // Evolution origin
@@ -305,7 +333,8 @@ export async function loginSwix(username: string, headers: Record<string, string
       'sec-fetch-user': headers['sec-fetch-user'] ?? '?1',
       'upgrade-insecure-requests': '1',
       'connection': 'keep-alive',
-      // 프록시 증거 제거: x-forwarded-*, x-real-ip, cf-*, cdn-loop, via, referer, cookie 모두 제외
+      ...(cookieHeader && { cookie: cookieHeader }),       // Swix에서 받은 쿠키 포함
+      // 프록시 증거 제거: x-forwarded-*, x-real-ip, cf-*, cdn-loop, via, referer 제외
     }
 
     console.log('===== loginSwix: Sending headers to Evolution =====')
@@ -328,12 +357,26 @@ export async function loginSwix(username: string, headers: Record<string, string
         throw err
       })
 
+    console.log('linkRes.status:', linkRes.status)
+    console.log('linkRes.headers.location:', linkRes.headers.location)
+    console.log('linkRes.data preview:', JSON.stringify(linkRes.data).substring(0, 500))
+
     const gameUrl = linkRes.headers.location as string
+
+    if (!gameUrl) {
+      console.log('❌ No location header in Swix response')
+      console.log('Full response headers:', JSON.stringify(linkRes.headers))
+      console.log('Full response data:', typeof linkRes.data === 'string' ? linkRes.data.substring(0, 1000) : JSON.stringify(linkRes.data))
+      throw {
+        status: 100,
+        message: 'Swix did not return a valid redirect URL',
+      }
+    }
 
     res.gameUrl = gameUrl
     res.status = 0
 
-    console.log(JSON.stringify(linkRes.data))
+    console.log('✅ Swix gameUrl:', gameUrl)
 
     return res
     // return connectEvolution(res.gameUrl, username)
