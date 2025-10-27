@@ -50,13 +50,18 @@ const execFileAsync = promisify(execFile)
 const CURL_CHROME_PATH = path.join(__dirname, '../curl_chrome116')
 
 // curl-impersonate로 요청하는 함수
-async function curlImpersonate(url: string, headers: Record<string, string | string[]>) {
+async function curlImpersonate(url: string, headers: Record<string, string | string[]>, followRedirects: boolean = false) {
   const args = [
     url,
     '-v', // verbose
     '--http2', // HTTP/2 사용
     '--compressed', // gzip/brotli 자동 처리
   ]
+
+  // 리다이렉트 처리
+  if (!followRedirects) {
+    args.push('--max-redirs', '0') // 리다이렉트 따라가지 않음 - 302를 그대로 받음
+  }
 
   // 헤더 추가
   for (const [key, value] of Object.entries(headers)) {
@@ -70,6 +75,7 @@ async function curlImpersonate(url: string, headers: Record<string, string | str
     console.log('🌐 Using curl-impersonate:', CURL_CHROME_PATH)
     console.log('URL:', url)
     console.log('Headers:', headers)
+    console.log('Follow redirects:', followRedirects)
 
     const { stdout, stderr } = await execFileAsync(CURL_CHROME_PATH, args, {
       maxBuffer: 10 * 1024 * 1024, // 10MB
@@ -95,6 +101,33 @@ async function curlImpersonate(url: string, headers: Record<string, string | str
       data: stdout,
     }
   } catch (err) {
+    // curl이 --max-redirs 0으로 302를 받으면 에러가 발생할 수 있음
+    // 하지만 stderr에 응답이 있으므로 파싱 시도
+    console.log('curl exit with error (may be 302 redirect):', err.code)
+
+    if (err.stderr) {
+      console.log('Parsing stderr for 302 response...')
+      const statusMatch = err.stderr.match(/< HTTP\/\d\.\d (\d+)/)
+      const status = statusMatch ? parseInt(statusMatch[1]) : 0
+
+      const locationMatch = err.stderr.match(/< [Ll]ocation: (.+)/)
+      const location = locationMatch ? locationMatch[1].trim() : undefined
+
+      console.log('Parsed status:', status)
+      console.log('Parsed location:', location)
+
+      // 302인 경우 정상 응답으로 처리
+      if (status === 302 && location) {
+        return {
+          status,
+          headers: {
+            location,
+          },
+          data: err.stdout || '',
+        }
+      }
+    }
+
     console.error('❌ curl-impersonate error:', err)
     throw err
   }
@@ -415,7 +448,8 @@ export async function loginSwix(username: string, headers: Record<string, string
     console.log('===================================================')
 
     // curl-impersonate 사용 (Cloudflare 봇 감지 우회)
-    const linkRes = await curlImpersonate(linkUrl, newHeaders)
+    // followRedirects = false: 302 리다이렉트를 받아야 함
+    const linkRes = await curlImpersonate(linkUrl, newHeaders, false)
 
     console.log('linkRes.status:', linkRes.status)
     console.log('linkRes.headers.location:', linkRes.headers.location)
