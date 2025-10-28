@@ -49,7 +49,7 @@ export async function connectEvolution(
       // Evolution 도메인으로 직접 연결한 것처럼 헤더 재구성 (프록시 증거 제거)
       const cleanHeaders = {
         host: evolutionEntryUrl.host,
-        origin: evolutionUrl,
+        // ❌ origin: evolutionUrl,  // 제거! 브라우저가 origin을 보내지 않았으면 추가하지 않음
         accept: headers['accept'],
         'accept-encoding': headers['accept-encoding'] ?? 'gzip, deflate, br',
         'accept-language': headers['accept-language'],
@@ -59,7 +59,7 @@ export async function connectEvolution(
         'sec-ch-ua-platform': headers['sec-ch-ua-platform'],
         'sec-fetch-dest': headers['sec-fetch-dest'] ?? 'document',
         'sec-fetch-mode': headers['sec-fetch-mode'] ?? 'navigate',
-        'sec-fetch-site': 'none',
+        'sec-fetch-site': headers['sec-fetch-site'] ?? 'none',  // 원본 헤더 유지
         'sec-fetch-user': headers['sec-fetch-user'] ?? '?1',
         'upgrade-insecure-requests': '1',
         cookie: currentCookie,
