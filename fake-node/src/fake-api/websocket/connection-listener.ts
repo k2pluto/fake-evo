@@ -45,6 +45,14 @@ export async function connectionListener(ws: WebSocket, request: FastifyRequest)
 
     const selfUrl = getSelfUrl(request)
 
+    // Log Cloudflare headers to debug real user IP
+    console.log('🔍 Incoming Headers (IP detection):', {
+      'x-forwarded-for': request.headers['x-forwarded-for'],
+      'cf-connecting-ip': request.headers['cf-connecting-ip'],
+      'x-real-ip': request.headers['x-real-ip'],
+      'socket-ip': request.socket.remoteAddress,
+    })
+
     const socketData = new SocketData({
       user,
       agent,
@@ -105,39 +113,53 @@ export async function connectionListener(ws: WebSocket, request: FastifyRequest)
       console.log('[Akamai Bypass] Firefox → Chrome User-Agent')
     }
 
-    const sendHeaders = {
-      //...request.headers,
-      host: evolutionUrl.host,
-      origin: evolutionUrl.origin,
+    // 받은 헤더를 그대로 사용하되, 도메인만 fake-node → Evolution으로 변경
+    const sendHeaders = { ...headers } as Record<string, string>
 
-      ...(headers.accept != null && { accept: headers.accept as string }),
-      'accept-encoding': headers['accept-encoding'] as string,
-      'accept-language': headers['accept-language'] as string,
-      ...(headers['content-type'] != null && { ['content-type']: headers['content-type'] as string }),
-      ...(headers.priority != null && { priority: headers.priority as string }),
+    // Cloudflare/Caddy/Proxy가 추가한 헤더들 제거 (프록시 사용 흔적 제거)
+    delete sendHeaders['x-forwarded-for']
+    delete sendHeaders['x-forwarded-host']
+    delete sendHeaders['x-forwarded-proto']
+    delete sendHeaders['x-real-ip']
+    delete sendHeaders['via']
+    delete sendHeaders['cdn-loop']
+    delete sendHeaders['cf-connecting-ip']
+    delete sendHeaders['cf-ipcountry']
+    delete sendHeaders['cf-ray']
+    delete sendHeaders['cf-visitor']
+    delete sendHeaders['cf-worker']
+    delete sendHeaders['cf-request-id']
 
-      'user-agent': spoofedUserAgent,
-      ...(headers.cookie != null && { cookie: headers.cookie as string }),
+    // 필수: host는 Evolution 서버로 변경
+    delete sendHeaders.host // 소문자 host 삭제
+    sendHeaders.Host = evolutionUrl.host // 대문자 Host로 설정
 
-      connection: 'upgrade',
-      upgrade: 'websocket',
-
-      // Safari/Firefox 호환성: sec-websocket 헤더들을 명시적으로 전달
-      ...(headers['sec-websocket-version'] != null && { 'sec-websocket-version': headers['sec-websocket-version'] as string }),
-      ...(headers['sec-websocket-key'] != null && { 'sec-websocket-key': headers['sec-websocket-key'] as string }),
-      ...(headers['sec-websocket-extensions'] != null && { 'sec-websocket-extensions': headers['sec-websocket-extensions'] as string }),
-      ...(headers['sec-websocket-protocol'] != null && { 'sec-websocket-protocol': headers['sec-websocket-protocol'] as string }),
-
-      // Safari/Firefox sec-fetch-* 헤더 (Akamai WAF 통과용)
-      ...(headers['sec-fetch-site'] != null && { 'sec-fetch-site': headers['sec-fetch-site'] as string }),
-      ...(headers['sec-fetch-mode'] != null && { 'sec-fetch-mode': headers['sec-fetch-mode'] as string }),
-      ...(headers['sec-fetch-dest'] != null && { 'sec-fetch-dest': headers['sec-fetch-dest'] as string }),
-
-      // Safari 추가 헤더
-      ...(headers['sec-ch-ua'] != null && { 'sec-ch-ua': headers['sec-ch-ua'] as string }),
-      ...(headers['sec-ch-ua-mobile'] != null && { 'sec-ch-ua-mobile': headers['sec-ch-ua-mobile'] as string }),
-      ...(headers['sec-ch-ua-platform'] != null && { 'sec-ch-ua-platform': headers['sec-ch-ua-platform'] as string }),
+    // origin이 있으면 fake-node 도메인을 Evolution 도메인으로 교체
+    if (sendHeaders.origin && sendHeaders.origin.includes('soft-evo-games.com')) {
+      delete sendHeaders.origin // 소문자 origin 삭제
+      sendHeaders.Origin = evolutionUrl.origin // 대문자 Origin으로 설정
+      console.log(`[WS] Origin: ${headers.origin} → ${evolutionUrl.origin}`)
     }
+
+    // referer가 있으면 fake-node 도메인을 Evolution 도메인으로 교체 (경로 유지)
+    if (sendHeaders.referer && sendHeaders.referer.includes('soft-evo-games.com')) {
+      const refererUrl = new URL(sendHeaders.referer)
+      const newReferer = `${evolutionUrl.origin}${refererUrl.pathname}${refererUrl.search}`
+      delete sendHeaders.referer // 소문자 referer 삭제
+      sendHeaders.Referer = newReferer // 대문자 Referer로 설정
+      console.log(`[WS] Referer: ${headers.referer} → ${newReferer}`)
+    }
+
+    // Firefox는 User-Agent를 Chrome으로 위장 (Akamai 우회)
+    if (isFirefox) {
+      sendHeaders['user-agent'] = spoofedUserAgent
+    }
+
+    // WebSocket 필수 헤더
+    delete sendHeaders.connection // 소문자 connection 삭제
+    delete sendHeaders.upgrade // 소문자 upgrade 삭제
+    sendHeaders.Connection = 'upgrade' // 대문자 Connection으로 설정
+    sendHeaders.Upgrade = 'websocket' // 대문자 Upgrade로 설정
 
     // Use browser-specific pooled agent for better TLS fingerprint consistency
     const userAgent = headers['user-agent'] as string

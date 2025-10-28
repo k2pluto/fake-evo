@@ -92,6 +92,7 @@ if (process.env.STAGE_ENV === 'test') {
     ...PROD,
     proxyVideo: true,
     SELF_URL: 'https://babylonkrst2.evo-games-k.com',
+    EVOLUTION_URL: 'https://babylonvg.evo-games.com',
     VIDEO_HOST: 'seoa-mdp-e08.evo-games-k.com',
     FAKE_VENDOR: VendorCode.FakeCX_Evolution,
   } satisfies ConfigData)

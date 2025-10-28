@@ -86,7 +86,7 @@ export async function connectionVideo(ws: WebSocket, request: FastifyRequest) {
       }
     }
 
-    // Use Evolution's real domain for Origin header (from loginData.evolutionUrl)
+    // Evolution 메인 도메인
     const evolutionOrigin = loginData.evolutionUrl || `https://${requestUrl.host}`
 
     const sendHeaders = {

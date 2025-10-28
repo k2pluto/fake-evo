@@ -8,7 +8,6 @@ import path from 'path'
 import tls from 'tls'
 import { type CallEvoOptions, type CallEvoResponse } from './call-evo'
 import { shuffleArray } from '@service/src/lib/utility/util'
-import parser from 'ua-parser-js'
 import { getOrCreateBrowserAgent } from './browser-tls-agent'
 
 const gunzipAsync = promisify(gunzip)
@@ -107,11 +106,6 @@ export function updateTlsSuites(newPreset?: number) {
   console.log('updateTlsSuites', tlsCurrentPreset, tls.DEFAULT_CIPHERS)
   tlsCurrentPreset++
   //currentPreset += 10
-}
-
-const osToPlatfrom = {
-  'Mac OS': 'macOS',
-  Windows: 'Windows',
 }
 
 const referers = [
@@ -311,6 +305,10 @@ async function callCustomAgent(
   console.log('URL:', urlstr)
   console.log('Method:', method ?? 'GET')
   console.log('Headers:', JSON.stringify(newHeaders, null, 2))
+  if (method === 'POST' && body) {
+    const bodyPreview = typeof body === 'string' ? body.substring(0, 500) : JSON.stringify(body).substring(0, 500)
+    console.log('POST Body:', bodyPreview)
+  }
 
   const url = new URL(urlstr)
   const userAgent = (headers['user-agent'] || newHeaders['user-agent']) as string
@@ -627,76 +625,57 @@ export async function callAxios(
   try {
     const url = new URL(urlstr)
 
-    const userAgent = parser(headers['user-agent'] as string)
+    const fixEvourl = 'https://babylonvg.evo-games.com'
+    // Evolution 메인 도메인 (비디오 서버 요청이라도 Origin은 메인 도메인)
+    const mainOrigin = evolutionUrl || fixEvourl
 
-    const cookies: Record<string, string> = {}
+    // 디버깅: 도메인 변환 확인
+    console.log(`🔍 callAxios Header processing:`)
+    console.log(`   Request URL: ${urlstr}`)
+    console.log(`   Evolution domain: ${mainOrigin}`)
 
-    if (headers.cookie != null) {
-      for (const cookie of (headers.cookie as string).split(';')) {
-        const [key, value] = cookie.split('=')
-        cookies[key] = value
+    // 받은 헤더를 그대로 복사하되, 도메인만 fake-node → Evolution으로 변경
+    newHeaders = { ...headers } as Record<string, string | string[]>
+
+    // Cloudflare/Caddy/Proxy가 추가한 헤더들 제거 (프록시 사용 흔적 제거)
+    delete newHeaders['x-forwarded-for']
+    delete newHeaders['x-forwarded-host']
+    delete newHeaders['x-forwarded-proto']
+    delete newHeaders['x-real-ip']
+    delete newHeaders['via']
+    delete newHeaders['cdn-loop']
+    delete newHeaders['cf-connecting-ip']
+    delete newHeaders['cf-ipcountry']
+    delete newHeaders['cf-ray']
+    delete newHeaders['cf-visitor']
+    delete newHeaders['cf-worker']
+    delete newHeaders['cf-request-id']
+
+    // 필수: host는 요청 대상 서버로 변경
+    newHeaders.host = url.host
+
+    // origin이 있으면 fake-node 도메인을 Evolution 도메인으로 교체
+    if (newHeaders.origin && typeof newHeaders.origin === 'string') {
+      if (newHeaders.origin.includes('soft-evo-games.com')) {
+        newHeaders.origin = mainOrigin
+        console.log(`   ✏️ Origin: ${headers.origin} → ${mainOrigin}`)
       }
     }
 
-    const newCookie = headers.cookie
-    const fixEvourl = 'https://babylonvg.evo-games.com'
-    // Origin과 Referer는 Evolution 메인 도메인으로 설정 (비디오 서버에 요청해도 Origin은 메인 도메인)
-    const mainOrigin = evolutionUrl || fixEvourl
-    const referer = `${mainOrigin}/`
-
-    // 디버깅: evolutionUrl 전달 여부 확인
-    console.log(`🔍 callAxios Origin setting:`)
-    console.log(`   Request URL: ${urlstr}`)
-    console.log(`   evolutionUrl param: ${evolutionUrl || 'NOT PROVIDED'}`)
-    console.log(`   url.origin: ${url.origin}`)
-    console.log(`   Final origin: ${mainOrigin}`)
-
-    if (evolutionUrl && evolutionUrl !== url.origin) {
-      console.log(`🔧 Using Evolution main domain for Origin/Referer:`)
-      console.log(`   Request URL: ${urlstr}`)
-      console.log(`   Origin: ${mainOrigin} (not ${url.origin})`)
+    // referer가 있으면 fake-node 도메인을 Evolution 도메인으로 교체 (경로 유지)
+    if (newHeaders.referer && typeof newHeaders.referer === 'string') {
+      if (newHeaders.referer.includes('soft-evo-games.com')) {
+        const refererUrl = new URL(newHeaders.referer)
+        const newReferer = `${mainOrigin}${refererUrl.pathname}${refererUrl.search}`
+        newHeaders.referer = newReferer
+        console.log(`   ✏️ Referer: ${headers.referer} → ${newReferer}`)
+      }
     }
 
-    newHeaders = {
-      host: url.host,
-      origin: mainOrigin,  // Evolution 메인 도메인 (예: https://babylonvg.evo-games.com)
-      ...(headers.referer != null && { referer }),  // Evolution 메인 도메인 referer
-
-      accept: headers['accept'],
-      'accept-encoding': headers['accept-encoding'] ?? 'gzip, deflate, br',
-      'accept-language': headers['accept-language'],
-      'content-type': headers['content-type'],
-      priority: headers['priority'],
-      'connection': 'keep-alive',
-      'upgrade-insecure-requests': '1',
-      'te': 'trailers',
-
-      'user-agent': headers['user-agent'],
-      cookie: newCookie,
-
-      'sec-ch-ua': headers['sec-ch-ua'],
-      'sec-ch-ua-mobile': headers['sec-ch-ua-mobile'],
-      'sec-ch-ua-platform': headers['sec-ch-ua-platform'],
-      'sec-fetch-dest': headers['sec-fetch-dest'] ?? 'document',
-      'sec-fetch-mode': headers['sec-fetch-mode'] ?? 'navigate',
-      'sec-fetch-site': 'none',  // 항상 'none' - 직접 연결 (프록시 증거 제거)
-      'sec-fetch-user': headers['sec-fetch-user'] ?? '?1',
-    } as Record<string, string | string[]>
-
+    // undefined 값 제거
     for (const key in newHeaders) {
       if (newHeaders[key] === undefined) {
         delete newHeaders[key]
-      }
-    }
-
-    if (userAgent.browser.name === 'Edge') {
-      newHeaders = {
-        ...newHeaders,
-        'sec-ch-ua':
-          (headers['sec-ch-ua'] as string) ??
-          `""Not)A;Brand";v="99", "Microsoft Edge";v="${userAgent.browser.major}", "Chromium";v="${userAgent.browser.major}"`,
-        'sec-ch-ua-mobile': headers['sec-ch-ua-mobile'] ?? '?0',
-        'sec-ch-ua-platform': headers['sec-ch-ua-platform'] ?? osToPlatfrom[userAgent.os.name],
       }
     }
 

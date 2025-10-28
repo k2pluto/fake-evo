@@ -134,6 +134,20 @@ export async function createApp() {
     }))
   })
 
+  // 모든 POST/GET 요청 로깅 (헤더 추적용)
+  instance.addHook('onRequest', async (request) => {
+    if (request.method === 'POST' || request.method === 'GET') {
+      console.log(`📝 ${request.method} Request:`, request.url.substring(0, 150))
+      console.log('   Headers:', JSON.stringify({
+        host: request.headers.host,
+        origin: request.headers.origin,
+        referer: request.headers.referer,
+        'user-agent': request.headers['user-agent']?.substring(0, 80),
+        cookie: request.headers.cookie ? `[${request.headers.cookie.length} bytes]` : undefined,
+      }, null, 2))
+    }
+  })
+
   instance.addHook('preValidation', async (request, reply) => {
     // check if the request is authenticated
     /* if (!request.isAuthenticated()) {
@@ -203,6 +217,14 @@ export async function createApp() {
 
       requestAny.authInfo = authInfo
       requestAny.loginData = loginData
+
+      // Log Cloudflare headers to debug real user IP
+      console.log('🔍 Incoming Headers (preValidation IP detection):', {
+        'x-forwarded-for': headers['x-forwarded-for'],
+        'cf-connecting-ip': headers['cf-connecting-ip'],
+        'x-real-ip': headers['x-real-ip'],
+        'socket-ip': request.socket.remoteAddress,
+      })
     } catch (err) {
       errorObj = err
       console.log(JSON.stringify({ where: 'preValidation', ...errorToObj(err), username }))

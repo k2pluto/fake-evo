@@ -4169,6 +4169,8 @@ and limitations under the License.
 
 /*! ./websocket/connection-listener */
 
+/*! ./websocket/connection-video */
+
 /*! ./websocket/util */
 
 /*! ./websocketerror */
@@ -8570,6 +8572,10 @@ and limitations under the License.
 /*!********************************************************!*\
   !*** ./service/src/lib/interface/mongo/log-service.ts ***!
   \********************************************************/
+
+/*!*********************************************************!*\
+  !*** ./dist/src/fake-api/websocket/connection-video.js ***!
+  \*********************************************************/
 
 /*!*********************************************************!*\
   !*** ./node_modules/@mongodb-js/saslprep/dist/index.js ***!

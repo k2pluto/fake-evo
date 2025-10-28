@@ -45,6 +45,25 @@ async function defaultEvoRootRouter(req: FastifyRequest, reply: FastifyReply) {
       headers: req.headers,
     })
 
+    // Akamai 봇 감지 스크립트 제거 (자동 로그아웃 방지)
+    if (res.recvHeaders['content-type']?.includes('text/html')) {
+      const beforeLength = res.data.length
+
+      // Akamai script 태그 제거 (src에 /akam/ 포함)
+      res.data = res.data.replace(/<script[^>]*src=["'][^"']*\/akam\/[^"']*["'][^>]*>[\s\S]*?<\/script>/gi, '')
+
+      // Akamai img 태그 제거 (src에 /akam/ 포함)
+      res.data = res.data.replace(/<img[^>]*src=["'][^"']*\/akam\/[^"']*["'][^>]*\/?>/gi, '')
+
+      // Akamai 인라인 스크립트 제거 (akam 문자열 포함)
+      res.data = res.data.replace(/<script[^>]*>[\s\S]*?\/akam\/[\s\S]*?<\/script>/gi, '')
+
+      const afterLength = res.data.length
+      if (beforeLength !== afterLength) {
+        console.log(`🚫 Akamai scripts removed from HTML: ${beforeLength} -> ${afterLength} bytes (removed ${beforeLength - afterLength} bytes)`)
+      }
+    }
+
     if (config.proxyVideo && res.recvHeaders['content-type']?.includes('text/html')) {
       //이 부분에서 많이 부하가 있을거라 예상됨 나중에 캐싱으로 처리해야 할듯
       /*const match = res.data.match(versionRegex)
@@ -167,6 +186,7 @@ async function defaultCdnRouter(req: FastifyRequest, reply: FastifyReply) {
       'sec-fetch-site': 'none',  // 직접 연결로 위장
       'priority': req.headers['priority'],
       'cookie': req.headers['cookie'],
+      'referer': req.headers['referer'],  // Referer 추가 (callAxios에서 도메인 변환됨)
     }
 
     // undefined 값 제거
@@ -178,7 +198,7 @@ async function defaultCdnRouter(req: FastifyRequest, reply: FastifyReply) {
 
     console.log('===== defaultCdnRouter: Cleaned headers for Evolution CDN =====')
     console.log('Username:', loginData?.username, 'URL:', url)
-    console.log('Original Referer:', req.headers['referer'], '(removed)')
+    console.log('Original Referer:', req.headers['referer'], '(will be transformed by callAxios)')
     console.log('sec-fetch-site:', cleanHeaders['sec-fetch-site'])
     console.log('================================================================')
 
@@ -295,6 +315,10 @@ async function defaultEvoRouter(req: FastifyRequest, reply: FastifyReply) {
       const bodyObj = JSON.parse(req.body as string)
       changePacketHostname(bodyObj, new URL(evolutionUrl).hostname)
 
+      // POST body 로깅
+      console.log('defaultEvoRouter POST:', req.originalUrl)
+      console.log('  Body preview:', JSON.stringify(bodyObj).substring(0, 200))
+
       res = await callEvo(url, {
         body: JSON.stringify(bodyObj),
         headers: req.headers,
@@ -334,6 +358,10 @@ async function defaultEvoApiRouter(req: FastifyRequest, reply: FastifyReply) {
     if (req.method === 'POST') {
       const bodyObj = JSON.parse(req.body as string)
       changePacketHostname(bodyObj, new URL(evolutionUrl).hostname)
+
+      // POST body 로깅
+      console.log('defaultEvoApiRouter POST:', req.originalUrl)
+      console.log('  Body preview:', JSON.stringify(bodyObj).substring(0, 200))
 
       res = await callEvo(url, {
         body: JSON.stringify(bodyObj),
@@ -451,6 +479,9 @@ export function registerV2Controller(fastify: FastifyInstance) {
 
   fastify.post('/set-url', async (req, reply) => {
     const { authToken, evolutionEntryUrl } = req.body as { authToken: string; evolutionEntryUrl: string }
+
+    // POST body 로깅
+    console.log('POST /set-url:', JSON.stringify(req.body).substring(0, 200))
 
     let userInfo: User
 
@@ -702,22 +733,63 @@ export function registerV2Controller(fastify: FastifyInstance) {
     console.log('etc_post_url', req.url)
     const { EVOSESSIONID } = (req.cookies ?? {}) as { EVOSESSIONID: string }
 
-    return ''
-
-    if (EVOSESSIONID == null) {
-      return 'OK'
-      //return await reply.code(403).send({ error: 'unauthenticated' })
-    }
-
     try {
-      const evolutionUrl = config.EVOLUTION_URL ?? (await getEvolutionUrl(EVOSESSIONID))
-      if (evolutionUrl == null) {
-        return await reply.status(401).send('authorization failed login')
+      // EVOSESSIONID가 없어도 처리 가능하도록 수정 (Akamai POST는 쿠키 없음)
+      let evolutionUrl = config.EVOLUTION_URL
+
+      if (!evolutionUrl && EVOSESSIONID) {
+        evolutionUrl = await getEvolutionUrl(EVOSESSIONID)
       }
+
+      // Akamai POST는 쿠키가 없으므로 fake-node 도메인을 Evolution 도메인으로 매핑
+      if (!evolutionUrl) {
+        const selfUrl = getSelfUrl(req)
+        const selfDomain = new URL(selfUrl).hostname
+
+        // soft-evo-games.com 도메인을 evo-games.com으로 변환
+        // babylonrdi.soft-evo-games.com → babylonvg.evo-games.com
+        const evolutionDomain = selfDomain.replace(/([a-z]+)[a-z]{3}\.soft-evo-games\.com/, 'babylonvg.evo-games.com')
+        evolutionUrl = `https://${evolutionDomain}`
+        console.log(`🔄 Akamai POST - Mapped domain: ${selfDomain} → ${evolutionDomain}`)
+      }
+
+      if (evolutionUrl == null) {
+        console.log('⚠️ POST without session/origin - returning OK:', req.url.substring(0, 100))
+        return 'OK'
+      }
+
+      // POST body 처리: fake-node 도메인을 Evolution 도메인으로 교체
+      let bodyToSend = req.body
+      if (req.body) {
+        const selfUrl = getSelfUrl(req)
+        const fakeNodeDomain = new URL(selfUrl).hostname
+        const evolutionDomain = new URL(evolutionUrl).hostname
+
+        if (typeof req.body === 'string') {
+          const originalBody = req.body
+          // fake-node 도메인을 Evolution 도메인으로 교체 (정확한 도메인 매칭)
+          bodyToSend = originalBody.replace(new RegExp(fakeNodeDomain.replace(/\./g, '\\.'), 'gi'), evolutionDomain)
+
+          // Akamai 텔레메트리 요청인 경우 로깅 (173자 이상의 obfuscated URL)
+          if (req.url.length > 100 && req.url.split('/').length <= 2) {
+            console.log('🔧 Akamai POST - Domain replacement:')
+            console.log('   URL:', req.url.substring(0, 80) + '...')
+            console.log(`   ${fakeNodeDomain} -> ${evolutionDomain}`)
+            console.log('   Original body preview:', originalBody.substring(0, 150))
+            console.log('   Replaced body preview:', (typeof bodyToSend === 'string' ? bodyToSend : JSON.stringify(bodyToSend)).substring(0, 150))
+          }
+        } else if (typeof req.body === 'object') {
+          // 객체인 경우 JSON 문자열로 변환 후 교체
+          const jsonStr = JSON.stringify(req.body)
+          bodyToSend = jsonStr.replace(new RegExp(fakeNodeDomain.replace(/\./g, '\\.'), 'gi'), evolutionDomain)
+        }
+      }
+
       const res = await callEvo(`${evolutionUrl}${req.url}`, {
         headers: req.headers,
         method: 'POST',
-        evolutionUrl: evolutionUrl,  // Evolution 메인 도메인 전달
+        body: bodyToSend,
+        evolutionUrl: evolutionUrl,
       })
       await reply.header('Content-Type', res.recvHeaders['content-type']).status(res.status).send(res.data)
     } catch (err) {

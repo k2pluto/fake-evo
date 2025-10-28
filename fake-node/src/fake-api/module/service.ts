@@ -869,6 +869,13 @@ export async function setup(req: FastifyRequest, reply: FastifyReply) {
 
     setupData.casino_id = fakeCasinoId
 
+    // 채팅 WebSocket도 fake-node를 통하도록 serverHost 변경
+    if (setupData.chat && setupData.chat.serverHost) {
+      const originalChatHost = setupData.chat.serverHost
+      setupData.chat.serverHost = fakeServerHost
+      console.log(`🔧 채팅 서버 변경: ${originalChatHost} → ${fakeServerHost}`)
+    }
+
     const sendData = { ...setupData, ...(isLambda && { wsHost }) }
 
     return await reply.headers(setupHeaders).send(sendData)
