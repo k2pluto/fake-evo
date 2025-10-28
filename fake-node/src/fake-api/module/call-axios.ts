@@ -660,6 +660,10 @@ export async function callAxios(
         newHeaders.origin = mainOrigin
         console.log(`   ✏️ Origin: ${headers.origin} → ${mainOrigin}`)
       }
+    } else {
+      // origin이 없으면 Evolution 메인 도메인으로 설정 (JWT roh 필드 생성에 필수)
+      newHeaders.origin = mainOrigin
+      console.log(`   ✏️ Origin: (none) → ${mainOrigin}`)
     }
 
     // referer가 있으면 fake-node 도메인을 Evolution 도메인으로 교체 (경로 유지)
