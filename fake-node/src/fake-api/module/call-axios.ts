@@ -661,9 +661,13 @@ export async function callAxios(
         console.log(`   ✏️ Origin: ${headers.origin} → ${mainOrigin}`)
       }
     } else {
-      // origin이 없으면 Evolution 메인 도메인으로 설정 (JWT roh 필드 생성에 필수)
-      newHeaders.origin = mainOrigin
-      console.log(`   ✏️ Origin: (none) → ${mainOrigin}`)
+      // origin이 없는 경우: manifest-ws2.json 요청에만 추가 (JWT roh 필드 생성에 필수)
+      // 다른 요청에 origin을 추가하면 Akamai Bot Manager가 의심스러운 행동으로 감지함
+      if (url.pathname.includes('manifest-ws2.json')) {
+        newHeaders.origin = mainOrigin
+        console.log(`   ✏️ Origin: (none) → ${mainOrigin} [manifest-ws2 required]`)
+      }
+      // 다른 요청에는 origin을 추가하지 않음 (브라우저 자연스러운 동작 유지)
     }
 
     // referer가 있으면 fake-node 도메인을 Evolution 도메인으로 교체 (경로 유지)
