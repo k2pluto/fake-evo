@@ -89,23 +89,49 @@ export async function connectionVideo(ws: WebSocket, request: FastifyRequest) {
     // Evolution 메인 도메인
     const evolutionOrigin = loginData.evolutionUrl || `https://${requestUrl.host}`
 
-    const sendHeaders = {
-      'Cache-Control': 'no-cache',
-      Cookie: request.headers.cookie ?? '',
-      Pragma: 'no-cache',
-      Origin: evolutionOrigin,
-      Host: requestUrl.host,
-      'User-Agent': request.headers['user-agent'],
-      'Accept-Encoding': request.headers['accept-encoding'],
-      'Accept-Language': request.headers['accept-language'],
-    }
+    // 사용자 브라우저 헤더를 그대로 사용하되, 프록시 흔적 제거 및 도메인 교체
+    const sendHeaders = { ...request.headers } as Record<string, string | string[]>
 
-    console.log('connected video socket', username, request.url, evolutionWsUrl, 'evolutionOrigin:', evolutionOrigin, JSON.stringify(sendHeaders))
-    console.log('user request headers:', JSON.stringify({
-      host: request.headers.host,
-      origin: request.headers.origin,
-      referer: request.headers.referer,
-    }))
+    // Cloudflare/Caddy/Proxy 흔적 제거
+    delete sendHeaders['x-forwarded-for']
+    delete sendHeaders['x-forwarded-host']
+    delete sendHeaders['x-forwarded-proto']
+    delete sendHeaders['x-real-ip']
+    delete sendHeaders['via']
+    delete sendHeaders['cdn-loop']
+    delete sendHeaders['cf-connecting-ip']
+    delete sendHeaders['cf-ipcountry']
+    delete sendHeaders['cf-ray']
+    delete sendHeaders['cf-visitor']
+    delete sendHeaders['cf-worker']
+    delete sendHeaders['cf-request-id']
+
+    // 필수: host는 Evolution 비디오 서버로 변경
+    sendHeaders.host = requestUrl.host
+    delete sendHeaders.Host
+
+    // origin이 있으면 fake-node 도메인을 Evolution 도메인으로 교체
+    if (sendHeaders.origin && typeof sendHeaders.origin === 'string') {
+      if (sendHeaders.origin.includes('soft-evo-games.com')) {
+        sendHeaders.origin = evolutionOrigin
+        console.log(`[Video WS] Origin: ${request.headers.origin} → ${evolutionOrigin}`)
+      }
+    }
+    delete sendHeaders.Origin
+
+    // referer가 있으면 fake-node 도메인을 Evolution 도메인으로 교체 (경로 유지)
+    if (sendHeaders.referer && typeof sendHeaders.referer === 'string') {
+      if (sendHeaders.referer.includes('soft-evo-games.com')) {
+        const refererUrl = new URL(sendHeaders.referer)
+        const newReferer = `${evolutionOrigin}${refererUrl.pathname}${refererUrl.search}`
+        sendHeaders.referer = newReferer
+        console.log(`[Video WS] Referer: ${request.headers.referer} → ${newReferer}`)
+      }
+    }
+    delete sendHeaders.Referer
+
+    console.log('connected video socket', username, request.url, evolutionWsUrl, 'evolutionOrigin:', evolutionOrigin)
+    console.log('sendHeaders keys:', Object.keys(sendHeaders).join(', '))
 
     const videoWs = new WebSocket(evolutionWsUrl, { headers: sendHeaders })
 
