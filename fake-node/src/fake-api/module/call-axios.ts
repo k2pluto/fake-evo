@@ -374,6 +374,12 @@ async function callCustomAgent(
           const payload = JSON.parse(Buffer.from(parts[1], 'base64').toString())
           console.log('   JWT payload dlh:', payload.dlh)
           console.log('   JWT payload sub:', payload.sub)
+          if (payload.exp) {
+            const expDate = new Date(payload.exp * 1000)
+            const now = new Date()
+            const diffSeconds = Math.floor((expDate.getTime() - now.getTime()) / 1000)
+            console.log(`   JWT payload exp: ${payload.exp} (${expDate.toISOString()}, expires in ${diffSeconds}s)`)
+          }
         }
       } catch (e) {
         console.log('   (Failed to decode JWT)')
@@ -462,6 +468,12 @@ async function callUndici(
           const payload = JSON.parse(Buffer.from(parts[1], 'base64').toString())
           console.log('   JWT payload dlh:', payload.dlh)
           console.log('   JWT payload sub:', payload.sub)
+          if (payload.exp) {
+            const expDate = new Date(payload.exp * 1000)
+            const now = new Date()
+            const diffSeconds = Math.floor((expDate.getTime() - now.getTime()) / 1000)
+            console.log(`   JWT payload exp: ${payload.exp} (${expDate.toISOString()}, expires in ${diffSeconds}s)`)
+          }
         }
       } catch (e) {
         console.log('   (Failed to decode JWT)')
@@ -567,6 +579,12 @@ async function callAxiosBackend(
           const payload = JSON.parse(Buffer.from(parts[1], 'base64').toString())
           console.log('   JWT payload dlh:', payload.dlh)
           console.log('   JWT payload sub:', payload.sub)
+          if (payload.exp) {
+            const expDate = new Date(payload.exp * 1000)
+            const now = new Date()
+            const diffSeconds = Math.floor((expDate.getTime() - now.getTime()) / 1000)
+            console.log(`   JWT payload exp: ${payload.exp} (${expDate.toISOString()}, expires in ${diffSeconds}s)`)
+          }
         }
       } catch (e) {
         console.log('   (Failed to decode JWT)')
@@ -654,30 +672,96 @@ export async function callAxios(
     // 필수: host는 요청 대상 서버로 변경
     newHeaders.host = url.host
 
-    // origin이 있으면 fake-node 도메인을 Evolution 도메인으로 교체
-    if (newHeaders.origin && typeof newHeaders.origin === 'string') {
-      if (newHeaders.origin.includes('soft-evo-games.com')) {
-        newHeaders.origin = mainOrigin
-        console.log(`   ✏️ Origin: ${headers.origin} → ${mainOrigin}`)
+    // 원본 fake-node 도메인 추출 (예: babylondg.soft-evo-games.com)
+    const fakeNodeDomain = headers.host as string
+
+    // 모든 헤더를 순회하면서 fake-node 도메인을 Evolution 도메인으로 교체
+    for (const key in newHeaders) {
+      const value = newHeaders[key]
+
+      // string 타입 헤더만 처리
+      if (typeof value === 'string' && value.includes('soft-evo-games.com')) {
+        // URL 형태인지 확인 (http:// 또는 https://)
+        if (value.startsWith('http://') || value.startsWith('https://')) {
+          try {
+            const headerUrl = new URL(value)
+            if (headerUrl.hostname.includes('soft-evo-games.com')) {
+              // 도메인만 교체, 경로는 유지
+              const newValue = value.replace(headerUrl.origin, mainOrigin)
+              newHeaders[key] = newValue
+              console.log(`   ✏️ ${key}: ${value} → ${newValue}`)
+            }
+          } catch (e) {
+            // URL 파싱 실패시 단순 문자열 교체
+            const newValue = value.replace(fakeNodeDomain, new URL(mainOrigin).hostname)
+            newHeaders[key] = newValue
+            console.log(`   ✏️ ${key}: ${value} → ${newValue}`)
+          }
+        } else {
+          // URL이 아닌 경우 도메인만 교체
+          const newValue = value.replace(fakeNodeDomain, new URL(mainOrigin).hostname)
+          if (newValue !== value) {
+            newHeaders[key] = newValue
+            console.log(`   ✏️ ${key}: ${value} → ${newValue}`)
+          }
+        }
       }
-    } else {
-      // origin이 없는 경우: manifest-ws2.json 요청에만 추가 (JWT roh 필드 생성에 필수)
-      // 다른 요청에 origin을 추가하면 Akamai Bot Manager가 의심스러운 행동으로 감지함
-      if (url.pathname.includes('manifest-ws2.json')) {
-        newHeaders.origin = mainOrigin
-        console.log(`   ✏️ Origin: (none) → ${mainOrigin} [manifest-ws2 required]`)
+
+      // string[] 배열 타입 헤더 처리
+      if (Array.isArray(value)) {
+        newHeaders[key] = value.map(v => {
+          if (typeof v === 'string' && v.includes('soft-evo-games.com')) {
+            return v.replace(fakeNodeDomain, new URL(mainOrigin).hostname)
+          }
+          return v
+        })
       }
-      // 다른 요청에는 origin을 추가하지 않음 (브라우저 자연스러운 동작 유지)
     }
 
-    // referer가 있으면 fake-node 도메인을 Evolution 도메인으로 교체 (경로 유지)
-    if (newHeaders.referer && typeof newHeaders.referer === 'string') {
-      if (newHeaders.referer.includes('soft-evo-games.com')) {
-        const refererUrl = new URL(newHeaders.referer)
-        const newReferer = `${mainOrigin}${refererUrl.pathname}${refererUrl.search}`
-        newHeaders.referer = newReferer
-        console.log(`   ✏️ Referer: ${headers.referer} → ${newReferer}`)
-      }
+    // origin이 없는 경우: manifest-ws2.json 요청에는 추가하지 않음 (브라우저 동작과 일치)
+    // Real browsers do NOT send origin header for cross-origin GET requests to CDN
+    // Adding origin causes Akamai to detect proxy/bot and issue short-lived tokens (20 sec instead of 24 hours)
+    // if (!newHeaders.origin && url.pathname.includes('manifest-ws2.json')) {
+    //   newHeaders.origin = mainOrigin
+    //   console.log(`   ✏️ Origin: (none) → ${mainOrigin} [manifest-ws2 required]`)
+    // }
+
+    // sec-fetch-site 수정: same-origin 또는 none은 봇 감지됨, cross-site로 변경 (HAR 동작과 일치)
+    // Browser sends same-origin when requesting fake-node, but Evolution expects cross-site
+    // live1.egcvi.com requests may have 'none', which also needs to be changed to 'cross-site'
+    if (newHeaders['sec-fetch-site'] === 'same-origin' || newHeaders['sec-fetch-site'] === 'none') {
+      const oldValue = newHeaders['sec-fetch-site']
+      newHeaders['sec-fetch-site'] = 'cross-site'
+      console.log(`   ✏️ sec-fetch-site: ${oldValue} → cross-site [Akamai bot detection fix]`)
+    }
+
+    // origin 추가: cross-site 요청에는 origin이 필요함 (HAR 동작과 일치)
+    // Browser automatically adds origin for cross-site fetch requests
+    // In fake-node environment, browser doesn't add origin (same domain), so we must add it
+    if (newHeaders['sec-fetch-site'] === 'cross-site' && !newHeaders['origin']) {
+      newHeaders['origin'] = mainOrigin
+      console.log(`   ✏️ origin: (none) → ${mainOrigin} [cross-site requires origin]`)
+    }
+
+    // user-agent 복원: callAxios 처리 중 user-agent가 누락되는 경우 복원 (HAR 기준)
+    // HAR shows user-agent is critical for Akamai authentication
+    if (!newHeaders['user-agent'] && headers['user-agent']) {
+      newHeaders['user-agent'] = headers['user-agent']
+      console.log(`   ✏️ user-agent: restored from original headers`)
+    }
+
+    // accept-encoding 수정: HAR에서는 "gzip, deflate, br, zstd"를 사용
+    // custom-agent는 "gzip, br"만 보내는데, 이것은 Akamai에서 봇으로 감지됨
+    if (newHeaders['accept-encoding'] === 'gzip, br') {
+      newHeaders['accept-encoding'] = 'gzip, deflate, br, zstd'
+      console.log(`   ✏️ accept-encoding: gzip, br → gzip, deflate, br, zstd [HAR match]`)
+    }
+
+    // sec-fetch-storage-access 추가: HAR에서 egcvi.com 요청은 이 헤더를 가짐
+    // Chrome이 자동으로 추가하는 헤더, 없으면 봇으로 감지될 수 있음
+    if (url.hostname.includes('egcvi.com') && newHeaders['sec-fetch-site'] === 'cross-site' && !newHeaders['sec-fetch-storage-access']) {
+      newHeaders['sec-fetch-storage-access'] = 'none'
+      console.log(`   ✏️ sec-fetch-storage-access: (none) → none [egcvi.com cross-site]`)
     }
 
     // undefined 값 제거

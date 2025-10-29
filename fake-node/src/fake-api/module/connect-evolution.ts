@@ -46,10 +46,18 @@ export async function connectEvolution(
         .map(([key, value]) => `${key}=${value}`)
         .join('; ')
 
+      // 🔍 클라이언트가 보낸 원본 sec-fetch-site 값 확인
+      console.log('===== connectEvolution: CLIENT ORIGINAL HEADERS =====')
+      console.log('  sec-fetch-site (from client):', headers['sec-fetch-site'])
+      console.log('  sec-fetch-dest (from client):', headers['sec-fetch-dest'])
+      console.log('  sec-fetch-mode (from client):', headers['sec-fetch-mode'])
+      console.log('====================================================')
+
       // Evolution 도메인으로 직접 연결한 것처럼 헤더 재구성 (프록시 증거 제거)
+      // origin: 브라우저는 GET navigation 요청에 origin을 보내지 않음 (클라이언트가 보낸 경우만 전달)
       const cleanHeaders = {
         host: evolutionEntryUrl.host,
-        origin: evolutionUrl,
+        ...(headers['origin'] ? { origin: evolutionUrl } : {}), // Only add if client sent it
         accept: headers['accept'],
         'accept-encoding': headers['accept-encoding'] ?? 'gzip, deflate, br',
         'accept-language': headers['accept-language'],
@@ -59,7 +67,7 @@ export async function connectEvolution(
         'sec-ch-ua-platform': headers['sec-ch-ua-platform'],
         'sec-fetch-dest': headers['sec-fetch-dest'] ?? 'document',
         'sec-fetch-mode': headers['sec-fetch-mode'] ?? 'navigate',
-        'sec-fetch-site': 'none',
+        'sec-fetch-site': headers['sec-fetch-site'] === 'none' ? 'cross-site' : (headers['sec-fetch-site'] ?? 'cross-site'),
         'sec-fetch-user': headers['sec-fetch-user'] ?? '?1',
         'upgrade-insecure-requests': '1',
         cookie: currentCookie,

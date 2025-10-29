@@ -412,6 +412,13 @@ export async function loginSwix(username: string, headers: Record<string, string
       console.log('Cookie header to send:', cookieHeader)
     }
 
+    // 🔍 클라이언트가 보낸 원본 sec-fetch-site 값 확인
+    console.log('===== loginSwix: CLIENT ORIGINAL HEADERS =====')
+    console.log('  sec-fetch-site (from client):', headers['sec-fetch-site'])
+    console.log('  sec-fetch-dest (from client):', headers['sec-fetch-dest'])
+    console.log('  sec-fetch-mode (from client):', headers['sec-fetch-mode'])
+    console.log('================================================')
+
     const newHeaders = {
       host: url.host,                                      // Evolution host
       origin: url.origin,                                  // Evolution origin
@@ -424,7 +431,7 @@ export async function loginSwix(username: string, headers: Record<string, string
       'sec-ch-ua-platform': headers['sec-ch-ua-platform'],
       'sec-fetch-dest': headers['sec-fetch-dest'] ?? 'document',
       'sec-fetch-mode': headers['sec-fetch-mode'] ?? 'navigate',
-      'sec-fetch-site': 'none',                            // 직접 연결
+      'sec-fetch-site': headers['sec-fetch-site'] === 'none' ? 'cross-site' : (headers['sec-fetch-site'] ?? 'cross-site'),
       'sec-fetch-user': headers['sec-fetch-user'] ?? '?1',
       'upgrade-insecure-requests': '1',
       'connection': 'keep-alive',
@@ -596,11 +603,43 @@ export async function entryGame(options: EntryGameOptions) {
 
       const location = connectRes.data.headers.location as string
 
-      if (location != null) {
-        return await reply.headers(connectRes.data.headers).redirect(location)
+      // 🍪 Evolution의 set-cookie를 fake-node 도메인용으로 변환
+      const responseHeaders = { ...connectRes.data.headers }
+      if (responseHeaders['set-cookie']) {
+        const cookies = Array.isArray(responseHeaders['set-cookie'])
+          ? responseHeaders['set-cookie']
+          : [responseHeaders['set-cookie']]
+
+        // fake-node 도메인 및 프로토콜 확인
+        const fakeNodeHost = headers.host as string // 예: babylondg.soft-evo-games.com 또는 localhost:4000
+        const isLocalhost = fakeNodeHost.includes('localhost') || fakeNodeHost.includes('127.0.0.1')
+        const fakeNodeDomain = isLocalhost ? fakeNodeHost : fakeNodeHost.split('.').slice(-3).join('.')
+
+        responseHeaders['set-cookie'] = cookies.map(cookie => {
+          let newCookie = cookie
+
+          // 1. Domain=.evo-games.com 교체
+          if (/Domain=\.evo-games\.com/i.test(newCookie)) {
+            newCookie = newCookie.replace(/Domain=\.evo-games\.com/gi, isLocalhost ? '' : `Domain=.${fakeNodeDomain}`)
+          }
+
+          // 2. localhost에서는 Secure 속성 제거 (HTTP에서는 Secure 쿠키 저장 불가)
+          if (isLocalhost) {
+            newCookie = newCookie.replace(/;\s*Secure;?/gi, ';')
+            console.log(`  🍪 Cookie for localhost (removed Secure): ${newCookie.substring(0, 100)}...`)
+          } else {
+            console.log(`  🍪 Cookie for production: ${newCookie.substring(0, 100)}...`)
+          }
+
+          return newCookie
+        })
       }
 
-      return await reply.headers(connectRes.data.headers).redirect(`/`)
+      if (location != null) {
+        return await reply.headers(responseHeaders).redirect(location)
+      }
+
+      return await reply.headers(responseHeaders).redirect(`/`)
     }
 
     // 페이크 접속이 안되면 블랙리스트에 추가한다. (봇일 가능성이 높다.)

@@ -142,6 +142,36 @@ async function defaultVideoRouter(req: FastifyRequest, reply: FastifyReply) {
       res.data = res.data.replace(/"stream\.host"\s*:\s*"[a-zA-Z0-9.]+"/, `"stream.host": "${new URL(selfUrl).host}"`)
     }
 
+    // video_wf*.js 파일에서 dlh 설정 시 location.hostname을 Evolution 도메인으로 교체
+    // video_version은 제외 (버전 정보만 있음)
+    if (req.originalUrl.includes('video_') && req.originalUrl.includes('.js')) {
+      console.log('[Video JS] Processing:', req.originalUrl)
+      // JWT dlh 필드에 사용되는 location.hostname을 Evolution 메인 도메인으로 교체
+      // CDN 도메인이 아닌 Evolution 메인 도메인 사용 (babylonvg.evo-games.com)
+      const evolutionHost = new URL(config.EVOLUTION_URL).hostname
+
+      // 디버깅: location.hostname이 실제로 있는지 확인
+      const hasLocationHostname = res.data.includes('location.hostname')
+      if (hasLocationHostname) {
+        const idx = res.data.indexOf('location.hostname')
+        const context = res.data.substring(Math.max(0, idx - 100), idx + 100)
+        console.log('[Video JS] Found location.hostname, context:', context)
+      } else {
+        console.log('[Video JS] ⚠️ location.hostname NOT found in file')
+      }
+
+      // 함수 호출의 마지막 인자로 전달되는 location.hostname만 교체
+      // 패턴: location.hostname) 또는 window.location.hostname)
+      // 예: F:"",location.hostname) -> F:"","babylonvg.evo-games.com")
+      const beforeReplace = res.data
+      res.data = res.data.replace(
+        /(?:window\.)?location\.hostname\)/g,
+        `"${evolutionHost}")`
+      )
+      const replaced = beforeReplace !== res.data
+      console.log(`[Video JS] ${replaced ? '✅ Replaced' : '❌ NOT replaced'} dlh location.hostname -> ${evolutionHost}`)
+    }
+
     res.recvHeaders['access-control-allow-origin'] = selfUrl
 
     return await reply.headers(res.recvHeaders).status(res.status).send(res.data)
@@ -299,6 +329,13 @@ async function defaultEvoRouter(req: FastifyRequest, reply: FastifyReply) {
 
   if (EVOSESSIONID == null) {
     return await reply.status(401).send(`authorization failed EVOSESSIONID ${EVOSESSIONID}`)
+  }
+
+  // /log 요청은 Evolution 서버로 전달하지 않고 직접 "OK" 응답
+  if (req.originalUrl.startsWith('/log?')) {
+    console.log('defaultEvoRouter POST:', req.originalUrl)
+    console.log('  ⚡ Intercepted /log request - returning "OK" without forwarding to Evolution')
+    return await reply.status(200).send('OK')
   }
 
   const evolutionUrl = config.EVOLUTION_URL ?? (await getEvolutionUrl(EVOSESSIONID))
