@@ -348,4 +348,8 @@ export default {
     API_URL: 'https://dev.triple-a.cc/api',
     API_KEY: 'gsBiDNbzSP8pya0AKLJ27Wlo',
   },
+  SKYHUB_ENV: {
+    API_URL: 'https://gameapi.skycityghub.com/op/api/seamless',
+    API_TOKEN: '0b294438f785416c87babf3c3fea04e6',
+  },
 } as ThirdPartyEnvironments

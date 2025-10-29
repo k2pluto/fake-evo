@@ -5,6 +5,7 @@ import { HonorLinkEnv } from '../honorlink'
 import { AlphaEnv } from '../alpha'
 import { UnionGameEnv } from '../union-game'
 import { EvolutionEnv } from '../evolution'
+import { SkyHubEnv } from '../sky-hub'
 
 export interface ThirdPartyEnvironments {
   CX_ENV: CXEnv
@@ -17,6 +18,8 @@ export interface ThirdPartyEnvironments {
   CHOI_EVOLUTION_ENV: EvolutionEnv
 
   UNIONGAME_COOL_ENV: UnionGameEnv
+
+  SKYHUB_ENV: SkyHubEnv
 }
 
 const rawConfig: ThirdPartyEnvironments = {} as any

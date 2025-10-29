@@ -8,6 +8,7 @@ import { ThirdPartyAlpha } from '@service/src/vendor/alpha'
 import { ThirdPartyUnionGame } from '@service/src/vendor/union-game'
 import { VendorCode } from '@service/src/lib/common/types/vendor-code'
 import { ThirdPartyEvolution } from '@service/src/vendor/evolution'
+import { ThirdPartySkyHub } from '@service/src/vendor/sky-hub'
 
 export const honorlink = new ThirdPartyHonorLink({ env: PROD.FAKEHONOR_ENV })
 
@@ -18,6 +19,7 @@ export const star_cx = new ThirdPartyCX({ env: PROD.FAKECX_ENV })
 export const cider_cx = new ThirdPartyCX({ env: PROD.CX_ENV })
 
 export const uniongame = new ThirdPartyUnionGame({ env: PROD.UNIONGAME_COOL_ENV })
+export const skyhub = new ThirdPartySkyHub({ env: PROD.SKYHUB_ENV })
 export const evolution = new ThirdPartyEvolution({ env: PROD.CHOI_EVOLUTION_ENV })
 
 export const fakeVendors = {

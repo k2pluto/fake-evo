@@ -1,6 +1,6 @@
 import { FastifyInstance } from 'fastify'
 
-import { honorlink, star_cx, alpha, uniongame, evolution } from '../../common/fake-vendors'
+import { honorlink, star_cx, alpha, uniongame, evolution, skyhub } from '../../common/fake-vendors'
 import { mainSQL, mongoBet } from '../app'
 import { VendorCode } from '@service/src/lib/common/types/vendor-code'
 import { APIError } from '@service/src/vendor'
@@ -179,6 +179,42 @@ export function registerController(fastify: FastifyInstance) {
       }
     }
     const res = await uniongame.join({ agentCode, userId })
+    console.log(JSON.stringify(res))
+    if (res.success === false) {
+      return {
+        status: 102,
+        desc: res.error,
+      }
+    }
+
+    return {
+      status: 0,
+      gameUrl: res.gameUrl,
+    }
+  })
+  fastify.get('/skyhub/token', async (req, reply): Promise<LaunchAPIResult> => {
+    const { query } = req
+
+    const { username } = query as { [key: string]: string }
+
+    const { agentCode, userId } = getUserInfo(username)
+
+    /*const user = await mainSQL.user.findOne({ where: { agentCode, userId } })
+    if (user == null) {
+      return {
+        status: 100,
+      }
+    }*/
+
+    const createRes = await skyhub.create(null, agentCode + userId)
+    console.log(JSON.stringify(createRes))
+    if (createRes.success === false) {
+      return {
+        status: 100,
+        desc: createRes.error,
+      }
+    }
+    const res = await skyhub.join({ agentCode, userId })
     console.log(JSON.stringify(res))
     if (res.success === false) {
       return {
