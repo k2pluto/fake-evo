@@ -72,6 +72,7 @@
     "source-map-support": "^0.5.21",
     "typeorm": "^0.3.20",
     "ua-parser-js": "^1.0.37",
+    "undici": "^7.16.0",
     "uuid": "^9.0.1",
     "websocket": "^1.0.35",
     "ws": "^8.17.0"

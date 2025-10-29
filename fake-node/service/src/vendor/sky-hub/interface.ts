@@ -1,4 +1,4 @@
-import { EvolutionDetail } from '@vendor/evolution/interface'
+import { EvolutionDetail } from '../type'
 
 export interface HistoryItem {
   id: number // 195884244
