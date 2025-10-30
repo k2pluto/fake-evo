@@ -4,6 +4,9 @@ import { formatInTimeZone } from 'date-fns-tz'
 import axios from 'axios'
 import _ from 'lodash'
 
+import cheerio from 'cheerio'
+import FormData from 'form-data'
+
 import { authManager, isLambda, mainSQL, mongoDB, vendorCode } from '../app'
 import {
   errorToString,
@@ -356,7 +359,7 @@ export async function loginEvolutionOriginal(username: string) {
   }
 }
 
-export async function loginSkyHubPluto(username: string) {
+export async function loginSkyHubPluto(username: string, headers: Record<string, string | string[]>) {
   try {
     const { agentCode, userId } = getUserInfo(username)
 
@@ -373,7 +376,81 @@ export async function loginSkyHubPluto(username: string) {
       }
     }
 
-    console.log(JSON.stringify(res))
+    const vendorRes = await axios.get(res.gameUrl)
+
+    const $ = cheerio.load(vendorRes.data)
+
+    const form = $('form')
+    const action = form.attr('action')
+    const method = (form.attr('method') || 'GET').toUpperCase()
+
+    const formData = new FormData()
+    form.find('input').each((_, input) => {
+      const name = $(input).attr('name')
+      const value = $(input).attr('value') || ''
+      if (name) formData.append(name, value)
+    })
+
+    // Skyhub에서 받은 쿠키 추출
+    const vendorSetCookies = vendorRes.headers['set-cookie']
+    console.log('Skyhub cookies:', vendorSetCookies)
+
+    // submit 시뮬레이션
+
+    const linkUrl = action
+
+    // Evolution 도메인으로 직접 연결한 것처럼 헤더 재구성 (프록시 증거 모두 제거)
+    const url = new URL(linkUrl)
+
+    // Swix 쿠키를 Evolution 도메인용 쿠키로 변환
+    let cookieHeader = ''
+    if (vendorSetCookies && vendorSetCookies.length > 0) {
+      // Set-Cookie 헤더에서 쿠키 이름=값만 추출
+      cookieHeader = vendorSetCookies
+        .map((cookie) => {
+          const match = cookie.match(/^([^=]+=[^;]+)/)
+          return match ? match[1] : ''
+        })
+        .filter(Boolean)
+        .join('; ')
+      console.log('Cookie header to send:', cookieHeader)
+    }
+
+    const newHeaders = {
+      host: url.host, // Evolution host
+      origin: url.origin, // Evolution origin
+      accept: headers['accept'],
+      'accept-encoding': headers['accept-encoding'] ?? 'gzip, deflate, br',
+      'accept-language': headers['accept-language'],
+      'user-agent': headers['user-agent'],
+      'sec-ch-ua': headers['sec-ch-ua'],
+      'sec-ch-ua-mobile': headers['sec-ch-ua-mobile'],
+      'sec-ch-ua-platform': headers['sec-ch-ua-platform'],
+      'sec-fetch-dest': headers['sec-fetch-dest'] ?? 'document',
+      'sec-fetch-mode': headers['sec-fetch-mode'] ?? 'navigate',
+      'sec-fetch-site': 'none', // 직접 연결
+      'sec-fetch-user': headers['sec-fetch-user'] ?? '?1',
+      'upgrade-insecure-requests': '1',
+      connection: 'keep-alive',
+      ...(cookieHeader && { cookie: cookieHeader }), // Swix에서 받은 쿠키 포함
+      // 프록시 증거 제거: x-forwarded-*, x-real-ip, cf-*, cdn-loop, via, referer 제외
+    }
+
+    console.log('===== loginSkyHub: Sending headers to Evolution =====')
+    console.log('URL:', linkUrl)
+    console.log('Header keys:', Object.keys(newHeaders).join(', '))
+    for (const key of ['host', 'origin', 'referer', 'x-forwarded-host', 'x-real-ip', 'user-agent', 'sec-fetch-site']) {
+      if (newHeaders[key]) console.log(`  ${key}: ${newHeaders[key]}`)
+    }
+    console.log('===================================================')
+    const formRes = await axios({
+      url: action,
+      method,
+      data: formData,
+      headers: formData.getHeaders(), // Axios에서 multipart 헤더 세팅 필요
+    })
+
+    console.log(JSON.stringify(formRes))
 
     return res
 
@@ -544,7 +621,7 @@ function loginVendor(username: string, headers: Record<string, string | string[]
   } else if (vendorCode === VendorCode.FakeChoi_Evolution) {
     return loginEvolutionOriginal(username)
   } else if (vendorCode === VendorCode.SkyHub_Pluto) {
-    return loginSkyHubPluto(username)
+    return loginSkyHubPluto(username, headers)
   } else {
     return loginSwix(username, headers)
   }
