@@ -30,6 +30,7 @@ export enum VendorCode {
   FakeAlpha_Cider_Evolution = 'facev',
   FakeUnionGame_Cool_Evolution = 'fucev',
   FakeChoi_Evolution = 'fchev',
+  SkyHub_Pluto = 'skypl',
   Choi_Evolution = 'chev',
   Jin_Evolution = 'jinev',
   Kroad_Evolution = 'krevo',

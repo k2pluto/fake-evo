@@ -67,6 +67,22 @@
         "internalConsoleOptions": "openOnSessionStart"
       },
       {
+        "name": "fake-api SkyHub",
+        "type": "node",
+        "request": "launch",
+        "args": [ "${workspaceFolder}/src/fake-api/main.ts"],
+        "runtimeArgs": ["-r", "ts-node/register", "-r", "tsconfig-paths/register"],
+        "cwd": "${workspaceRoot}",
+        "env": {
+          "STAGE_ENV": "remote-prod",
+          //"STAGE_ENV": "lemon",
+          "FAKE_VENDOR": "skypl",
+          "FAKE_SERVER": "blue",
+          "DEBUG_MODE": "debug",
+        },
+        "internalConsoleOptions": "openOnSessionStart"
+      },
+      {
         "name": "fake-api SWIX http",
         "type": "node",
         "request": "launch",

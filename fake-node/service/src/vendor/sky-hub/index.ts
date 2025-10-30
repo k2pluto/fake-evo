@@ -163,6 +163,8 @@ export class ThirdPartySkyHub extends Vendor {
       const joinResData = callRes.res.data
       result.result = joinResData
 
+      console.log('skyhub join', JSON.stringify(callRes))
+
       if (callRes.error != null || joinResData.link == null) {
         throw new Error('launch error ' + callRes.error)
       }

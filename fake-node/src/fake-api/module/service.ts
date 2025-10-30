@@ -50,7 +50,11 @@ const execFileAsync = promisify(execFile)
 const CURL_CHROME_PATH = path.join(__dirname, '../curl_chrome116')
 
 // curl-impersonate로 요청하는 함수
-async function curlImpersonate(url: string, headers: Record<string, string | string[]>, followRedirects: boolean = false) {
+async function curlImpersonate(
+  url: string,
+  headers: Record<string, string | string[]>,
+  followRedirects: boolean = false,
+) {
   const args = [
     url,
     '-v', // verbose
@@ -352,6 +356,40 @@ export async function loginEvolutionOriginal(username: string) {
   }
 }
 
+export async function loginSkyHubPluto(username: string) {
+  try {
+    const { agentCode, userId } = getUserInfo(username)
+
+    let res: LaunchAPIResult
+    for (let i = 0; ; i++) {
+      console.log('get gameurl count ' + i)
+      res = await getBlackmambaGameUrl(agentCode, userId, 'skyhub')
+      if (res.gameUrl != null) {
+        break
+      }
+
+      if (i >= 2) {
+        throw res
+      }
+    }
+
+    console.log(JSON.stringify(res))
+
+    return res
+
+    // return connectEvolution(res.gameUrl, username)
+  } catch (err) {
+    printAxiosErrorLog(err)
+    if (err?.status != null) {
+      throw err
+    }
+    throw {
+      status: 100,
+      error: err.toString(),
+    }
+  }
+}
+
 export async function loginSwix(username: string, headers: Record<string, string | string[]>) {
   try {
     const { agentCode, userId } = getUserInfo(username)
@@ -385,7 +423,10 @@ export async function loginSwix(username: string, headers: Record<string, string
 
     if (matchRes == null || matchRes.length === 0) {
       console.log('❌ No Evolution URL found in Swix response')
-      console.log('Swix response data preview:', typeof swixRes.data === 'string' ? swixRes.data.substring(0, 500) : JSON.stringify(swixRes.data))
+      console.log(
+        'Swix response data preview:',
+        typeof swixRes.data === 'string' ? swixRes.data.substring(0, 500) : JSON.stringify(swixRes.data),
+      )
       throw {
         status: 100,
         message: 'swix game url not found',
@@ -403,7 +444,7 @@ export async function loginSwix(username: string, headers: Record<string, string
     if (swixCookies && swixCookies.length > 0) {
       // Set-Cookie 헤더에서 쿠키 이름=값만 추출
       cookieHeader = swixCookies
-        .map(cookie => {
+        .map((cookie) => {
           const match = cookie.match(/^([^=]+=[^;]+)/)
           return match ? match[1] : ''
         })
@@ -413,8 +454,8 @@ export async function loginSwix(username: string, headers: Record<string, string
     }
 
     const newHeaders = {
-      host: url.host,                                      // Evolution host
-      origin: url.origin,                                  // Evolution origin
+      host: url.host, // Evolution host
+      origin: url.origin, // Evolution origin
       accept: headers['accept'],
       'accept-encoding': headers['accept-encoding'] ?? 'gzip, deflate, br',
       'accept-language': headers['accept-language'],
@@ -424,11 +465,11 @@ export async function loginSwix(username: string, headers: Record<string, string
       'sec-ch-ua-platform': headers['sec-ch-ua-platform'],
       'sec-fetch-dest': headers['sec-fetch-dest'] ?? 'document',
       'sec-fetch-mode': headers['sec-fetch-mode'] ?? 'navigate',
-      'sec-fetch-site': 'none',                            // 직접 연결
+      'sec-fetch-site': 'none', // 직접 연결
       'sec-fetch-user': headers['sec-fetch-user'] ?? '?1',
       'upgrade-insecure-requests': '1',
-      'connection': 'keep-alive',
-      ...(cookieHeader && { cookie: cookieHeader }),       // Swix에서 받은 쿠키 포함
+      connection: 'keep-alive',
+      ...(cookieHeader && { cookie: cookieHeader }), // Swix에서 받은 쿠키 포함
       // 프록시 증거 제거: x-forwarded-*, x-real-ip, cf-*, cdn-loop, via, referer 제외
     }
 
@@ -454,14 +495,22 @@ export async function loginSwix(username: string, headers: Record<string, string
 
     console.log('linkRes.status:', linkRes.status)
     console.log('linkRes.headers.location:', linkRes.headers.location)
-    console.log('linkRes.data preview:', typeof linkRes.data === 'string' ? linkRes.data.substring(0, 500) : JSON.stringify(linkRes.data).substring(0, 500))
+    console.log(
+      'linkRes.data preview:',
+      typeof linkRes.data === 'string'
+        ? linkRes.data.substring(0, 500)
+        : JSON.stringify(linkRes.data).substring(0, 500),
+    )
 
     const gameUrl = linkRes.headers.location as string
 
     if (!gameUrl) {
       console.log('❌ No location header in Swix response')
       console.log('Full response headers:', JSON.stringify(linkRes.headers))
-      console.log('Full response data:', typeof linkRes.data === 'string' ? linkRes.data.substring(0, 1000) : JSON.stringify(linkRes.data))
+      console.log(
+        'Full response data:',
+        typeof linkRes.data === 'string' ? linkRes.data.substring(0, 1000) : JSON.stringify(linkRes.data),
+      )
       throw {
         status: 100,
         message: 'Swix did not return a valid redirect URL',
@@ -494,6 +543,8 @@ function loginVendor(username: string, headers: Record<string, string | string[]
     return loginUnionGame(username)
   } else if (vendorCode === VendorCode.FakeChoi_Evolution) {
     return loginEvolutionOriginal(username)
+  } else if (vendorCode === VendorCode.SkyHub_Pluto) {
+    return loginSkyHubPluto(username)
   } else {
     return loginSwix(username, headers)
   }
@@ -609,14 +660,14 @@ export async function entryGame(options: EntryGameOptions) {
     const purpose = headers['purpose'] as string
     const secPurpose = headers['sec-purpose'] as string
 
-    const isMonitoringRequest = userAgent === 'node' ||
-                               userAgent?.includes('curl') ||
-                               userAgent?.includes('wget') ||
-                               headers['cdn-loop']?.includes('cloudflare')
+    const isMonitoringRequest =
+      userAgent === 'node' ||
+      userAgent?.includes('curl') ||
+      userAgent?.includes('wget') ||
+      headers['cdn-loop']?.includes('cloudflare')
 
-    const isPrefetchRequest = purpose === 'prefetch' ||
-                             secPurpose?.includes('prefetch') ||
-                             secPurpose?.includes('prerender')
+    const isPrefetchRequest =
+      purpose === 'prefetch' || secPurpose?.includes('prefetch') || secPurpose?.includes('prerender')
 
     if (!isMonitoringRequest && !isPrefetchRequest) {
       console.log(`🚨 Adding user ${username} to blacklist due to fake connection failure`)

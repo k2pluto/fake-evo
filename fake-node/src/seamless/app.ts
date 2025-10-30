@@ -20,6 +20,7 @@ import { formatMemoryUsage } from '../common/util'
 import { registerFakeAlphaController } from './module/fake-alpha.controller'
 import { registerFakeUnionController } from './module/fake-union.controller'
 import { registerFakeEvolutionChoiController } from './module/fake-evolution.choi.controller'
+import { registerFakeSkyHubController } from './module/fake-skyhub.controller'
 
 export const mongoDB = new MongoBet(config.MONGO_OPTIONS)
 // export const mainSQL = new UserSQL(config.RDB_OPTIONS)
@@ -133,8 +134,9 @@ export async function createApp() {
 
   registerFakeSwixController(instance)
   registerFakeHonorController(instance)
-  registerFakeAlphaController(instance)
-  registerFakeUnionController(instance)
+  registerFakeSkyHubController(instance)
+  //registerFakeAlphaController(instance)
+  //registerFakeUnionController(instance)
   registerFakeEvolutionChoiController(instance)
 
   console.log('createApp End')
